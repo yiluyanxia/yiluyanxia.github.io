@@ -134,6 +134,7 @@
 
     $fullpage.removeClass('mobile-nav-on');
   });
+
 })(jQuery);
 
 $(window).load(function(){
