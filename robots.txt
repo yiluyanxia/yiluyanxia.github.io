@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /archives
+
+Disallow: /fonts/
+Disallow: /vendors/
+
+Sitemap: https://www.yiluyanxia.site/sitemap.xml
+Sitemap: https://www.yiluyanxia.site/baidusitemap.xml

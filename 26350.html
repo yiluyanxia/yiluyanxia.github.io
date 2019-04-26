@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-134049127-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>基于node开发的系统搭建说明 | Yiluyanxia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="Z2eTUO78NDUbUNrYk5dUHLf6we_TOAle3WKpEFw5Dk4">
+  <meta name="baidu-site-verification" content="1CQQGgl03Q">
+  
+  <meta name="keywords" content="vue前端">
+  
+  <meta name="description" content="（一）Nodejs的安装 根据您的电脑系统去nodejs官网下载nodejs的安装包。注意：是msi格式的文件，且要下载8.4以上版本的。 安装步骤很简单，只需要一直下一步，msi文件是专门为微软系统提供的安装包，所以安装完成后无需进行任何配置。 安装完成后，打开cmd,输入 node –v ,出现版本号则说明安装成功。  （二）淘宝镜像">
+<meta name="keywords" content="node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于node开发的系统搭建说明">
+<meta property="og:url" content="https://yiluyanxia.site/26350.html">
+<meta property="og:site_name" content="Yiluyanxia">
+<meta property="og:description" content="（一）Nodejs的安装 根据您的电脑系统去nodejs官网下载nodejs的安装包。注意：是msi格式的文件，且要下载8.4以上版本的。 安装步骤很简单，只需要一直下一步，msi文件是专门为微软系统提供的安装包，所以安装完成后无需进行任何配置。 安装完成后，打开cmd,输入 node –v ,出现版本号则说明安装成功。  （二）淘宝镜像">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://yiluyanxia.site/26350/cmd-taobao.png">
+<meta property="og:image" content="https://yiluyanxia.site/26350/cmd-run.png">
+<meta property="og:image" content="https://yiluyanxia.site/26350/mongo1.png">
+<meta property="og:image" content="https://yiluyanxia.site/26350/mongo2.png">
+<meta property="og:image" content="https://yiluyanxia.site/26350/npm2.png">
+<meta property="og:updated_time" content="2019-01-06T03:55:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于node开发的系统搭建说明">
+<meta name="twitter:description" content="（一）Nodejs的安装 根据您的电脑系统去nodejs官网下载nodejs的安装包。注意：是msi格式的文件，且要下载8.4以上版本的。 安装步骤很简单，只需要一直下一步，msi文件是专门为微软系统提供的安装包，所以安装完成后无需进行任何配置。 安装完成后，打开cmd,输入 node –v ,出现版本号则说明安装成功。  （二）淘宝镜像">
+<meta name="twitter:image" content="https://yiluyanxia.site/26350/cmd-taobao.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Yiluyanxia" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.webp">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <script>
+  let antiquityStorage = window.sessionStorage.getItem('antiquitySessionStorage');
+  if (antiquityStorage == '' || antiquityStorage == null) {
+    var antiquityLoader = '<div id="loaderbox"><div class="loader"><div class="load-roll"><div class="load-top"></div><div class="load-right"></div><div class="load-bottom"></div></div></div></div>';
+    document.write(antiquityLoader);
+    document.body.style.overflow = 'hidden'
+  }
+  </script>
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+        <a class="nav-item" href="https://github.com/yiluyanxia" title target="_blank">姬友</a>
+      
+        <a class="nav-item" href="/cv" title>简历</a>
+      
+        <a class="nav-item" href="/mood" title target="_blank">心情</a>
+      
+        <a class="nav-item" href="/pda" title target="_blank">手账</a>
+      
+        <a class="nav-item" href="/negative" title target="_blank">暗黑</a>
+      
+        <a class="nav-item" href="/about" title>本王</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-基于node开发的系统搭建说明" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      基于node开发的系统搭建说明
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/26350.html" class="article-date">
+  <time datetime="2018-02-20T03:17:49.000Z" itemprop="datePublished">2018-02-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/入坑教程/">入坑教程</a>
+  </div>
+
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="（一）Nodejs的安装"><a href="#（一）Nodejs的安装" class="headerlink" title="（一）Nodejs的安装"></a>（一）Nodejs的安装</h2><ol>
+<li>根据您的电脑系统去nodejs官网下载nodejs的安装包。<br>注意：是msi格式的文件，且要下载8.4以上版本的。</li>
+<li>安装步骤很简单，只需要一直下一步，msi文件是专门为微软系统提供的安装包，所以安装完成后无需进行任何配置。</li>
+<li>安装完成后，打开cmd,输入 node –v ,出现版本号则说明安装成功。</li>
+</ol>
+<h2 id="（二）淘宝镜像"><a href="#（二）淘宝镜像" class="headerlink" title="（二）淘宝镜像"></a>（二）淘宝镜像</h2><a id="more"></a>
+<ol>
+<li><p>配置淘宝镜像。在cmd输入如下命令：</p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="GAMS"><figure class="iseeu highlight /gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="keyword">set</span> registry <span class="comment">https:</span>//<span class="comment">registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>验证是否配置成功。输入：</p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="ROUTEROS"><figure class="iseeu highlight /routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm<span class="built_in"> config </span><span class="builtin-name">get</span> registry</span><br></pre></td></tr></table></figure></div>
+<p>出现如下内容则说明配置成功<br><a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
+<img src="/26350/cmd-taobao.png" title="验证安装淘宝镜像">
+</li>
+</ol>
+<h2 id="（三）运行前端代码"><a href="#（三）运行前端代码" class="headerlink" title="（三）运行前端代码"></a>（三）运行前端代码</h2><ol>
+<li>打开cmd,使用cd命令转到前端代码所在目录，并输入 npm install,按回车。</li>
+<li>等待几分钟后，安装依赖完成。然后输入 npm run dev。在浏览器输入 <a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> 则可以查看前端界面。输入 <a href="http://localhost:8080/#/admin/userList" target="_blank" rel="noopener">http://localhost:8080/#/admin/userList</a> 可以查看全局管理员的页面。<img src="/26350/cmd-run.png" title="输入npm run dev">
+注意：生产阶段不需要运行前端代码！既“3.运行前端代码”本步骤不需要执行。</li>
+</ol>
+<h2 id="（四）MongoDB安装与配置"><a href="#（四）MongoDB安装与配置" class="headerlink" title="（四）MongoDB安装与配置"></a>（四）MongoDB安装与配置</h2><ol>
+<li>根据您的电脑系统去MongoDB官网下载MongoDB的安装包。<br>注意：是msi格式的文件。</li>
+<li>安装步骤很简单，只需要一直下一步，msi文件是专门为微软系统提供的安装包，环境变量已自动配置好，所以安装完成后无需进行任何配置。</li>
+<li>在安装文件所在盘符创建一个任意名的文件夹,用于数据存放目录。</li>
+<li>打开cmd,使用cd命令进入安装文件夹 ,输入mongod –dbpath d:\mongo。这里的“mongo”为刚刚创建的用于存放数据的文件夹。<img src="/26350/mongo1.png" title="mongo安装成功"></li>
+<li>出现如图所示，则说明安装成功。此时在浏览器中输入“127.0.0.1:27017”,则出现<img src="/26350/mongo2.png" title="mongo安装成功">
+注意：<strong>此cmd不能关闭，需保持开启</strong>。<br>（mongodb的安装与配置，网上有多种方法，在此仅提供最快速的方法。例如，如何将mongoDB设置为Windows服务。在此也不赘述。）</li>
+</ol>
+<h2 id="（五）运行本系统"><a href="#（五）运行本系统" class="headerlink" title="（五）运行本系统"></a>（五）运行本系统</h2><ol>
+<li>打开cmd,使用cd命令进入到项目根目录，执行“npm install”,此步骤为安装依赖。</li>
+<li>安装依赖完毕后，根目录会出现“node_modules”文件夹。然后输入“npm run start”。<img src="/26350/npm2.png" title="执行node后台"></li>
+<li>出现如图所示则说明运行成功，此时打开谷歌浏览器输入 <a href="http://localhost:3000" target="_blank" rel="noopener">http://localhost:3000</a> 则可访问本系统。<br><em>（这是写给不太懂开发的经理看的，保存一份，方便以后再复制给他。）</em></li>
+</ol>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/23376.html" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            angular初体验
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/47060.html" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Happy day</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'yiluyanxia',
+  repo: 'yiluyanxia.github.io',
+  oauth: {
+    client_id: 'b8e8c50258809e47e61a',
+    client_secret: '15a8996b14bedbbb4c2e1a540ac064d629f0c6ee',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.webp" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        一路烟霞
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，不想局限于前端的攻城狮。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/入坑教程/">入坑教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/私人/">私人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/跳坑记录/">跳坑记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/防丢失/">防丢失</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小情绪/">小情绪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/49e22128.html">面试五分钟路程两小时</a>
+          </li>
+        
+          <li>
+            <a href="/5b83c362.html">关于vue的面试题</a>
+          </li>
+        
+          <li>
+            <a href="/e61b7efa.html">又又又又又又又要面试了</a>
+          </li>
+        
+          <li>
+            <a href="/8d1a7429.html">一篇很丧的文</a>
+          </li>
+        
+          <li>
+            <a href="/55c8e4e2.html">使用Heroku，解决gitment登录失败，报[object ProgressEvent]的错</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://blog.yiranzai.cn/" title target="_blank">一冉再</a>
+      
+        <a style="display: block;" href="https://zine-fj.github.io/" title target="_blank">一世长安</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 yiluyanxia &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="https://github.com/yiluyanxia" class="mobile-nav-link">姬友</a>
+  
+    <a href="/cv" class="mobile-nav-link">简历</a>
+  
+    <a href="/mood" class="mobile-nav-link">心情</a>
+  
+    <a href="/pda" class="mobile-nav-link">手账</a>
+  
+    <a href="/negative" class="mobile-nav-link">暗黑</a>
+  
+    <a href="/about" class="mobile-nav-link">本王</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

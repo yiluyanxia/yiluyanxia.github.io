@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-134049127-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>angular实操 | Yiluyanxia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="Z2eTUO78NDUbUNrYk5dUHLf6we_TOAle3WKpEFw5Dk4">
+  <meta name="baidu-site-verification" content="1CQQGgl03Q">
+  
+  <meta name="keywords" content="vue前端">
+  
+  <meta name="description" content="安装环境node 6.9.x 和 npm 3.x.x 以上全局安装 Angular CLI1npm install -g @angular/cli 创建新项目运行下列命令来生成一个新项目以及应用的骨架代码1ng new my-app">
+<meta name="keywords" content="angular">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular实操">
+<meta property="og:url" content="https://yiluyanxia.site/48873.html">
+<meta property="og:site_name" content="Yiluyanxia">
+<meta property="og:description" content="安装环境node 6.9.x 和 npm 3.x.x 以上全局安装 Angular CLI1npm install -g @angular/cli 创建新项目运行下列命令来生成一个新项目以及应用的骨架代码1ng new my-app">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-06T03:55:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angular实操">
+<meta name="twitter:description" content="安装环境node 6.9.x 和 npm 3.x.x 以上全局安装 Angular CLI1npm install -g @angular/cli 创建新项目运行下列命令来生成一个新项目以及应用的骨架代码1ng new my-app">
+  
+    <link rel="alternate" href="/atom.xml" title="Yiluyanxia" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.webp">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <script>
+  let antiquityStorage = window.sessionStorage.getItem('antiquitySessionStorage');
+  if (antiquityStorage == '' || antiquityStorage == null) {
+    var antiquityLoader = '<div id="loaderbox"><div class="loader"><div class="load-roll"><div class="load-top"></div><div class="load-right"></div><div class="load-bottom"></div></div></div></div>';
+    document.write(antiquityLoader);
+    document.body.style.overflow = 'hidden'
+  }
+  </script>
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+        <a class="nav-item" href="https://github.com/yiluyanxia" title target="_blank">姬友</a>
+      
+        <a class="nav-item" href="/cv" title>简历</a>
+      
+        <a class="nav-item" href="/mood" title target="_blank">心情</a>
+      
+        <a class="nav-item" href="/pda" title target="_blank">手账</a>
+      
+        <a class="nav-item" href="/negative" title target="_blank">暗黑</a>
+      
+        <a class="nav-item" href="/about" title>本王</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-angular实操" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      angular实操
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/48873.html" class="article-date">
+  <time datetime="2018-02-20T06:47:42.000Z" itemprop="datePublished">2018-02-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/跳坑记录/">跳坑记录</a>
+  </div>
+
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>node 6.9.x 和 npm 3.x.x 以上<br>全局安装 Angular CLI<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="COFFEESCRIPT"><figure class="iseeu highlight /coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> install -g @angular/cli</span><br></pre></td></tr></table></figure></div></p>
+<h2 id="创建新项目"><a href="#创建新项目" class="headerlink" title="创建新项目"></a>创建新项目</h2><p>运行下列命令来生成一个新项目以及应用的骨架代码<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="HAXE"><figure class="iseeu highlight /haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng <span class="keyword">new</span> <span class="type">my</span>-app</span><br></pre></td></tr></table></figure></div></p>
+<a id="more"></a>
+<h2 id="启动开发服务器"><a href="#启动开发服务器" class="headerlink" title="启动开发服务器"></a>启动开发服务器</h2><p>进入项目目录，并启动服务器<br>使用–open（或-o）参数可以自动打开浏览器并访问<a href="http://localhost:4200/" target="_blank" rel="noopener">http://localhost:4200/</a><br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="STATA"><figure class="iseeu highlight /stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> my-<span class="keyword">app</span></span><br><span class="line">ng serve --<span class="keyword">open</span></span><br></pre></td></tr></table></figure></div></p>
+<h2 id="保持应用不断转译和运行"><a href="#保持应用不断转译和运行" class="headerlink" title="保持应用不断转译和运行"></a>保持应用不断转译和运行</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="COFFEESCRIPT"><figure class="iseeu highlight /coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> start</span><br></pre></td></tr></table></figure></div>
+<h2 id="router-route-傻傻分不清楚"><a href="#router-route-傻傻分不清楚" class="headerlink" title="router route 傻傻分不清楚"></a>router route 傻傻分不清楚</h2><p>Router 路由器<br>Route 路由（线路 vt 及物动词）</p>
+<p>##执行流程<br>执行ng server 后，进入main.js入口文件，再找到app.module.ts,</p>
+<p>app.module.ts 这个根模块会告诉Angular如何组装该应用</p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//这个根模块会告诉 Angular 如何组装该应用</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//引入模块</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; BrowserModule &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-browser'</span>; <span class="comment">//*BrowserModule，浏览器解析的模块*/</span></span><br><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;  <span class="comment">/*核心模块*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; AppComponent &#125; <span class="keyword">from</span> <span class="string">'./app.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeaderComponent &#125; <span class="keyword">from</span> <span class="string">'./components/header/header.component'</span>;  <span class="comment">/*自定义的模块*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*@NgModule装饰器将AppModule标记为 Angular 模块类（也叫NgModule类）。</span></span><br><span class="line"><span class="comment"> @NgModule接受一个元数据对象，告诉 Angular 如何编译和启动应用。*/</span></span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [    <span class="comment">/*引入当前项目运行的的组件  自定义组件都需要引入并且在这个里面配制*/</span></span><br><span class="line">    AppComponent, HeaderComponent</span><br><span class="line">  ],</span><br><span class="line">  imports: [  <span class="comment">/*当前的项目依赖哪些模块*/</span></span><br><span class="line">    BrowserModule</span><br><span class="line">  ],</span><br><span class="line">  providers: [], <span class="comment">/*定义的服务  回头放在这个里面*/</span></span><br><span class="line">  bootstrap: [AppComponent]   <span class="comment">/*默认启动那个组件*/</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*根模块不需要导出任何东西，   因为其它组件不需要导入根模块。 但是一定要写*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123; &#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//直接创建文件，并在根组件配置</span></span><br><span class="line">ng g component components/heaer</span><br></pre></td></tr></table></figure></div>
+<h2 id="ng指令"><a href="#ng指令" class="headerlink" title="ng指令"></a>ng指令</h2><p>*ngIf<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngIf</span>=<span class="string">"flag"</span>&gt;</span> flag = true 时显示</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">'flag=!flag'</span>&gt;</span>改变flag<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></div></p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/42986.html" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            和我一起入坑-Angular入门-ToDoList
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/23376.html" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">angular初体验</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'yiluyanxia',
+  repo: 'yiluyanxia.github.io',
+  oauth: {
+    client_id: 'b8e8c50258809e47e61a',
+    client_secret: '15a8996b14bedbbb4c2e1a540ac064d629f0c6ee',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.webp" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        一路烟霞
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，不想局限于前端的攻城狮。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/入坑教程/">入坑教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/私人/">私人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/跳坑记录/">跳坑记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/防丢失/">防丢失</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小情绪/">小情绪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/49e22128.html">面试五分钟路程两小时</a>
+          </li>
+        
+          <li>
+            <a href="/5b83c362.html">关于vue的面试题</a>
+          </li>
+        
+          <li>
+            <a href="/e61b7efa.html">又又又又又又又要面试了</a>
+          </li>
+        
+          <li>
+            <a href="/8d1a7429.html">一篇很丧的文</a>
+          </li>
+        
+          <li>
+            <a href="/55c8e4e2.html">使用Heroku，解决gitment登录失败，报[object ProgressEvent]的错</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://blog.yiranzai.cn/" title target="_blank">一冉再</a>
+      
+        <a style="display: block;" href="https://zine-fj.github.io/" title target="_blank">一世长安</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 yiluyanxia &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="https://github.com/yiluyanxia" class="mobile-nav-link">姬友</a>
+  
+    <a href="/cv" class="mobile-nav-link">简历</a>
+  
+    <a href="/mood" class="mobile-nav-link">心情</a>
+  
+    <a href="/pda" class="mobile-nav-link">手账</a>
+  
+    <a href="/negative" class="mobile-nav-link">暗黑</a>
+  
+    <a href="/about" class="mobile-nav-link">本王</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
