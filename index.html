@@ -40,7 +40,7 @@ ga('send', 'pageview');
     <link rel="alternate" href="/atom.xml" title="Yiluyanxia" type="application/atom+xml">
   
   
-    <link rel="icon" href="/images/default-avatar.webp">
+    <link rel="icon" href="/images/default-avatar.jpg">
   
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
@@ -90,6 +90,53 @@ ga('send', 'pageview');
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
+  
+    <article id="post-前端可能需要知道的色彩知识" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/dc916e3c.html">前端可能需要知道的色彩知识</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/dc916e3c.html" class="article-date">
+  <time datetime="2019-09-14T17:40:25.000Z" itemprop="datePublished">2019-09-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/防丢失/">防丢失</a>
+  </div>
+
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/色彩/">色彩</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="前端可能需要知道的色彩知识的分享"><a href="#前端可能需要知道的色彩知识的分享" class="headerlink" title="前端可能需要知道的色彩知识的分享"></a>前端可能需要知道的色彩知识的分享</h2><p>一般在写页面的时候，css 中经常有 #de1c31, rgb(222, 28, 29), rgb(222, 28, 29, 0.8) 这种字符，他们都是代表某一种红色。</p>
+<h3 id="色彩的调和"><a href="#色彩的调和" class="headerlink" title="色彩的调和"></a>色彩的调和</h3><p>色光三原色是指红、绿和蓝，一般显示器等电子设备采用这种模式，<em>除此以外还有色料三原色是指红，黄，蓝，美术中就是定义这种为色彩三原色。</em><br>由三种颜色混合可以配出丰富的颜色。<br>
+        
+          </p><p class="article-more-link">
+            <a href="/dc916e3c.html#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
   
     <article id="post-JS中的数学计算" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
@@ -206,10 +253,12 @@ ga('send', 'pageview');
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <h2 id="vuex-数据流"><a href="#vuex-数据流" class="headerlink" title="vuex 数据流"></a>vuex 数据流</h2><p>说实话，看了官方文档我并不清楚vuex到底是个什么东西，通过例子，我知道如何使用后，我才慢慢理解一点。<br>我的理解就是：<br>为什么会存在组件不能通信？简单粗暴的回答就是，变量的作用域导致的，vue的每一个组件都有自己的生命周期，都是独立存在的个体。vuex就是在根组件创建一个叫state的全局变量，让不同组件共享这个变量，并且定义了一系列方法和规范，也就是action、mutation等等，去统一触发这个全局变量也就是state。<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// store/index.js</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      monitorInfo: &#123;</span><br><span class="line">        name: <span class="string">''</span>,</span><br><span class="line">        description: <span class="string">''</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  actions: &#123;</span><br><span class="line">    updateMonitorInfo: <span class="function">(<span class="params">&#123;commit&#125;, info</span>) =&gt;</span> &#123;</span><br><span class="line">      commit(<span class="string">'UPDATE_MONITOR_INFO'</span>, info)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    UPDATE_MONITOR_INFO: <span class="function">(<span class="params">state, info</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">window</span>.localStorage.setItem(<span class="string">'monitorInfo'</span>, <span class="built_in">JSON</span>.stringify(info))</span><br><span class="line">      state.monitorInfo = info</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  getters: &#123;</span><br><span class="line">    monitorInfo: <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (!state.monitorInfo.name) &#123;</span><br><span class="line">        state.monitorInfo = <span class="built_in">JSON</span>.parse(<span class="built_in">window</span>.localStorage.getItem(<span class="string">'monitorInfo'</span>))</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> state.monitorInfo</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  modules: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store</span><br></pre></td></tr></table></figure></div></p>
-<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- list 兄弟组件的发送方--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> &#123; mapActions &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">    data () &#123;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    computed: &#123;</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    methods: &#123;  </span></span><br><span class="line"><span class="actionscript">      ...mapActions([<span class="string">'updateMonitorInfo'</span>]),</span></span><br><span class="line"><span class="undefined">      goNextPage (row, routerName) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> monitorInfo = &#123;</span></span><br><span class="line"><span class="undefined">          name: row.name,</span></span><br><span class="line"><span class="undefined">          serviceUrl: row.serviceUrl,</span></span><br><span class="line"><span class="undefined">          description: row.info.description</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.updateMonitorInfo(monitorInfo)</span></span><br><span class="line"><span class="undefined">      &#125;,</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    mounted () &#123;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- monitor.vue  兄弟组件接收方--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;monitorInfo.name&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;monitorInfo.description&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> &#123; mapGetters &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">    data () &#123;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    computed: &#123;</span></span><br><span class="line"><span class="actionscript">      ...mapGetters([<span class="string">'monitorInfo'</span>])</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    methods: &#123;   </span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    mounted () &#123;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
+        <h2 id="vuex-数据流"><a href="#vuex-数据流" class="headerlink" title="vuex 数据流"></a>vuex 数据流</h2><p>说实话，看了官方文档我并不清楚vuex到底是个什么东西，通过例子，我知道如何使用后，我才慢慢理解一点。<br>我的理解就是：<br>为什么会存在组件不能通信？简单粗暴的回答就是，变量的作用域导致的，vue的每一个组件都有自己的生命周期，都是独立存在的个体。vuex就是在根组件创建一个叫state的全局变量，让不同组件共享这个变量，并且定义了一系列方法和规范，也就是action、mutation等等，去统一触发这个全局变量也就是state。<br>
+        
+          </p><p class="article-more-link">
+            <a href="/5b83c362.html#more">阅读全文</a>
+          </p>
+        
       
     </div>
     
@@ -497,53 +546,6 @@ ga('send', 'pageview');
 </article>
 
   
-    <article id="post-一些面试题" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/59519.html">一些面试题</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/59519.html" class="article-date">
-  <time datetime="2018-03-13T01:00:47.000Z" itemprop="datePublished">2018-03-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/防丢失/">防丢失</a>
-  </div>
-
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h2 id="js处理小数点会有误差，请问如何处理小数点呢？"><a href="#js处理小数点会有误差，请问如何处理小数点呢？" class="headerlink" title="js处理小数点会有误差，请问如何处理小数点呢？"></a>js处理小数点会有误差，请问如何处理小数点呢？</h2><p>心中一万只草泥马奔腾而过，为什么要处理小数点呢？直接使用整数计算，得到的结果在加上小数点啊。但是这个函数我忘记了 –。</p>
-<h2 id="ElementUI把页面分成几个部分？"><a href="#ElementUI把页面分成几个部分？" class="headerlink" title="ElementUI把页面分成几个部分？"></a>ElementUI把页面分成几个部分？</h2><p>OMG,就在刚刚我谷歌一下，我都不知道哦！<br>
-        
-          </p><p class="article-more-link">
-            <a href="/59519.html#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
 
 
   <nav id="page-nav">
@@ -557,7 +559,7 @@ ga('send', 'pageview');
   
     <div class="widget-box">
   <div class="avatar-box">
-    <img class="avatar" src="/images/default-avatar.webp" title="图片来自网络">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络">
     <h3 class="avatar-name">
       
         一路烟霞
@@ -585,7 +587,7 @@ ga('send', 'pageview');
   <div class="widget-box">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小情绪/">小情绪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小情绪/">小情绪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/色彩/">色彩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
     </div>
   </div>
 
@@ -595,7 +597,7 @@ ga('send', 'pageview');
   <div class="widget-box">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li></ul>
     </div>
   </div>
 
@@ -605,6 +607,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/dc916e3c.html">前端可能需要知道的色彩知识</a>
+          </li>
         
           <li>
             <a href="/e34e0359.html">JS中的数学计算</a>
@@ -622,10 +628,6 @@ ga('send', 'pageview');
             <a href="/e61b7efa.html">又又又又又又又要面试了</a>
           </li>
         
-          <li>
-            <a href="/8d1a7429.html">一篇很丧的文</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -638,6 +640,10 @@ ga('send', 'pageview');
         <a style="display: block;" href="https://blog.yiranzai.cn/" title target="_blank">一冉再</a>
       
         <a style="display: block;" href="https://zine-fj.github.io/" title target="_blank">一世长安</a>
+      
+        <a style="display: block;" href="https://yelog.org/" title target="_blank">叶落阁</a>
+      
+        <a style="display: block;" href="https://ivu1314.club/" title target="_blank">疯不觉</a>
       
     </div>
   </div>
