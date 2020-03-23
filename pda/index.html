@@ -9,11 +9,11 @@
   <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-  <div class="wrapper">
-    <div class="flowers">
+  <div class="wrapper" id="wrapper">
+    <div class="flowers" id="flowers">
       <img src="./images/flowers_01.jpg">
     </div>
-    <div class="catalog">
+    <div class="catalog" id="catalog">
       <ul>
         <li>
           <span>2-1<strong>2019</strong>/</span>
@@ -26,5 +26,23 @@
       </ul>
     </div>
   </div>
+  <div class="notsee" id="notSee">
+      Oops! 移动端暂不支持阅读。
+  </div>
+  <script>
+    var wrapper = document.getElementById('wrapper');
+    var catalog = document.getElementById('catalog');
+    var flowers = document.getElementById('flowers');
+    var notSee = document.getElementById('notSee');
+    
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+      wrapper.style.minWidth = 'inherit'
+      catalog.style.display = 'none';
+      flowers.style.width = '100%';
+      flowers.children[0].style.width = '100%';
+      flowers.children[0].style.height = 'auto';
+      notSee.style.display = 'block';
+    }
+  </script>
 </body>
 </html>

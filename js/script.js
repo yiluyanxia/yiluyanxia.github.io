@@ -136,9 +136,3 @@
   });
 
 })(jQuery);
-
-$(window).load(function(){
-  $('#loaderbox').fadeOut('slow');  
-  $('body').css({'overflow': 'scroll'}); 
-  sessionStorage.setItem('antiquitySessionStorage', 'antiquitySessionStorage');
-});
