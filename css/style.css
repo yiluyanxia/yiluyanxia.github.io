@@ -415,7 +415,9 @@ html, body, #fullpage{
 .article-content p {
   line-height: 1.6em;
   margin: 1.6em 0;
+  text-indent: 2em;
 }
+
 .article-content a {
   color: #be7e4a;
 }
@@ -579,6 +581,9 @@ html, body, #fullpage{
   margin: 1.6em 0;
   border-left: 3px solid #ddd;
   padding-left: 20px;
+}
+.article-content blockquote p{
+  text-indent: 0;
 }
 .article-content blockquote footer {
   font-size: 14px;
@@ -789,3 +794,4 @@ html, body, #fullpage{
     flex-direction: column;
   }
 }
+
