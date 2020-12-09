@@ -26,7 +26,7 @@ ga('send', 'pageview');
   <meta name="keywords" content="vue前端">
   
   <meta name="description" content="第一次与云服务器的亲密接触最近想学一点服务器的内容，看到腾讯云服务器搞活动，二话不说我就买了。在这里记录一下部署一个 node + vue + mongodb 的项目过程。期间参考了很多文章，主要是官方文档。成果在这里 http://www.fishhere.fun ，可以查看一下。">
-<meta name="keywords" content="node,云服务器,vue,mongodb">
+<meta name="keywords" content="云服务器,node,vue,mongodb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第一次与云服务器的亲密接触">
 <meta property="og:url" content="https://yiluyanxia.github.io/732766a1.html">
@@ -77,6 +77,8 @@ ga('send', 'pageview');
         <a class="nav-item" href="http://www.fishhere.fun/pda/index.html" title target="_blank">手账</a>
       
         <a class="nav-item" href="/topup" title>Top Up</a>
+      
+        <a class="nav-item" href="https://www.fishhere.fun/rap" title target="_blank">Rap</a>
       
         <a class="nav-item" href="/about" title>本王</a>
       
@@ -129,7 +131,7 @@ ga('send', 'pageview');
 <div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#wget https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz</span></span><br><span class="line"></span><br><span class="line">wget https://nodejs.org/dist/v12.18.1/node-v12.18.1-linux-x64.tar.xz</span><br></pre></td></tr></table></figure></div>
 </li>
 <li><p>解压安装包</p>
-<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="CRMSH"><figure class="iseeu highlight /crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvf <span class="keyword">node</span><span class="title">-v12</span>.<span class="number">18.1</span>-linux-x64.tar.xz</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">tar</span> <span class="selector-tag">xvf</span> <span class="selector-tag">node-v12</span><span class="selector-class">.18</span><span class="selector-class">.1-linux-x64</span><span class="selector-class">.tar</span><span class="selector-class">.xz</span></span><br></pre></td></tr></table></figure></div>
 </li>
 <li><p>创建软连接</p>
 <div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="CRMSH"><figure class="iseeu highlight /crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /root/<span class="keyword">node</span><span class="title">-v12</span>.<span class="number">18.1</span>-linux-x64/bin/<span class="keyword">node</span> <span class="title">/usr</span>/local/bin/<span class="keyword">node</span><span class="title"></span></span><br></pre></td></tr></table></figure></div>
@@ -422,6 +424,8 @@ document.body.write(script);
     <a href="http://www.fishhere.fun/pda/index.html" class="mobile-nav-link">手账</a>
   
     <a href="/topup" class="mobile-nav-link">Top Up</a>
+  
+    <a href="https://www.fishhere.fun/rap" class="mobile-nav-link">Rap</a>
   
     <a href="/about" class="mobile-nav-link">本王</a>
   
