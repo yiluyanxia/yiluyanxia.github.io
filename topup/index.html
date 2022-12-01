@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-134049127-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>Top Up 笔记 | Yiluyanxia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="Z2eTUO78NDUbUNrYk5dUHLf6we_TOAle3WKpEFw5Dk4" />
+  <meta name="baidu-site-verification" content="1CQQGgl03Q" />
+  
+  <meta name="keywords" content="vue前端" />
+  
+  <meta name="description" content="说在前面的话我最近被“拉勾大前端训练营”刷屏了，好奇点进去发现内容确实不错，填了问卷，一个拉勾的小姐姐加了我的微信，她可能觉得我是男的吧，部分对话有一点点不适，问了价钱一直没有说，还让我去考试之类的，总之我觉得套路太多，我就没有参加。但是这个内容确实不错，于是我把它作为自己top up笔记的目录。以下内容与“拉勾大前端训练营”无关。 （一）JavaScript 深度剖析ECMAScript 新特性">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Top Up 笔记">
+<meta property="og:url" content="https://yiluyanxia.github.io/topup/index.html">
+<meta property="og:site_name" content="Yiluyanxia">
+<meta property="og:description" content="说在前面的话我最近被“拉勾大前端训练营”刷屏了，好奇点进去发现内容确实不错，填了问卷，一个拉勾的小姐姐加了我的微信，她可能觉得我是男的吧，部分对话有一点点不适，问了价钱一直没有说，还让我去考试之类的，总之我觉得套路太多，我就没有参加。但是这个内容确实不错，于是我把它作为自己top up笔记的目录。以下内容与“拉勾大前端训练营”无关。 （一）JavaScript 深度剖析ECMAScript 新特性">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-22T08:02:31.000Z">
+<meta property="article:modified_time" content="2022-12-01T10:49:35.120Z">
+<meta property="article:author" content="yiluyanxia">
+<meta property="article:tag" content="vue前端">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Yiluyanxia" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+        <a class="nav-item" href="https://github.com/yiluyanxia" title
+        
+          target='_blank'
+        
+        >姬友</a>
+      
+        <a class="nav-item" href="/mood" title
+        
+          target='_blank'
+        
+        >心情</a>
+      
+        <a class="nav-item" href="/pda" title
+        
+          target='_blank'
+        
+        >手账</a>
+      
+        <a class="nav-item" href="/topup" title
+        
+        >Top Up</a>
+      
+        <a class="nav-item" href="/about" title
+        
+        >本王</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="page-" class="article global-container article-type-page" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      Top Up 笔记
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/topup/index.html" class="article-date">
+  <time datetime="2020-11-22T08:02:31.000Z" itemprop="datePublished">2020-11-22</time>
+</a>
+    
+    
+  </div>
+  <!--
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  -->
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="说在前面的话"><a href="#说在前面的话" class="headerlink" title="说在前面的话"></a>说在前面的话</h1><p>我最近被“拉勾大前端训练营”刷屏了，好奇点进去发现内容确实不错，填了问卷，一个拉勾的小姐姐加了我的微信，她可能觉得我是男的吧，部分对话有一点点不适，问了价钱一直没有说，还让我去考试之类的，总之我觉得套路太多，我就没有参加。但是这个内容确实不错，于是我把它作为自己top up笔记的目录。<br>以下内容与“拉勾大前端训练营”无关。</p>
+<h1 id="（一）JavaScript-深度剖析"><a href="#（一）JavaScript-深度剖析" class="headerlink" title="（一）JavaScript 深度剖析"></a>（一）JavaScript 深度剖析</h1><h2 id="ECMAScript-新特性"><a href="#ECMAScript-新特性" class="headerlink" title="ECMAScript 新特性"></a>ECMAScript 新特性</h2><ul>
+<li><h3 id="JavaScript-vs-ECMAScript"><a href="#JavaScript-vs-ECMAScript" class="headerlink" title="JavaScript vs. ECMAScript"></a><a href="../53634cfe.html">JavaScript vs. ECMAScript</a></h3></li>
+</ul>
+<p>在谷歌上搜索JavaScript vs. ECMAScript得到了这篇文章<a target="_blank" rel="noopener" href="https://www.freecodecamp.org/news/whats-the-difference-between-javascript-and-ecmascript-cba48c73a2b5/">What’s the difference between JavaScript and ECMAScript ?</a>，突发奇想给他翻译一下，顺便锻炼一下英语技能。准备着手的时候发现<a target="_blank" rel="noopener" href="https://www.oschina.net/translate/whats-the-difference-between-javascript-and-ecmascript">开源中国</a>翻译过了。</p>
+<p><a href="">JavaScript 和 ECMAScript 有什么区别</a>这篇文章是我自己翻译的，水平有限，如有谬误，敬请谅解，或者可以给我提 issue。</p>
+<ul>
+<li><h3 id="块级作用域、模板字符串"><a href="#块级作用域、模板字符串" class="headerlink" title="块级作用域、模板字符串"></a><a href="../e181814a.html">块级作用域、模板字符串</a></h3></li>
+<li><h3 id="对象与数组的解构、rest-操作符"><a href="#对象与数组的解构、rest-操作符" class="headerlink" title="对象与数组的解构、rest 操作符"></a><a href="../a1d95bcb.html">对象与数组的解构、rest 操作符</a></h3></li>
+<li><h3 id="函数进阶（箭头函数、默认参数）"><a href="#函数进阶（箭头函数、默认参数）" class="headerlink" title="函数进阶（箭头函数、默认参数）"></a><a href="../32c28743.html">函数进阶（箭头函数、默认参数）</a></h3></li>
+</ul>
+<p>对象和数组的扩展用法<br>Proxy、Reflect、Map、Set、Symbol<br>for…of、迭代器模式、生成器函数<br>ES Modules 模块系统<br>ES2016 - ES2020（ES7 - ES11）特性一览<br>新特性编译工具（Babel）的使用<br>新特性的 Polyfill：CoreJS 标准库</p>
+<h2 id="JavaScript-异步编程"><a href="#JavaScript-异步编程" class="headerlink" title="JavaScript 异步编程"></a>JavaScript 异步编程</h2><p>JavaScript 的单线程设计<br>同步模式和异步模式的调用差异<br>回调函数的执行原理<br>Promise 异步方案的使用进阶与剖析<br>处理异步任务的任务队列和事件循环<br>JavaScript 内部的宏任务与微任务<br>ES 6 Generator 迭代器的异步应用<br>使用 Async / Await 语法糖编写扁平的异步代码</p>
+<h2 id="TypeScript-高级编程"><a href="#TypeScript-高级编程" class="headerlink" title="TypeScript 高级编程"></a>TypeScript 高级编程</h2><p>编程语言的几种不同类型系统<br>JavaScript 自有类型系统的问题<br>Flow 静态类型检查方案<br>Flow 工具的配置及相关插件的使用<br>TypeScript 基本语法<br>TypeScript 高级特性（泛型、接口）<br>TypeScript 内置对象标准库<br>TypeScript 的类型声明</p>
+<h2 id="函数式编程范式"><a href="#函数式编程范式" class="headerlink" title="函数式编程范式"></a>函数式编程范式</h2><p>函数式编程的本质以及应用场景<br>如何以函数式编程风格创建应用程序<br>用简单的代码构建复杂的应用程序<br>纯函数的定义以及为什么使用纯函数<br>为什么消除和控制副作用如此重要<br>柯里化、compose、高阶函数的优点<br>不可变的数据结构<br>常见库（Lodash、Ramda.js）</p>
+<h2 id="JavaScript-性能优化"><a href="#JavaScript-性能优化" class="headerlink" title="JavaScript 性能优化"></a>JavaScript 性能优化</h2><p>JavaScript 中的垃圾收集<br>JavaScript 内存管理<br>V8 垃圾回收机制分类<br>引用计数、标记清除、标记整理和增量标记<br>Preformance 工具的使用及注意事项<br>20 个代码层面的优化细节</p>
+<h1 id="（二）前端工程化实战"><a href="#（二）前端工程化实战" class="headerlink" title="（二）前端工程化实战"></a>（二）前端工程化实战</h1><h2 id="脚手架工具"><a href="#脚手架工具" class="headerlink" title="脚手架工具"></a>脚手架工具</h2><p>脚手架设计思想与目标<br>脚手架工具的本质作用<br>常用的脚手架工具一览<br>Yeoman 的基本使用以及自定义 Generator<br>Yeoman Sub Generator 特性<br>基于 Yeoman 创建适合自己的脚手架工具<br>Plop 生成器的基本使用<br>使用 Plop 提高项目创建同类文件的效率<br>脚手架工作原理剖析<br>手写一个自己的脚手架工具</p>
+<h2 id="自动化构建"><a href="#自动化构建" class="headerlink" title="自动化构建"></a>自动化构建</h2><p>如何使用自动化构建提高开发效率<br>常用的自动化构建任务执行器<br>npm scripts &amp; script hooks<br>Grunt 工具的使用及扩展开发<br>Gulp 的使用以及任务结构<br>基于 Gulp 创建自动化构建工作流<br>封装独立的自动化构建工具<br>FIS 3 的使用以及常用的扩展插件</p>
+<h2 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h2><p>自动化测试的主要分类：单元测试、集成测试、E2E 测试<br>高性能应用开发所必要的性能测试与压力测试<br>常见的自动化测试框架与自动化测试的实现原理<br>Mocha、Jest、Enzyme、Cypress、Nightmare、Puppeteer<br>前端项目中自动化测试的最佳实践（基础设施、公共组件的测试）</p>
+<h2 id="自动化部署（CI-CD）"><a href="#自动化部署（CI-CD）" class="headerlink" title="自动化部署（CI / CD）"></a>自动化部署（CI / CD）</h2><p>持续集成与持续部署<br>基于 GitHub / GitLab 的自动化工作流搭建<br>常见的 CI 实践：Jenkins、GitLab CI、Travis CI、Circle CI<br>开源项目的新选择：GitHub Actions<br>基于常用 CI 系统实现静态 / Node 类型的项目自动部署</p>
+<h2 id="模块化开发与-Webpack"><a href="#模块化开发与-Webpack" class="headerlink" title="模块化开发与 Webpack"></a>模块化开发与 Webpack</h2><p>模块化标准与规范<br>ES Modules 标准的支持情况<br>Webpack 打包工具的基本使用<br>Webpack 的配置详解<br>Webpack 打包过程和打包结果分析<br>Webpack 中资源模块的加载（Loader）<br>如何开发一个 Webpack 的 Loader<br>Webpack 的插件机制<br>开发一个 Webpack 插件<br>Webpack 周边生态（Dev Server、HMR、Proxy）<br>Webpack 高级特性（Tree-shaking、sideEffects)<br>Webpack 打包过程及打包结果的优化<br>深度剖析 Webpack 实现原理（AST 语法树）<br>其他常见的打包工具（Rollup、Parcel）</p>
+<h2 id="规范化标准"><a href="#规范化标准" class="headerlink" title="规范化标准"></a>规范化标准</h2><p>常见的代码 Lint 工具（ESLint、Stylelint）<br>创建项目或者团队专属的 Lint 规则 / 风格<br>通用型代码格式化工具 Prettier<br>结合自动化工具或者 Webpack 的使用<br>配合 Git Hook 确保源代码仓库中代码的质量<br>结合脚手架、自动化、模块化、规范化搭现代化前端工程</p>
+<h1 id="（三）核心框架原理与进阶"><a href="#（三）核心框架原理与进阶" class="headerlink" title="（三）核心框架原理与进阶"></a>（三）核心框架原理与进阶</h1><h2 id="Vue-js-原理深度剖析"><a href="#Vue-js-原理深度剖析" class="headerlink" title="Vue.js 原理深度剖析"></a>Vue.js 原理深度剖析</h2><p>Vue.js 框架基础回顾<br>Vue CLI 基础设施深度解剖<br>数据响应式实现原理分析<br>虚拟 DOM 和 Diff 算法的实现<br>模板编译模块的实现原理<br>Vue Router 源码剖析</p>
+<h2 id="Vue-js-高级与进阶"><a href="#Vue-js-高级与进阶" class="headerlink" title="Vue.js 高级与进阶"></a>Vue.js 高级与进阶</h2><p>封装自己的 Vue 组件库<br>Vue 项目性能优化<br>Vuex 数据流管理方案<br>使用 TypeScript 开发 Vue.js 应用<br>原生服务端渲染（SSR）的实现、同构开发<br>Nuxt.js 集成式 SSR 框架<br>静态站点生成（SSG）方案及 Gridsome<br>Vue.js 3.0 设计和用法的变化以及优势<br>Vue.js 3.0 Composition APIs<br>Vue.js + Vue Router + Vuex + TypeScript 实战项目开发</p>
+<h2 id="React-设计原理解密"><a href="#React-设计原理解密" class="headerlink" title="React 设计原理解密"></a>React 设计原理解密</h2><p>React 框架基础回顾、JSX 语法<br>分析 Virtual-DOM 目的及实现原理<br>React 核心算法：Fiber<br>React 框架的设计哲学<br>React 框架核心源码解读</p>
+<h2 id="React-进阶与实战"><a href="#React-进阶与实战" class="headerlink" title="React 进阶与实战"></a>React 进阶与实战</h2><p>封装 React 自定义组件库<br>React 组件的性能优化<br>受控和非受控组件的选用标准<br>React 组件的自动化测试<br>React 16.8 Hooks 特性的使用以及实现原理分析<br>CSS-in-JS 方案以及 emotion 库<br>现代化 React 应用 UI 框架 Chakra-UI<br>使用 TypeScript 开发 React 应用<br>React 数据流方案：Redux、Mobx<br>Redux 常用中间件以及中间件的开发<br>原生服务端渲染（SSR）的实现、同构开发<br>Next.js 集成式 SSR 框架<br>静态站点生成（SSG）方案及 Gatsby 框架<br>React + React Router + Redux + Ant Design + TypeScript 实战</p>
+<h2 id="Angular-企业实战开发"><a href="#Angular-企业实战开发" class="headerlink" title="Angular 企业实战开发"></a>Angular 企业实战开发</h2><p>Angular 9 基础<br>Angular 数据绑定及实现原理<br>Angular 组件封装及父子组件通信<br>Angular 服务模块及服务注入<br>Angular 路由模块<br>RxJS 响应式编程的库<br>NgRx 状态管理工具</p>
+<h1 id="（四）Node-js-全栈开发"><a href="#（四）Node-js-全栈开发" class="headerlink" title="（四）Node.js 全栈开发"></a>（四）Node.js 全栈开发</h1><h2 id="Node-js-高级编程"><a href="#Node-js-高级编程" class="headerlink" title="Node.js 高级编程"></a>Node.js 高级编程</h2><p>非堵塞 IO、EventLoop、事件队列<br>CommonJS 原理解析<br>核心模块、自定义模块、第三方模块<br>文件系统、Buffer 对象、字符编码<br>压缩和解压缩、加密和签名算法<br>网络编程、TCP/IP、HTTP 服务<br>cookie 和 session 原理<br>多进程和集群搭建<br>搭建反向代理服务器</p>
+<h2 id="NoSQL-数据库"><a href="#NoSQL-数据库" class="headerlink" title="NoSQL 数据库"></a>NoSQL 数据库</h2><p>NoSQL 数据库特性及优势介绍<br>MongoDB 的安装、连接、操作<br>mongoose 模块以及常用的操作 API<br>Redis 快速上手以及它所适合的场景<br>使用 Node.js 操作 Redis</p>
+<h2 id="GraphQL-API-开发"><a href="#GraphQL-API-开发" class="headerlink" title="GraphQL API 开发"></a>GraphQL API 开发</h2><p>基于 Koa 开发 RESTful API<br>应用层最佳接口实践：GraphQL<br>GraphQL 规格标准与设计优势<br>GraphQL 快速开发库：Apollo<br>API 鉴权标准、jsonwebtoken 模块及其相关 API<br>Docker Compose + GitLab CI 自动化部署 Node.js 应用</p>
+<h2 id="企业级框架"><a href="#企业级框架" class="headerlink" title="企业级框架"></a>企业级框架</h2><p>Egg.js 项目架构与脚手架工具<br>Egg.js 中间件机制、洋葱圈模型<br>Egg.js 路由、控制器、服务<br>Egg.js 插件机制以及插件开发<br>Egg.js 定时任务调度<br>Egg.js + Mongoose + Nunjucks + TypeScript 项目实战<br>Nest.js 框架的基本概念和内部组成<br>使用 Nest.js 框架构建高效且可伸缩的服务端应用<br>Nest.js 面向切面编程、依赖注入的实践<br>Adonis.js 框架介绍</p>
+<h1 id="（五）泛客户端开发"><a href="#（五）泛客户端开发" class="headerlink" title="（五）泛客户端开发"></a>（五）泛客户端开发</h1><h2 id="小程序与快应用"><a href="#小程序与快应用" class="headerlink" title="小程序与快应用"></a>小程序与快应用</h2><p>原生小程序 MINA 框架回顾<br>基于 mpvue 框架开发小程序应用<br>基于 mpvue 框架打包快应用和 H5<br>京东 Taro 多端统一开发方案<br>uni-app 多端统一开发方案</p>
+<h2 id="Hybrid-App-开发"><a href="#Hybrid-App-开发" class="headerlink" title="Hybrid App 开发"></a>Hybrid App 开发</h2><p>基于 WebView UI 的基础方案<br>Cordova / Ionic 通用型混合 App 开发框架<br>Cordova 的实现原理分析以及它的常用插件<br>H5 配合原生 WebView 开发混合式 App<br>通过 JSBridge 完成 H5 与 Native 的双向通讯<br>原生 App 开发相关知识</p>
+<h2 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h2><p>React Native 开发环境搭建<br>初始环节搭建以及相关基础配置<br>热更新的开发体验<br>使用 Flexbox 实现界面布局<br>常见界面布局和长列表呈现<br>接入第三方 Native 组件（Objective-C / Swift / Java）<br>React Native 架构的实现原理</p>
+<h2 id="Flutter-原生-App-开发"><a href="#Flutter-原生-App-开发" class="headerlink" title="Flutter 原生 App 开发"></a>Flutter 原生 App 开发</h2><p>Flutter 概述以及 Windows / macOS 环境搭建<br>Dart 语言快速上手、包管理工具<br>Flutter 快速上手、开发体验、路由和导航<br>UI 开发：内置 Material Design 和 Cupertino（iOS风格）Widget<br>常用 Widget、表单组件、布局方式<br>数据响应：界面状态管理<br>网络编程以及相关第三方包<br>Native 功能和 SDK 的调用<br>Flutter 在线课堂项目实战案例</p>
+<h2 id="Electron-桌面应用开发"><a href="#Electron-桌面应用开发" class="headerlink" title="Electron 桌面应用开发"></a>Electron 桌面应用开发</h2><p>Electron 运行时的基本结构分析<br>快速上手、常用 API、基础案例<br>主进程与渲染进程之间的差异以及相互通信<br>常见桌面应用程序功能的实现<br>Electron 结合 React / Vue.js 之类的前端框架<br>Electron 应用的调试（主进程与渲染进程）以及相关工具（Spectron / Devtron）<br>集成式打包工具（electron-builder / electron-packager / electron-forge）<br>实战案例：模仿 Microsoft To Do</p>
+<h1 id="（六）商业级技术解决方案"><a href="#（六）商业级技术解决方案" class="headerlink" title="（六）商业级技术解决方案"></a>（六）商业级技术解决方案</h1><h2 id="Serverless-无服务端方案"><a href="#Serverless-无服务端方案" class="headerlink" title="Serverless 无服务端方案"></a>Serverless 无服务端方案</h2><p>BaaS / FaaS / PaaS 服务<br>Serverless 架构与实现原理<br>Serverless 应用场景与局限性<br>国外常见的 Serverless 服务（ZEIT Now、Netlify）<br>国内常见的 Serverless 服务（阿里云、腾讯云）</p>
+<h2 id="中途岛-中间层方案"><a href="#中途岛-中间层方案" class="headerlink" title="中途岛 / 中间层方案"></a>中途岛 / 中间层方案</h2><p>BFF 架构的优势及常见方式<br>基于 Node.js 的中间层架构<br>实现更合理的前后端分离架构<br>中间层的目标与职责<br>后端细粒度接口聚合<br>服务端模板渲染<br>前端路由设计</p>
+<h2 id="首屏性能提升方案"><a href="#首屏性能提升方案" class="headerlink" title="首屏性能提升方案"></a>首屏性能提升方案</h2><p>白屏加载和首屏加载时间的区别<br>骨架屏：渲染一些简单元素进行占位<br>使用 PWA 开发可离线化应用<br>客户端缓存策略<br>利用 script 的 async 和 defer 异步加载<br>前端资源的分块 / 按需加载</p>
+<h2 id="数据埋点方案"><a href="#数据埋点方案" class="headerlink" title="数据埋点方案"></a>数据埋点方案</h2><p>数据埋点的原理分析<br>页面访问量统计<br>功能点击量统计<br>埋点系统的实现</p>
+<h2 id="长列表无限滚动方案"><a href="#长列表无限滚动方案" class="headerlink" title="长列表无限滚动方案"></a>长列表无限滚动方案</h2><p>触底加载更多功能的实现<br>长列表渲染卡顿问题的原因<br>高性能长列表渲染的思路：虚拟列表<br>不同框架下长列表无限滚动的实现方法<br>高性能滚动及页面渲染优化</p>
+<h2 id="API-接口鉴权方案"><a href="#API-接口鉴权方案" class="headerlink" title="API 接口鉴权方案"></a>API 接口鉴权方案</h2><p>JSON Web Token 方案介绍<br>jsonwebtoken 模块及其相关 API<br>JWT 创建与签发、解码与验证<br>Node.js 鉴权中间件的实现<br>Axios 统一鉴权模块<br>React / Vue.js 框架下客户端路由鉴权</p>
+<h2 id="更多常见方案"><a href="#更多常见方案" class="headerlink" title="更多常见方案"></a>更多常见方案</h2><p>渐进式加载方案<br>RBAC 权限管理解决方案<br>接口 Mock 方案<br>OSS 云存储方案<br>H5 直播方案<br>多语言化方案<br>防盗链方案<br>CDN 加速方案</p>
+<h1 id="（七）高阶技术专题"><a href="#（七）高阶技术专题" class="headerlink" title="（七）高阶技术专题"></a>（七）高阶技术专题</h1><h2 id="微前端架构与实践"><a href="#微前端架构与实践" class="headerlink" title="微前端架构与实践"></a>微前端架构与实践</h2><p>微前端诞生的背景和解决的问题<br>微前端下的工程化实践<br>如何同时支持 React / Vue.js / Angular 等不同的框架<br>开发一个简单的微前端框架</p>
+<h2 id="PWA-渐进式-Web-应用"><a href="#PWA-渐进式-Web-应用" class="headerlink" title="PWA 渐进式 Web 应用"></a>PWA 渐进式 Web 应用</h2><p>PWA 使用场景分析<br>服务端 / 客户端离线缓存技术<br>浏览器多线程环境<br>通过 Service workers 让 PWA 离线工作<br>ServiceWorkers 的生命周期<br>基于 PWA 的消息推送、应用更新<br>渐进式加载</p>
+<h2 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h2><p>相关知识储备：Canvas、SVG<br>数据可视化的目标<br>实现数据可视化的常用方式<br>相关库：D3.js、AntV、ECharts.js</p>
+<h2 id="现代化-Web-101-架构剖析"><a href="#现代化-Web-101-架构剖析" class="headerlink" title="现代化 Web 101 架构剖析"></a>现代化 Web 101 架构剖析</h2><p>Web 应用主流架构概览<br>域名、DNS、负载均衡等相关概念的普及<br>Web 应用服务端、数据库服务器<br>缓存服务、任务队列服务<br>云存储、CDN</p>
+<h2 id="Web-Components"><a href="#Web-Components" class="headerlink" title="Web Components"></a>Web Components</h2><p>Custom Elements<br>Shadow DOM<br>HTML Templates<br>Web Components 案例<br>Vue 组件转换成原生组件</p>
+<h2 id="更多技术专题"><a href="#更多技术专题" class="headerlink" title="更多技术专题"></a>更多技术专题</h2><p>CSS 预 / 后处理器（Sass、PostCSS）<br>CSS 架构（BEM、CSS-in-JS、emotion、styled-components）<br>移动端真机调试<br>Web 安全专题（HTTPS、XSS / CSRF、CSP）<br>前端应用性能专题<br>Web Assembly</p>
+<h1 id="（八）大厂面试指导"><a href="#（八）大厂面试指导" class="headerlink" title="（八）大厂面试指导"></a>（八）大厂面试指导</h1><h2 id="Leet-Code-精选题"><a href="#Leet-Code-精选题" class="headerlink" title="Leet Code 精选题"></a>Leet Code 精选题</h2><p>常用数据结构介绍<br>常见算法题解析<br>常见数据结构题解析</p>
+<h2 id="BATJ-高频面试真题"><a href="#BATJ-高频面试真题" class="headerlink" title="BATJ 高频面试真题"></a>BATJ 高频面试真题</h2><p>BATJ 高频原理题解析<br>BATJ 高频应用题解析</p>
+<h2 id="面试专项能力突击"><a href="#面试专项能力突击" class="headerlink" title="面试专项能力突击"></a>面试专项能力突击</h2><p>一面：编程基础能力考察<br>二面：项目经验考察<br>三面：方案设计综合能力考察<br>四面：HR综合软素质考察</p>
+<h2 id="面试过程发挥应有水平"><a href="#面试过程发挥应有水平" class="headerlink" title="面试过程发挥应有水平"></a>面试过程发挥应有水平</h2><p>学会表达：如何把硬实力表达出来<br>扬长避短：如何表现出自己的闪光点<br>洞悉套路：面试考察点与答题套路指导<br>模拟训练：大厂面试官1v1模拟面试<br>模拟面试复盘</p>
+<h2 id="打造一份让人无法拒绝的简历"><a href="#打造一份让人无法拒绝的简历" class="headerlink" title="打造一份让人无法拒绝的简历"></a>打造一份让人无法拒绝的简历</h2><p>高分简历模板分析<br>打造一份高分简历的方法<br>模拟训练：重写简历1v1指导服务</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: 'yiluyanxia',
+  repo: 'yiluyanxia.github.io',
+  oauth: {
+    client_id: 'b8e8c50258809e47e61a',
+    client_secret: '15a8996b14bedbbb4c2e1a540ac064d629f0c6ee',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        一路烟霞
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，不想局限于前端的攻城狮。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Top-Up/">Top Up</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%A5%E5%9D%91%E6%95%99%E7%A8%8B/">入坑教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%81%E4%BA%BA/">私人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%B3%E5%9D%91%E8%AE%B0%E5%BD%95/">跳坑记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%9B%E6%AD%A5%E7%AC%94%E8%AE%B0/">进步笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%B2%E4%B8%A2%E5%A4%B1/">防丢失</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/" rel="tag">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/" rel="tag">React Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/" rel="tag">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/" rel="tag">mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%83%85%E7%BB%AA/" rel="tag">小情绪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%89%B2%E5%BD%A9/" rel="tag">色彩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/12/01/JSON-Web-Token-%E7%AE%80%E4%BB%8B/">JSON Web Token 简介</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6%EF%BC%88%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E3%80%81%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0%EF%BC%89/">函数进阶（箭头函数、默认参数）</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/%E5%AF%B9%E8%B1%A1%E4%B8%8E%E6%95%B0%E7%BB%84%E7%9A%84%E8%A7%A3%E6%9E%84%E3%80%81rest-%E6%93%8D%E4%BD%9C%E7%AC%A6/">对象与数组的解构、rest 操作符</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2/">块级作用域、模板字符串</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/JavaScript-vs-ECMAScript/">JavaScript vs. ECMAScript</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2022 yiluyanxia &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank">antiquity</a>
+    <br>
+    上帝本不公平，但凡人保持偏执的权利
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之  阁下是第56<span id="busuanzi_value_site_pv"></span>个访客</span>-->
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia" class="mobile-nav-link">姬友</a>
+  
+    <a href="/mood" class="mobile-nav-link">心情</a>
+  
+    <a href="/pda" class="mobile-nav-link">手账</a>
+  
+    <a href="/topup" class="mobile-nav-link">Top Up</a>
+  
+    <a href="/about" class="mobile-nav-link">本王</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

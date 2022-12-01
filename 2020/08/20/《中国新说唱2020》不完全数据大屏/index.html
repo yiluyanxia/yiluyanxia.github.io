@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-134049127-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>《中国新说唱2020》不完全数据大屏 | Yiluyanxia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="Z2eTUO78NDUbUNrYk5dUHLf6we_TOAle3WKpEFw5Dk4" />
+  <meta name="baidu-site-verification" content="1CQQGgl03Q" />
+  
+  <meta name="keywords" content="vue前端" />
+  
+  <meta name="description" content="《中国新说唱2020》不完全数据大屏爱奇艺《中国新说唱2020》弹幕分析哇咔咔，爱奇艺《中国新说唱2020》如期而至，作为漫不经心的伪嘻哈迷，以及与世无争的梅格妮，那绝对是必追无疑（单压X4 cool～）。在看视频的同时我还制作了一个爱奇艺《中国新说唱2020》不完全数据大屏，感兴趣的朋友可以点这里  https:&#x2F;&#x2F;www.fishhere.fun&#x2F;rap 先睹为快。 获取爱奇艺弹幕想要制作大屏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《中国新说唱2020》不完全数据大屏">
+<meta property="og:url" content="https://yiluyanxia.github.io/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/index.html">
+<meta property="og:site_name" content="Yiluyanxia">
+<meta property="og:description" content="《中国新说唱2020》不完全数据大屏爱奇艺《中国新说唱2020》弹幕分析哇咔咔，爱奇艺《中国新说唱2020》如期而至，作为漫不经心的伪嘻哈迷，以及与世无争的梅格妮，那绝对是必追无疑（单压X4 cool～）。在看视频的同时我还制作了一个爱奇艺《中国新说唱2020》不完全数据大屏，感兴趣的朋友可以点这里  https:&#x2F;&#x2F;www.fishhere.fun&#x2F;rap 先睹为快。 获取爱奇艺弹幕想要制作大屏">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/bullet_link.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/bullet_content.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/bullet_wordcloud.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/bullet_brandmanage.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/bullet_count.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/bullet_usertop10_1.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/bullet_liketop10.png">
+<meta property="article:published_time" content="2020-08-20T09:13:47.000Z">
+<meta property="article:modified_time" content="2022-12-01T10:49:35.089Z">
+<meta property="article:author" content="yiluyanxia">
+<meta property="article:tag" content="vue前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yiluyanxia.github.io/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/bullet_link.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Yiluyanxia" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+        <a class="nav-item" href="https://github.com/yiluyanxia" title
+        
+          target='_blank'
+        
+        >姬友</a>
+      
+        <a class="nav-item" href="/mood" title
+        
+          target='_blank'
+        
+        >心情</a>
+      
+        <a class="nav-item" href="/pda" title
+        
+          target='_blank'
+        
+        >手账</a>
+      
+        <a class="nav-item" href="/topup" title
+        
+        >Top Up</a>
+      
+        <a class="nav-item" href="/about" title
+        
+        >本王</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-《中国新说唱2020》不完全数据大屏" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      《中国新说唱2020》不完全数据大屏
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/" class="article-date">
+  <time datetime="2020-08-20T09:13:47.000Z" itemprop="datePublished">2020-08-20</time>
+</a>
+    
+    
+  </div>
+  <!--
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  -->
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="《中国新说唱2020》不完全数据大屏"><a href="#《中国新说唱2020》不完全数据大屏" class="headerlink" title="《中国新说唱2020》不完全数据大屏"></a>《中国新说唱2020》不完全数据大屏</h1><h2 id="爱奇艺《中国新说唱2020》弹幕分析"><a href="#爱奇艺《中国新说唱2020》弹幕分析" class="headerlink" title="爱奇艺《中国新说唱2020》弹幕分析"></a>爱奇艺《中国新说唱2020》弹幕分析</h2><p>哇咔咔，爱奇艺《中国新说唱2020》如期而至，作为漫不经心的伪嘻哈迷，以及与世无争的梅格妮，那绝对是必追无疑（单压X4 cool～）。在看视频的同时我还制作了一个爱奇艺《中国新说唱2020》不完全数据大屏，感兴趣的朋友可以点这里  <a target="_blank" rel="noopener" href="https://www.fishhere.fun/rap">https://www.fishhere.fun/rap</a> 先睹为快。</p>
+<h2 id="获取爱奇艺弹幕"><a href="#获取爱奇艺弹幕" class="headerlink" title="获取爱奇艺弹幕"></a>获取爱奇艺弹幕</h2><p>想要制作大屏，第一步就是要获取数据。我们先来看下弹幕。<br>其实这一步骤还是很简单的，网上有很多的先驱者，网友们也写的很清楚，随便搜索一下就可以知道怎么获取了，不过大多人都是用 python，我这里用的是 node。</p>
+<span id="more"></span>
+<ol>
+<li>打开网页控制台，搜索‘bullet’，点 z 结尾的就是我们要找的链接。</li>
+</ol>
+<img src="/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/bullet_link.png" class="" title="找到爱奇艺的链接">
+
+
+<p>链接中的最后一个数字每隔300秒加1，直到视频结束。所以遍历的次数为视频时长除以300且向上取整。视频分上下两集，所以还要再执行两次。</p>
+<ol start="2">
+<li>使用 node 请求数据，这里使用了 eggjs 框架。</li>
+</ol>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> res = <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="property">ctx</span>.<span class="title function_">curl</span>(url, &#123;</span><br><span class="line">    <span class="comment">// gzip: true,</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>是否支持 gzip 响应格式，默认为 false。 开启 gzip 之后，HttpClient 将自动设置 Accept-Encoding: gzip 请求头， 并且会自动解压带 Content-Encoding: gzip 响应头的数据。（摘自 eggjs 官方文档）</p>
+</blockquote>
+<p>这里获取到的是一个 buffer 格式的文件，我以为将 gzip 设置为 true，就可以拿到解压后的文件，但其实不然。</p>
+<ol start="3">
+<li>使用 node 的 zlib 解压文件，最后就可以拿到正确的文件。</li>
+</ol>
+<img src="/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/bullet_content.png" class="" title="爱奇艺弹幕xml文件">
+
+
+<h2 id="制作词云"><a href="#制作词云" class="headerlink" title="制作词云"></a>制作词云</h2><ol>
+<li><p>用 xml2js 操作 xml 文件</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xml2js = <span class="built_in">require</span>(<span class="string">&#x27;xml2js&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> parser = <span class="keyword">new</span> xml2js.<span class="title class_">Parser</span>();</span><br><span class="line">parser.<span class="title function_">parseString</span>(xmlData, <span class="keyword">function</span> (<span class="params">err, result</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(result)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div></li>
+<li><p>用 nodejieba 抽取关键词</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> nodejieba = <span class="built_in">require</span>(<span class="string">&quot;nodejieba&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = nodejieba.<span class="title function_">extract</span>(sentence, <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result)</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">name</span>: <span class="string">&#x27;吴亦凡&#x27;</span>, <span class="attr">value</span>: <span class="number">14263.133233106502</span> &#125;,</span><br><span class="line">&#123; <span class="attr">name</span>: <span class="string">&#x27;gai&#x27;</span>, <span class="attr">value</span>: <span class="number">9743.53957487934</span> &#125;,</span><br><span class="line">&#123; <span class="attr">name</span>: <span class="string">&#x27;GAI&#x27;</span>, <span class="attr">value</span>: <span class="number">8522.66232694265</span> &#125;,</span><br><span class="line">&#123; <span class="attr">name</span>: <span class="string">&#x27;哈哈哈&#x27;</span>, <span class="attr">value</span>: <span class="number">7698.80620601334</span> &#125;,</span><br><span class="line">&#123; <span class="attr">name</span>: <span class="string">&#x27;张靓颖&#x27;</span>, <span class="attr">value</span>: <span class="number">7492.465254428001</span> &#125;,</span><br><span class="line">&#123; <span class="attr">name</span>: <span class="string">&#x27;药水&#x27;</span>, <span class="attr">value</span>: <span class="number">6655.8901403435</span> &#125;,</span><br><span class="line">&#123; <span class="attr">name</span>: <span class="string">&#x27;凡凡&#x27;</span>, <span class="attr">value</span>: <span class="number">6632.650433502201</span> &#125;,</span><br><span class="line">&#123; <span class="attr">name</span>: <span class="string">&#x27;真的&#x27;</span>, <span class="attr">value</span>: <span class="number">6022.47052337153</span> &#125;,</span><br><span class="line">&#123; <span class="attr">name</span>: <span class="string">&#x27;可爱&#x27;</span>, <span class="attr">value</span>: <span class="number">5797.61069876588</span> &#125;,</span><br><span class="line">&#123; <span class="attr">name</span>: <span class="string">&#x27;感觉&#x27;</span>, <span class="attr">value</span>: <span class="number">4642.93663210213</span> &#125;,</span><br><span class="line">&#123; <span class="attr">name</span>: <span class="string">&#x27;凡哥&#x27;</span>, <span class="attr">value</span>: <span class="number">4554.811271148415</span> &#125;,</span><br><span class="line">&#123; <span class="attr">name</span>: <span class="string">&#x27;哈哈哈哈&#x27;</span>, <span class="attr">value</span>: <span class="number">4305.01735446552</span> &#125;,</span><br><span class="line">&#123; <span class="attr">name</span>: <span class="string">&#x27;giao&#x27;</span>, <span class="attr">value</span>: <span class="number">4273.0703677784095</span> &#125;,</span><br><span class="line">&#123; <span class="attr">name</span>: <span class="string">&#x27;孟子&#x27;</span>, <span class="attr">value</span>: <span class="number">4055.0087039027</span> &#125;</span><br></pre></td></tr></table></figure></div></li>
+</ol>
+<p>这个地方孟子坤变成了孟子，哈哈哈哈。</p>
+<ol start="3">
+<li>用 echarts 制作词云</li>
+</ol>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> echarts <span class="keyword">from</span> <span class="string">&#x27;echarts&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;echarts-wordcloud&#x27;</span>;</span><br><span class="line"></span><br><span class="line">chart.<span class="title function_">setOption</span>(&#123;</span><br><span class="line">    <span class="attr">series</span>: [&#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;弹幕&#x27;</span>,</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&#x27;wordCloud&#x27;</span>,</span><br><span class="line">        <span class="attr">shape</span>: <span class="string">&#x27;circle&#x27;</span>,</span><br><span class="line">        <span class="attr">textStyle</span>: &#123;</span><br><span class="line">            <span class="attr">normal</span>: &#123;</span><br><span class="line">                <span class="attr">color</span>: <span class="string">&#x27;#927e55&#x27;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">data</span>: <span class="variable language_">this</span>.<span class="property">data</span></span><br><span class="line">    &#125;]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<img src="/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/bullet_wordcloud.png" class="" title="爱奇艺弹幕词云">
+
+<h2 id="统计厂牌主理人的弹幕热度"><a href="#统计厂牌主理人的弹幕热度" class="headerlink" title="统计厂牌主理人的弹幕热度"></a>统计厂牌主理人的弹幕热度</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title class_">Kris</span> = [<span class="string">&#x27;吴亦凡&#x27;</span>, <span class="string">&#x27;凡哥&#x27;</span>, <span class="string">&#x27;凡凡子&#x27;</span>, <span class="string">&#x27;凡凡&#x27;</span>]</span><br><span class="line"><span class="keyword">let</span> <span class="title class_">JaneZhang</span> = [<span class="string">&#x27;张靓颖&#x27;</span>, <span class="string">&#x27;张姐&#x27;</span>, <span class="string">&#x27;姐姐&#x27;</span>, <span class="string">&#x27;靓颖&#x27;</span>]</span><br><span class="line"><span class="keyword">let</span> <span class="title class_">WilberPan</span> = [<span class="string">&#x27;潘玮柏&#x27;</span>, <span class="string">&#x27;潘帅&#x27;</span>]</span><br><span class="line"><span class="keyword">let</span> <span class="variable constant_">GAI</span> = [<span class="string">&#x27;GAI&#x27;</span>, <span class="string">&#x27;gai&#x27;</span>]</span><br></pre></td></tr></table></figure></div>
+<p>遍历 nodejieba 抽取的关键字，让匹配的词相加。<br>使用 echarts 的折线图 Line，颜色自由发挥，我觉得我这里的配色还是比较漂亮的。</p>
+<img src="/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/bullet_brandmanage.png" class="" title="厂牌主理人的弹幕热度">
+
+<p>凡凡子热度还是很高的，潘帅第一期不在，热度较低。</p>
+<h2 id="统计用户发弹幕数量"><a href="#统计用户发弹幕数量" class="headerlink" title="统计用户发弹幕数量"></a>统计用户发弹幕数量</h2><p>使用 echarts 的饼图 Pie。</p>
+<img src="/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/bullet_count.png" class="" title="统计用户发弹幕数量">
+
+<p>大多人只发了一条弹幕，当然也有我这种连账号都没有的长视频网站重度用户。</p>
+<h2 id="统计用户发弹幕top10"><a href="#统计用户发弹幕top10" class="headerlink" title="统计用户发弹幕top10"></a>统计用户发弹幕top10</h2><p>使用 echarts 的柱状体 Bar。</p>
+<img src="/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/bullet_usertop10_1.png" class="" title="统计用户发弹幕top10">
+
+<p>第一名发了55条。</p>
+<h2 id="弹幕点赞top10"><a href="#弹幕点赞top10" class="headerlink" title="弹幕点赞top10"></a>弹幕点赞top10</h2><img src="/2020/08/20/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E8%AF%B4%E5%94%B12020%E3%80%8B%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F/bullet_liketop10.png" class="" title="弹幕点赞top10">
+
+<p>看来 GAI 这句话深入人心。</p>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>感兴趣的可以点这里查看 <a target="_blank" rel="noopener" href="https://www.fishhere.fun/rap">https://www.fishhere.fun/rap</a> ，上面使用的弹幕数据最后时间更新于2020-08-19中午，之后的每一期我都会追，也会更新弹幕统计。</p>
+<p>写给网络小编的一句话，原文链接在这里 <a href="https://yiluyanxia.github.io/c03ee65c.html">https://yiluyanxia.github.io/c03ee65c.html</a> ，无论如何还是很感谢你爬了我的文章。</p>
+<p>最后感谢你的阅读，如果有好的建议或者意见可以给我回复，谢谢你。</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2020/10/14/SQL%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5%E5%88%9D%E4%BD%93%E9%AA%8C/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            SQL常用语句初体验
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2020/07/31/%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%B8%8E%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E4%BA%B2%E5%AF%86%E6%8E%A5%E8%A7%A6/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">第一次与云服务器的亲密接触</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: 'yiluyanxia',
+  repo: 'yiluyanxia.github.io',
+  oauth: {
+    client_id: 'b8e8c50258809e47e61a',
+    client_secret: '15a8996b14bedbbb4c2e1a540ac064d629f0c6ee',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        一路烟霞
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，不想局限于前端的攻城狮。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Top-Up/">Top Up</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%A5%E5%9D%91%E6%95%99%E7%A8%8B/">入坑教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%81%E4%BA%BA/">私人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%B3%E5%9D%91%E8%AE%B0%E5%BD%95/">跳坑记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%9B%E6%AD%A5%E7%AC%94%E8%AE%B0/">进步笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%B2%E4%B8%A2%E5%A4%B1/">防丢失</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/" rel="tag">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/" rel="tag">React Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/" rel="tag">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/" rel="tag">mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%83%85%E7%BB%AA/" rel="tag">小情绪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%89%B2%E5%BD%A9/" rel="tag">色彩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/12/01/JSON-Web-Token-%E7%AE%80%E4%BB%8B/">JSON Web Token 简介</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6%EF%BC%88%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E3%80%81%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0%EF%BC%89/">函数进阶（箭头函数、默认参数）</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/%E5%AF%B9%E8%B1%A1%E4%B8%8E%E6%95%B0%E7%BB%84%E7%9A%84%E8%A7%A3%E6%9E%84%E3%80%81rest-%E6%93%8D%E4%BD%9C%E7%AC%A6/">对象与数组的解构、rest 操作符</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2/">块级作用域、模板字符串</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/JavaScript-vs-ECMAScript/">JavaScript vs. ECMAScript</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2022 yiluyanxia &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank">antiquity</a>
+    <br>
+    上帝本不公平，但凡人保持偏执的权利
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之  阁下是第56<span id="busuanzi_value_site_pv"></span>个访客</span>-->
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia" class="mobile-nav-link">姬友</a>
+  
+    <a href="/mood" class="mobile-nav-link">心情</a>
+  
+    <a href="/pda" class="mobile-nav-link">手账</a>
+  
+    <a href="/topup" class="mobile-nav-link">Top Up</a>
+  
+    <a href="/about" class="mobile-nav-link">本王</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

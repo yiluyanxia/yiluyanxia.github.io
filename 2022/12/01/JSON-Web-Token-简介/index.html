@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-134049127-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>JSON Web Token 简介 | Yiluyanxia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="Z2eTUO78NDUbUNrYk5dUHLf6we_TOAle3WKpEFw5Dk4" />
+  <meta name="baidu-site-verification" content="1CQQGgl03Q" />
+  
+  <meta name="keywords" content="vue前端" />
+  
+  <meta name="description" content="JSON Web Token 是什么？JSON Web Token (JWT) 是一种开放标准（RFC 7519），它定义了一种严谨且独立的方式，用于在各方之间作为 JSON 对象安全地传输信息。此信息是已验证的、可信的，因为它是经过数字签名的。JWT 可以使用一个密钥（通过 HMAC 算法）或者一个 RSA 或 ECDSA 密钥对进行签名。尽管 JWT 可以被加密以在各方之间提供保密性，我们仍然">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSON Web Token 简介">
+<meta property="og:url" content="https://yiluyanxia.github.io/2022/12/01/JSON-Web-Token-%E7%AE%80%E4%BB%8B/index.html">
+<meta property="og:site_name" content="Yiluyanxia">
+<meta property="og:description" content="JSON Web Token 是什么？JSON Web Token (JWT) 是一种开放标准（RFC 7519），它定义了一种严谨且独立的方式，用于在各方之间作为 JSON 对象安全地传输信息。此信息是已验证的、可信的，因为它是经过数字签名的。JWT 可以使用一个密钥（通过 HMAC 算法）或者一个 RSA 或 ECDSA 密钥对进行签名。尽管 JWT 可以被加密以在各方之间提供保密性，我们仍然">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yiluyanxia.github.io/2022/12/01/JSON-Web-Token-%E7%AE%80%E4%BB%8B/encoded-jwt3.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2022/12/01/JSON-Web-Token-%E7%AE%80%E4%BB%8B/legacy-app-auth-5.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2022/12/01/JSON-Web-Token-%E7%AE%80%E4%BB%8B/client-credentials-grant.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2022/12/01/JSON-Web-Token-%E7%AE%80%E4%BB%8B/comparing-jwt-vs-saml2.png">
+<meta property="article:published_time" content="2022-12-01T11:07:17.000Z">
+<meta property="article:modified_time" content="2022-12-01T11:21:17.316Z">
+<meta property="article:author" content="yiluyanxia">
+<meta property="article:tag" content="vue前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yiluyanxia.github.io/2022/12/01/JSON-Web-Token-%E7%AE%80%E4%BB%8B/encoded-jwt3.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Yiluyanxia" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+        <a class="nav-item" href="https://github.com/yiluyanxia" title
+        
+          target='_blank'
+        
+        >姬友</a>
+      
+        <a class="nav-item" href="/mood" title
+        
+          target='_blank'
+        
+        >心情</a>
+      
+        <a class="nav-item" href="/pda" title
+        
+          target='_blank'
+        
+        >手账</a>
+      
+        <a class="nav-item" href="/topup" title
+        
+        >Top Up</a>
+      
+        <a class="nav-item" href="/about" title
+        
+        >本王</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-JSON-Web-Token-简介" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      JSON Web Token 简介
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2022/12/01/JSON-Web-Token-%E7%AE%80%E4%BB%8B/" class="article-date">
+  <time datetime="2022-12-01T11:07:17.000Z" itemprop="datePublished">2022-12-01</time>
+</a>
+    
+    
+  </div>
+  <!--
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  -->
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="JSON-Web-Token-是什么？"><a href="#JSON-Web-Token-是什么？" class="headerlink" title="JSON Web Token 是什么？"></a>JSON Web Token 是什么？</h2><p>JSON Web Token (JWT) 是一种开放标准（<a target="_blank" rel="noopener" href="https://datatracker.ietf.org/doc/html/rfc7519">RFC 7519</a>），它定义了一种严谨且独立的方式，用于在各方之间作为 JSON 对象安全地传输信息。此信息是已验证的、可信的，因为它是经过数字签名的。JWT 可以使用一个密钥（通过 HMAC 算法）或者一个 RSA 或 ECDSA 密钥对进行签名。<br>尽管 JWT 可以被加密以在各方之间提供保密性，我们仍然关注签名后的 tokens。签名 token 可以验证其中包含的声明的完整性，而加密 token 隐藏了其他地方的这些声明。当使用密钥对对令牌进行签名时，签名还证明只有持有私钥的一方才是签署它的一方。</p>
+<span id="more"></span>
+
+<h2 id="什么时候应该使用-JSON-Web-Tokens？"><a href="#什么时候应该使用-JSON-Web-Tokens？" class="headerlink" title="什么时候应该使用 JSON Web Tokens？"></a>什么时候应该使用 JSON Web Tokens？</h2><p>以下场景 JSON Web Tokens 是非常适用的：</p>
+<ul>
+<li><p>  授权：这是使用 JWT 最常见的情况。一旦用户登录，每一个后续的请求将会包含 JWT，允许用户访问该 Token 允许的路由、服务和资源。单点登录是当今广泛使用 JWT 的一项功能，因为它的开销很小并且能够在不同的域中轻松使用。</p>
+</li>
+<li><p>  信息交换：JSON Web Tokens 是在各方之间安全传输信息的好方法。因为 JWTs 可以签名。例如，使用密钥对，你就可以确认发件人说他是谁他就是谁。此外，签名是通过 header 和 payload 计算出来的，你也可以验证这些内容是否被篡改。</p>
+</li>
+</ul>
+<h2 id="什么是-JSON-Web-Token-结构"><a href="#什么是-JSON-Web-Token-结构" class="headerlink" title="什么是 JSON Web Token 结构"></a>什么是 JSON Web Token 结构</h2><p>以它严谨的形式，JSON Web Tokens 由以点（.）分隔的三部分组成，它们是：</p>
+<ul>
+<li>  Header</li>
+<li>  Payload</li>
+<li>  Signature</li>
+</ul>
+<p>由此，一个 JWT 通常如下所示。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xxxxx.yyyyy.zzzzz</span><br></pre></td></tr></table></figure></div>
+
+<p>我们来分解下这些不同的部分。</p>
+<h3 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h3><p>Header 通常由两部分组成：token 的类型，即 JWT, 以及使用哪种签名算法，例如 HMAC SHA256 或者 RSA。<br>示例：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JSON"><figure class="iseeu highlight /json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">	<span class="attr">&quot;alg&quot;</span><span class="punctuation">:</span> <span class="string">&quot;HS256&quot;</span><span class="punctuation">,</span></span><br><span class="line">	<span class="attr">&quot;typ&quot;</span><span class="punctuation">:</span> <span class="string">&quot;JWT&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>然后，这个 JSON 被 Base64Url 编码以形成 JWT 的第一部分。</p>
+<h3 id="Payload"><a href="#Payload" class="headerlink" title="Payload"></a>Payload</h3><p>Token 的第二部分是 payload,它包含了声明。声明是描述了关于一个实体（通常指用户）和额外的数据。声明分为三种类型： 注册的、公开的和私有的声明</p>
+<ul>
+<li><p>注册声明：这是一套预定义的声明，它是不强制的而是推荐的，去通过一套有用的可互相操作的声明。它们之中有一些是： iss (issuer) 签发人, exp (expiration time)过期事件, sub (subject)主题, aud (audience) 受众以及<a target="_blank" rel="noopener" href="https://datatracker.ietf.org/doc/html/rfc7519#section-4.1">其他的</a>。</p>
+<p>  注意： 声明的名称只能是 3 个字符，JWT 认为这是严谨的。</p>
+</li>
+<li><p>  公开声明：这些可以由使用 JWT 的人任意定义。但是为了避免冲突，它们应该在 <a target="_blank" rel="noopener" href="https://www.iana.org/assignments/jwt/jwt.xhtml">IANA JSON Web Token Registry</a> 中定义，或者定义为包含抗冲突命名空间的 URI。</p>
+</li>
+<li><p>  私有声明：这些是为在同意使用它们的各方之间共享信息而创建的自定义声明，既不是注册声明也不是公开声明</p>
+</li>
+</ul>
+<p>一个 Payload 可能为：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JSON"><figure class="iseeu highlight /json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">	<span class="attr">&quot;sub&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1234567890&quot;</span><span class="punctuation">,</span></span><br><span class="line">	<span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;John Doe&quot;</span><span class="punctuation">,</span></span><br><span class="line">	<span class="attr">&quot;admin&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>对 payload 进行 Base64Url 编码以形成 JSON Web Token 的第二部分。</p>
+<p>请注意，对于已签名的 token，此信息虽然可以防止篡改，但任何人都可以读取。不要将机密信息放在 payload 或者 header 中，除非它是加密的。</p>
+<h3 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h3><p>创建签名部分你需要获取编码后的 header、编码后的 payload、一个密钥以及在 header 中指定的算法，然后再去进行签名。</p>
+<p>例如，如果你想使用 HMAC SHA256 算法，签名将会以如下方式创建：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HMACSHA256(</span><br><span class="line">    base64UrlEncode(header) + &quot;.&quot; +</span><br><span class="line">    base64UrlEncode(payload),</span><br><span class="line">    secret)</span><br></pre></td></tr></table></figure></div>
+
+<p>签名用于验证消息在此过程中没有更改，并且在使用私钥签名的 token 的情况下，它还可以验证 JWT 的发送者就是它所说的那个人。</p>
+<h3 id="拼接起来"><a href="#拼接起来" class="headerlink" title="拼接起来"></a>拼接起来</h3><p>输出的是用点分隔的三个 Base64-URL 字符串，可以在 HTML 和 HTTP 环境中轻松传递，同时与基于 XML 的标准（如 SAML）相比更严谨。</p>
+<p>下面展示了一个 JWT，该 JWT 具有前面的 header 和 payload，并使用密钥签名。</p>
+<img src="/2022/12/01/JSON-Web-Token-%E7%AE%80%E4%BB%8B/encoded-jwt3.png" class="" title="encoded-jwt3">
+
+<p>如果你想玩转 JWT ，想将这些概念融入到实践中，你可以使用 <a target="_blank" rel="noopener" href="https://jwt.io/#debugger-io">jwt.io Debugger</a> 解码、验证、生成 JWTs。</p>
+<img src="/2022/12/01/JSON-Web-Token-%E7%AE%80%E4%BB%8B/legacy-app-auth-5.png" class="" title="legacy-app-auth-5">
+
+<h2 id="JSON-Web-Token-是如何工作？"><a href="#JSON-Web-Token-是如何工作？" class="headerlink" title="JSON Web Token 是如何工作？"></a>JSON Web Token 是如何工作？</h2><p>在验证方面，当用户使用他们的证书成功的登录后，一个 JSON Web Token 将会被返回。由于 token 是凭据，因此必须非常小心以防止出现安全问题。通常，你不应将令牌保留超过要求的时间。</p>
+<p>由于缺乏安全性，您也<a target="_blank" rel="noopener" href="https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html#local-storage">不应该将敏感的会话数据存储在浏览器存储中</a>。</p>
+<p>无论何时，用户想要访问一个受保护的路由或资源 user agent 必须发送 JWT，通常是在 header 的 Authorization 中使用 Bearer 模式。header 中的内容看起来应该是这个样子：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Authorization: Bearer &lt;token&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>在某些情况下，这可能是一种无状态授权机制。服务器的受保护路由将检查 Authorization header 中是否存在有效的 JWT，如果存在，则允许用户访问受保护的资源。如果 JWT 包含必要的数据，则可能会减少查询数据库以进行某些操作的需要，尽管情况并非总是如此。</p>
+<p>值得注意的是如果你通过 HTTP headers 发送 JWT,你应该避免它过大。有的服务器不能接收 headers 超过 8KB。如果你下嵌入太多的信息到 JWT 中，就像包含用户的所有权限，你需要一个替代的解决方案，例如 <a target="_blank" rel="noopener" href="https://auth0.com/developers/lab/fine-grained-authorization">Auth0 Fine-Grained Authorization</a>。</p>
+<p>如果 token 在 Authorization header 中发送，则 Cross-Origin Resource Sharing (CORS) 不会成为问题，因为它不使用 cookie。</p>
+<p>下图显示了如何获取 JWT 并将其用于访问 API 或资源:</p>
+<img src="/2022/12/01/JSON-Web-Token-%E7%AE%80%E4%BB%8B/client-credentials-grant.png" class="" title="client-credentials-grant">
+
+<ol>
+<li><p> 应用程序或客户端向授权服务器请求授权。这是通过不同的授权流程之一执行的。例如，一个典型的 <a target="_blank" rel="noopener" href="https://openid.net/connect/">OpenID Connect</a> 网络应用程序将会使用<a target="_blank" rel="noopener" href="https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth">授权码流程</a> 通过 /oauth/authorize 这样的终端。</p>
+</li>
+<li><p>当确认授权后，授权服务器会为该应用返回访问 token 。</p>
+</li>
+<li><p>应用程序使用访问 token 访问一个受保护的资源（比如 API）</p>
+</li>
+</ol>
+<p>注意，带有签名的 token, 尽管 token 不能被更改，但所有含在 token 里面的信息会暴露给用户或者他方。这意味着你不要把机密信息放到 token 中。</p>
+<h2 id="为什么我们应该使用-JSON-Web-Tokens？"><a href="#为什么我们应该使用-JSON-Web-Tokens？" class="headerlink" title="为什么我们应该使用 JSON Web Tokens？"></a>为什么我们应该使用 JSON Web Tokens？</h2><p>对比 Simple Web Tokens (SWT) 和 Security Assertion Markup Language Tokens (SAML)，我们来谈谈JSON Web Tokens (JWT)的优点。</p>
+<p>因为 JSON 没有 XML 那么冗长，编码后它的大小就更小了，使 JWT 比 SMAL 更严谨。这让 JWT 在 HTML 和 HTTP 环境中传输是一个很好的选择。</p>
+<p>安全方面， SWT 只能由 HMAC 算法生成的共享的密钥进行对称签名。然而，JWT 和 SAML token 可以在 X.509 认证的密钥对进行签名。与签署 JSON 的简单性相比，使用 XML 数字签名签署 XML 而不引入隐蔽的安全漏洞是非常困难的。</p>
+<p>JSOB 在大多数的编程语言中是比较常见的，因为它们可以直接映射到对象。相反，XML 没有自然的文档到对象映射。这使得使用 JWT 比使用 SAML 断言更容易。</p>
+<p>论使用度，JWT 应用在互联网范围内。这突出了 JSON Web token 在多个平台（尤其是移动平台）上客户端处理的便利性。</p>
+<img src="/2022/12/01/JSON-Web-Token-%E7%AE%80%E4%BB%8B/comparing-jwt-vs-saml2.png" class="" title="comparing-jwt-vs-saml2">
+
+<p>编码的 JWT 和编码的 SAML 的长度比较。</p>
+<p>如果你想阅读更多的JSON Web Tokens 相关信息，甚至已经开始在你自己的应用中使用了，你可以阅读 Auth0 中的 <a target="_blank" rel="noopener" href="https://auth0.com/learn/json-web-tokens">JSON Web Token 引导页面</a>。</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2020/11/22/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6%EF%BC%88%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E3%80%81%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">函数进阶（箭头函数、默认参数）</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: 'yiluyanxia',
+  repo: 'yiluyanxia.github.io',
+  oauth: {
+    client_id: 'b8e8c50258809e47e61a',
+    client_secret: '15a8996b14bedbbb4c2e1a540ac064d629f0c6ee',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        一路烟霞
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，不想局限于前端的攻城狮。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Top-Up/">Top Up</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%A5%E5%9D%91%E6%95%99%E7%A8%8B/">入坑教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%81%E4%BA%BA/">私人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%B3%E5%9D%91%E8%AE%B0%E5%BD%95/">跳坑记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%9B%E6%AD%A5%E7%AC%94%E8%AE%B0/">进步笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%B2%E4%B8%A2%E5%A4%B1/">防丢失</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/" rel="tag">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/" rel="tag">React Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/" rel="tag">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/" rel="tag">mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%83%85%E7%BB%AA/" rel="tag">小情绪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%89%B2%E5%BD%A9/" rel="tag">色彩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/12/01/JSON-Web-Token-%E7%AE%80%E4%BB%8B/">JSON Web Token 简介</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6%EF%BC%88%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E3%80%81%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0%EF%BC%89/">函数进阶（箭头函数、默认参数）</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/%E5%AF%B9%E8%B1%A1%E4%B8%8E%E6%95%B0%E7%BB%84%E7%9A%84%E8%A7%A3%E6%9E%84%E3%80%81rest-%E6%93%8D%E4%BD%9C%E7%AC%A6/">对象与数组的解构、rest 操作符</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2/">块级作用域、模板字符串</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/JavaScript-vs-ECMAScript/">JavaScript vs. ECMAScript</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2022 yiluyanxia &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank">antiquity</a>
+    <br>
+    上帝本不公平，但凡人保持偏执的权利
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之  阁下是第56<span id="busuanzi_value_site_pv"></span>个访客</span>-->
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia" class="mobile-nav-link">姬友</a>
+  
+    <a href="/mood" class="mobile-nav-link">心情</a>
+  
+    <a href="/pda" class="mobile-nav-link">手账</a>
+  
+    <a href="/topup" class="mobile-nav-link">Top Up</a>
+  
+    <a href="/about" class="mobile-nav-link">本王</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-134049127-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>JavaScript vs. ECMAScript | Yiluyanxia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="Z2eTUO78NDUbUNrYk5dUHLf6we_TOAle3WKpEFw5Dk4" />
+  <meta name="baidu-site-verification" content="1CQQGgl03Q" />
+  
+  <meta name="keywords" content="vue前端" />
+  
+  <meta name="description" content="原文： What’s the difference between JavaScript and ECMAScript ?原文作者：Michael Aranda">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript vs. ECMAScript">
+<meta property="og:url" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/index.html">
+<meta property="og:site_name" content="Yiluyanxia">
+<meta property="og:description" content="原文： What’s the difference between JavaScript and ECMAScript ?原文作者：Michael Aranda">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/js.jpg">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/ecma.jpg">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/ecma262.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/ecma262s.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/ecmascript.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/ECMAScript2017.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/js.jpg">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/ECMAScript20170903.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/brain.jpg">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/line.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/browser.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/browsersupport.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/Firefox50.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/Mario.jpg">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/es6.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/babel.png">
+<meta property="article:published_time" content="2020-11-22T08:15:50.000Z">
+<meta property="article:modified_time" content="2022-12-01T10:49:35.093Z">
+<meta property="article:author" content="yiluyanxia">
+<meta property="article:tag" content="vue前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yiluyanxia.github.io/2020/11/22/JavaScript-vs-ECMAScript/53634cfe/js.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Yiluyanxia" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+        <a class="nav-item" href="https://github.com/yiluyanxia" title
+        
+          target='_blank'
+        
+        >姬友</a>
+      
+        <a class="nav-item" href="/mood" title
+        
+          target='_blank'
+        
+        >心情</a>
+      
+        <a class="nav-item" href="/pda" title
+        
+          target='_blank'
+        
+        >手账</a>
+      
+        <a class="nav-item" href="/topup" title
+        
+        >Top Up</a>
+      
+        <a class="nav-item" href="/about" title
+        
+        >本王</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-JavaScript-vs-ECMAScript" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript vs. ECMAScript
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/11/22/JavaScript-vs-ECMAScript/" class="article-date">
+  <time datetime="2020-11-22T08:15:50.000Z" itemprop="datePublished">2020-11-22</time>
+</a>
+    
+    
+  </div>
+  <!--
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  -->
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <blockquote>
+<p>原文： <a target="_blank" rel="noopener" href="https://www.freecodecamp.org/news/whats-the-difference-between-javascript-and-ecmascript-cba48c73a2b5/">What’s the difference between JavaScript and ECMAScript ?</a><br>原文作者：Michael Aranda</p>
+</blockquote>
+<span id="more"></span>
+<p><img src="./53634cfe/js.jpg" alt="JavaScript"></p>
+<p>我曾试着在 google 上搜索“JavaScript 和 ECMAScript 的区别。”</p>
+<p>结果，我只得到了一大堆模棱两可、看似矛盾的内容： </p>
+<p>“ECMAScript 是一种标准。”   </p>
+<p>“JavaScript 是一种标准。”   </p>
+<p>“ECMAScript 是一种规范。”    </p>
+<p>“JavaScript 是 ECMAScript 标准的实现。”  </p>
+<p>“ECMAScript 是标准化的 JavaScript。” </p>
+<p>“ECMAScript 是一种语言。”   </p>
+<p>“JavaScript 是 ECMAScript 的方言。” </p>
+<p>“ECMAScript 就是 JavaScript。”    </p>
+<p>忍着别哭，我振作起来决定去做一件痛苦但有用的研究。  </p>
+<p>这篇文章代表了我当前对 JavaScript 和 ECMAScript 之间的区别的理解。本文适用于那些熟悉 JavaScript 但希望更清楚地了解JavaScript 与 ECMAScript、web浏览器、Babel等的关系的人。您将会学到脚本语言、JavaScript 引擎和 JavaScript 运行时。<br>所以加油吧！</p>
+<h2 id="JavaScript-ECMAScript-词汇表"><a href="#JavaScript-ECMAScript-词汇表" class="headerlink" title="JavaScript/ECMAScript 词汇表"></a>JavaScript/ECMAScript 词汇表</h2><p>以下是为了专注一致性和确定性而设计的一系列定义，这些定义主要是为了一致性和确定性而设计。这些定义并非百分百的完整。它们提供了一种更高级的方式去理解JavaScript 和 ECMAScript 之间的关联和关系。</p>
+<p>废话少说，让我们开干吧。</p>
+<h2 id="Ecma-国际"><a href="#Ecma-国际" class="headerlink" title="Ecma 国际"></a>Ecma 国际</h2><p>一个专为技术制定标准的组织。</p>
+<p><img src="./53634cfe/ecma.jpg" alt="ecma"> </p>
+<p>举一个“标准”的例子（尽管它不是由 Ecma 制定的），想想您曾经使用过的键盘。是不是大多数的字母都是同样的顺序、都有一个空格、一个输入键、箭头，还有一行数字在上方排列。这是因为键盘生产商是以 QWERTY 的编排规范为基准的。</p>
+<h2 id="ECMA-262"><a href="#ECMA-262" class="headerlink" title="ECMA-262"></a>ECMA-262</h2><p>这是由 Ecma 国际发布的标准。它包含了一般用途的脚本语言规范。</p>
+<p><img src="./53634cfe/ecma262.png" alt="ecma-262"> </p>
+<p>ECMA-262 是一个类似于 QWERTY 的标准，但它不是键盘布局的规范，而是一个被称为 ECMAScript脚本语言的规范。<br>可以将ECMA-262看作ECMAScript的参考编号。</p>
+<p><img src="./53634cfe/ecma262s.png" alt="ECMA-260, ECMA-261, ECMA-262. There’s ECMAScript."> </p>
+<h2 id="脚本语言"><a href="#脚本语言" class="headerlink" title="脚本语言"></a>脚本语言</h2><p>一种程序设计语言，专门用来处理现有的实体或系统。</p>
+<p>对于编程语言成为脚本语言的一般概念，可以考虑“走”、“跑”和“跳”命令。这些行为需要一些东西去执行他们，可能是一个人、一只狗，或者电子游戏的角色。没有这些演员去表演这些命令，“走”、“跑”和“跳”是没有任何意义的。这组操作类似于一种侧重于操作外部实体的脚本语言。</p>
+<h2 id="ECMAScript"><a href="#ECMAScript" class="headerlink" title="ECMAScript"></a>ECMAScript</h2><p>ECMAScript 是在 ECMA-262 中定义的用于创建通用脚本语言的规范。</p>
+<p>同义词：ECMAScript 规范</p>
+<p><img src="./53634cfe/ecmascript.png" alt="Photo credit: code.tutsplus.com"> </p>
+<p>ECMA-262 是这个标准的名字，它代表脚本语言规范 ECMAScript。</p>
+<p>ECMAScript 提供了规则、详细和指引，一个脚本语言必须遵守这些才能被视为符合ECMAScript规范的。</p>
+<p><img src="./53634cfe/ECMAScript2017.png" alt="An excerpt from the ECMAScript 2017 Language Specification. The document is only about 900 pages, if you are looking for a light read."> </p>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p>一种符合 ECMAScript 规范的通用脚本语言。</p>
+<p><img src="./53634cfe/js.jpg" alt="Photo credit: Udemy"></p>
+<p>JavaScript 是一种我喜欢用的咖啡味语言。 它是以 ECMAScript 为基本规范的。通过阅读 <a target="_blank" rel="noopener" href="https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">ECMAScript 规范</a>，您可以学会如何创建一门脚本语言。阅读<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript 文档</a> 您可以学会如何使用一门脚本语言。</p>
+<p>当人们称 JavaScript 为 “ECMAScript 的方言”，他们的意思和谈论英语、法语或汉语方言时的意义相同。一个方言派生的词典和语法大多数来自它们的母语，但这些区别足够值得去区分。</p>
+<p>JavaScript 大部分按照 ECMA-262 中描述的  ECMAScript 规范一样实现。但仍有少部分不同存在。Mozilla 在<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Archive/Web/JavaScript/ECMAScript_Next_support_in_Mozilla">这里</a>概述了 JavaScript 的非 ECMAScript 语言功能:</p>
+<p><img src="./53634cfe/ECMAScript20170903.png" alt="A screenshot from September 3, 2017. It is a list of JavaScript’s experimental features that are not a part of ECMAScript (at least not yet)."> </p>
+<h2 id="JavaScript-引擎"><a href="#JavaScript-引擎" class="headerlink" title="JavaScript 引擎"></a>JavaScript 引擎</h2><p>一个能理解并执行 JavaScript 代码的程序或者解释器。</p>
+<p>同义词：JavaScript 解释器，JavaScript 实现工具</p>
+<p><img src="./53634cfe/brain.jpg" alt="Photo credit: translatemedia.com"> </p>
+<p>JavaScript 引擎通常出现在浏览器中，包括谷歌浏览器的 V8, 火狐的 SpiderMonkey， Edge 中的 Chakra。每个引擎就像其应用程序的语言模块，允许它支持 JavaScript 语言的某个子集。</p>
+<p>JavaScript 引擎之于浏览器就像语言理解能力之于人。回顾刚刚的例子，“走”、“跑”和“跳”这些行为，JavaScript 引擎是能理解这些意义的实体的一部分。</p>
+<p>这个类比有助于解释浏览器的一些事情：<br><img src="./53634cfe/line.png" alt="Photo credit: datavizcatalogue.com"> </p>
+<h2 id="浏览器性能差异"><a href="#浏览器性能差异" class="headerlink" title="浏览器性能差异"></a>浏览器性能差异</h2><p>两人都会认出“跳”命令，但有一人反应更快，因为这个人比另外一人能更快地理解和处理这个命令。相似的，两个浏览器可以理解 JavaScript 代码，但其中一个运行的更快是因为它的 JavaScript 引擎是实现的效率更高。</p>
+<p><img src="./53634cfe/browser.png" alt="Photo credit: vcsolutions.com"> </p>
+<h2 id="浏览器支持差异"><a href="#浏览器支持差异" class="headerlink" title="浏览器支持差异"></a>浏览器支持差异</h2><p>两个说同样语言的人之间也会存在不同。甚至在说英语的人当中，有一些人知道一些单词、表达和语法规则而有一些人不知道，反之亦然。浏览器也是同样的道理。即使浏览器的JavaScript 引擎都能理解 JavaScript，但一些浏览器比其他的能更好的理解这个语言。浏览器支持该语言的方式存在差异。</p>
+<p>关于浏览器的支持，人们通常会讨论“ECMAScript 的兼容”而不“JavaScript 的兼容”，尽管是 JavaScript 引擎在解析和执行。好吧，JavaScript。这会有一点困惑，这里由一个说明。</p>
+<p><img src="./53634cfe/browsersupport.png" alt="This table is part of a browser support table in the ECMAScript Wikipedia page. JavaScript versions are not mentioned here."> </p>
+<p>如果您还记得，ECMAScript是脚本语言的规范。发布一个新的 ECMAScript 版本并不会意味着所有的已经出现的 JavaScript 引擎可以马上支持这些新特性。这将由负责 JavaScript 引擎的团队或者组织来更新 ECMAScript 规范，以及采用它的改变。</p>
+<p>因此，开发者往往会问这样的问题，“这个浏览器支持什么样的 ECMAScript 版本？”或者“这个浏览器支持哪些 ECMAScript 特性？”他们是想知道谷歌、Mozilla、微软是否有时间按照最新的 ECMAScript 制定的新特性去分别的更新他们浏览器的 JavaScript 引擎，比如V8、SpiderMonkey 和 Chakra。</p>
+<p>这个<a target="_blank" rel="noopener" href="http://kangax.github.io/compat-table/es6/">ECMAScript 兼容表</a>是一个回答这些问题的好资源。</p>
+<p>如果一个新的ECMAScript 版本诞生，JavaScript 引擎不会一次性集成整个更新。他们会递增的合并 ECMAScript 新特性，从Firefox的JavaScript变更日志中可以看到：</p>
+<p><img src="./53634cfe/Firefox50.png" alt="In Firefox 50, pieces of ES2015 and ES2017 were both implemented in Firefox’s JavaScript engine, SpiderMonkey. Other pieces of ES2015 and ES2017 were implemented before, and will continue to be implemented in the future."></p>
+<h2 id="运行时"><a href="#运行时" class="headerlink" title="运行时"></a>运行时</h2><p>运行 JavaScript 代码并由 JavaScript 引擎解释的环境。运行时提供 JavaScript 可以操作和使用的宿主对象。</p>
+<p>同义词： 宿主环境</p>
+<p><img src="./53634cfe/Mario.jpg" alt="Photo credit: Emuparadise"></p>
+<p>JavaScript 运行时是在脚本语言定义提到的的“存在的实体或系统”。代码通过<br>代码通过JavaScript引擎，一旦被解析和理解，实体或系统就会执行解释的动作。狗在走，人在跑，电子游戏角色在跳（或者如上图一样在搞破坏）。</p>
+<p>应用程序在运行时提供“宿主对象”使 其对 JavaScript 脚本可用。对于客户端，JavaScript 运行时就是 web 浏览器，在这里可以对 windows 和 HTML 文档等宿主对象进行操作。</p>
+<p>您曾经使用过 window 或文档宿主对象吗？window 和文档对象确实不是 JavaScript 语言的核心部分。他们只是JavaScript 宿主环境浏览器所提供的 web APIs 和对象。对于服务端，JavaScript 运行时是 Node.js。服务器相关的宿主对象比如文件系统、进程和请求，它们都是由 Node.js 提供的。</p>
+<p>有趣的是，不同的 JavaScript 运行时可以共享同样的 JavaScript 引擎。比如 V8 被两个完全不同的环境谷歌浏览器和 Node.js 所使用。</p>
+<h2 id="ECMAScript-6"><a href="#ECMAScript-6" class="headerlink" title="ECMAScript 6"></a>ECMAScript 6</h2><p>它是 ECMA-262 第六个版本，非常大的改变和改进了 ECMAScript 规范。</p>
+<p>同义词：ES6、 ES2015、 ECMAScript 2015</p>
+<p><img src="./53634cfe/es6.png" alt="ES6"></p>
+<p>在这个 ECMAScript 版本中将名字 ES6 改变为 ES2015，因为在2015年 Ecma 国际决定每年都要发布一个新的 ECMAScript。因此，Ecma 国际也开始根据 ECMAScript 规范的发布年份来命名新版本。简言之，ES5 和 ES2015 是同一个东西的两个不同的名字。</p>
+<h2 id="Bable"><a href="#Bable" class="headerlink" title="Bable"></a>Bable</h2><p>将 ES6 转换成 ES5 的转译器。</p>
+<p><img src="./53634cfe/babel.png" alt="Photo credit: HTML5Hive.org"></p>
+<p>开发者可以使用<a target="_blank" rel="noopener" href="http://es6-features.org/#Constants">ES6 闪亮的特性</a>，但他们的应用可能会涉及到跨浏览器的兼容。在写这篇文章的时候，Edge 和 IE 浏览器都还没有完全支持 ES6 规范的新特性。</p>
+<p>有顾虑的开发者可以使用 Babel 去转换 ES6 代码为功能相同的 ES5 版本。所有的主流浏览器都支持 ES5，那样他们的代码就可以在没有任何问题下运行。</p>
+<h2 id="一段趣闻"><a href="#一段趣闻" class="headerlink" title="一段趣闻"></a>一段趣闻</h2><p>我希望你发现的这些关于 JavaScript 和 ECMAScript 内容对你有用。在结束之前，<br>我想分享一个信息，让像我一样初出茅庐的web 开发者更清楚一些。</p>
+<h2 id="先有鸡还是先有蛋"><a href="#先有鸡还是先有蛋" class="headerlink" title="先有鸡还是先有蛋"></a>先有鸡还是先有蛋</h2><p>有一段令人困惑的历史是 JavaScript 在1996年创造的。而它是在1997年提交到 Ecma 国际进行标准化，从而 ECMAScript 应运而生。同时，由于 JavaScript 符合 ECMAScript 规范，所以 JavaScript 是根据 ECMAScript 实现的一个例子。</p>
+<p>这留给我们一个有趣的事实：ECMAScript 是基于 JavaScript，而 JavaScript 又是基于 ECMAScript。</p>
+<p>我知道了。</p>
+<p>这听起来完全像时间旅行比喻人们做自己的父母–有点矛盾，但想想有点有趣。</p>
+<h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><p>我知道我在这里玩得很开心，但仍有大量的信息去消化。我要借此机会告别了。</p>
+<p>请随时在下面留下任何问题、意见、建议或顾虑。</p>
+<p>非常感谢您的阅读！</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2020/11/22/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            块级作用域、模板字符串
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2020/10/14/SQL%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5%E5%88%9D%E4%BD%93%E9%AA%8C/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">SQL常用语句初体验</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: 'yiluyanxia',
+  repo: 'yiluyanxia.github.io',
+  oauth: {
+    client_id: 'b8e8c50258809e47e61a',
+    client_secret: '15a8996b14bedbbb4c2e1a540ac064d629f0c6ee',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        一路烟霞
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，不想局限于前端的攻城狮。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Top-Up/">Top Up</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%A5%E5%9D%91%E6%95%99%E7%A8%8B/">入坑教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%81%E4%BA%BA/">私人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%B3%E5%9D%91%E8%AE%B0%E5%BD%95/">跳坑记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%9B%E6%AD%A5%E7%AC%94%E8%AE%B0/">进步笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%B2%E4%B8%A2%E5%A4%B1/">防丢失</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/" rel="tag">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/" rel="tag">React Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/" rel="tag">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/" rel="tag">mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%83%85%E7%BB%AA/" rel="tag">小情绪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%89%B2%E5%BD%A9/" rel="tag">色彩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/12/01/JSON-Web-Token-%E7%AE%80%E4%BB%8B/">JSON Web Token 简介</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6%EF%BC%88%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E3%80%81%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0%EF%BC%89/">函数进阶（箭头函数、默认参数）</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/%E5%AF%B9%E8%B1%A1%E4%B8%8E%E6%95%B0%E7%BB%84%E7%9A%84%E8%A7%A3%E6%9E%84%E3%80%81rest-%E6%93%8D%E4%BD%9C%E7%AC%A6/">对象与数组的解构、rest 操作符</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2/">块级作用域、模板字符串</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/22/JavaScript-vs-ECMAScript/">JavaScript vs. ECMAScript</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2022 yiluyanxia &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank">antiquity</a>
+    <br>
+    上帝本不公平，但凡人保持偏执的权利
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之  阁下是第56<span id="busuanzi_value_site_pv"></span>个访客</span>-->
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia" class="mobile-nav-link">姬友</a>
+  
+    <a href="/mood" class="mobile-nav-link">心情</a>
+  
+    <a href="/pda" class="mobile-nav-link">手账</a>
+  
+    <a href="/topup" class="mobile-nav-link">Top Up</a>
+  
+    <a href="/about" class="mobile-nav-link">本王</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

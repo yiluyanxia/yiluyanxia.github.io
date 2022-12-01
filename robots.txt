@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /archives
+
+Disallow: /fonts/
+Disallow: /vendors/
+
+Sitemap: https://yiluyanxia.github.io/sitemap.xml
+Sitemap: https://yiluyanxia.github.io/baidusitemap.xml
