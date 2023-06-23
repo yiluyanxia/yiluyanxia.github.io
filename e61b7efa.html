@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-134049127-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>又又又又又又又要面试了 | Yiluyanxia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="Z2eTUO78NDUbUNrYk5dUHLf6we_TOAle3WKpEFw5Dk4" />
+  <meta name="baidu-site-verification" content="1CQQGgl03Q" />
+  
+  <meta name="keywords" content="前端" />
+  
+  <meta name="description" content="vue 父子通讯 如何实现 父子之间的v-modelprop 能实现父子通讯 但是prop中子组件的值改变了 父组件如何能够第一时间更新变量？ position 的取值有哪几种，默认值是什么？relative absolute fixed static（默认）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="又又又又又又又要面试了">
+<meta property="og:url" content="https://yiluyanxia.github.io/e61b7efa.html">
+<meta property="og:site_name" content="Yiluyanxia">
+<meta property="og:description" content="vue 父子通讯 如何实现 父子之间的v-modelprop 能实现父子通讯 但是prop中子组件的值改变了 父组件如何能够第一时间更新变量？ position 的取值有哪几种，默认值是什么？relative absolute fixed static（默认）">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-03-18T05:17:53.000Z">
+<meta property="article:modified_time" content="2022-12-01T10:49:35.080Z">
+<meta property="article:author" content="yiluyanxia">
+<meta property="article:tag" content="面试">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Yiluyanxia" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+        <a class="nav-item" href="https://github.com/yiluyanxia" title
+        
+          target='_blank'
+        
+        >姬友</a>
+      
+        <a class="nav-item" href="/mood" title
+        
+          target='_blank'
+        
+        >心情</a>
+      
+        <a class="nav-item" href="/pda" title
+        
+          target='_blank'
+        
+        >手账</a>
+      
+        <a class="nav-item" href="/topup" title
+        
+        >Top Up</a>
+      
+        <a class="nav-item" href="/about" title
+        
+        >本王</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-又又又又又又又要面试了" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      又又又又又又又要面试了
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/e61b7efa.html" class="article-date">
+  <time datetime="2019-03-18T05:17:53.000Z" itemprop="datePublished">2019-03-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%98%B2%E4%B8%A2%E5%A4%B1/">防丢失</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+
+  </div>
+  <!--
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  -->
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="vue-父子通讯-如何实现-父子之间的v-model"><a href="#vue-父子通讯-如何实现-父子之间的v-model" class="headerlink" title="vue 父子通讯 如何实现 父子之间的v-model"></a>vue 父子通讯 如何实现 父子之间的v-model</h2><p>prop 能实现父子通讯 但是prop中子组件的值改变了 父组件如何能够第一时间更新变量？</p>
+<h2 id="position-的取值有哪几种，默认值是什么？"><a href="#position-的取值有哪几种，默认值是什么？" class="headerlink" title="position 的取值有哪几种，默认值是什么？"></a>position 的取值有哪几种，默认值是什么？</h2><p>relative absolute fixed static（默认）</p>
+<span id="more"></span>
+
+<h2 id="输出什么"><a href="#输出什么" class="headerlink" title="输出什么"></a>输出什么</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p = &#123;</span><br><span class="line">  <span class="attr">a</span>: <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> arr = []</span><br><span class="line">arr.<span class="title function_">push</span>(p)</span><br><span class="line">arr.<span class="title function_">push</span>(p)</span><br><span class="line">arr[<span class="number">1</span>].<span class="property">a</span> = <span class="number">20</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr)</span><br><span class="line"><span class="comment">// 输出</span></span><br><span class="line">[</span><br><span class="line">  &#123;<span class="attr">a</span>: <span class="number">20</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">a</span>: <span class="number">20</span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p = &#123;</span><br><span class="line">  <span class="attr">age</span>:<span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> arr = []</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">	arr.<span class="title function_">push</span>(p)</span><br><span class="line">&#125;</span><br><span class="line">arr[<span class="number">1</span>].<span class="property">a</span> = <span class="number">20</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr)</span><br><span class="line"><span class="comment">// 输出</span></span><br><span class="line">[</span><br><span class="line">  &#123; <span class="attr">age</span>: <span class="number">18</span>, <span class="attr">a</span>: <span class="number">20</span> &#125;, </span><br><span class="line">  &#123; <span class="attr">age</span>: <span class="number">18</span>, <span class="attr">a</span>: <span class="number">20</span> &#125;, </span><br><span class="line">  &#123; <span class="attr">age</span>: <span class="number">18</span>, <span class="attr">a</span>: <span class="number">20</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></div>
+<p>引入传递</p>
+<h2 id="px-em-rem单位的区别？"><a href="#px-em-rem单位的区别？" class="headerlink" title="px em rem单位的区别？"></a>px em rem单位的区别？</h2><p>px em rem均是相对长度单位。</p>
+<ul>
+<li>px像素（Pixel）是相对于显示器屏幕分辨率而言的。<br>当显示器分辨率为1920时，设置一个div的大小为200px,再使用1366的显示器看这个200px,使用肉眼看起来是不一样的，但实际上它的大小是一样。</li>
+<li>em是相对于父元素字体大小进行缩放的。<br>假设字体大小为16px，那么1em === 16px,个人用的比较多的地方就是一段文本首行缩进，即text-indent: 2em; 其他的场景基本上没怎么用过了。</li>
+<li>rem是基于根元素<html>按比例缩放的，也就是倍数。<br>将html的font-size设置为100px,想要设置某个元素为10px,只需这样计算 10/100 = 0.1, 得到10px === 0.1rem;<br>扩展一些内容</li>
+<li>%一般来说是相对于父元素的大小。父元素宽为1000px时，则80% === 800px;</li>
+<li>vw和vh分别为可视区域的宽度和高度，最大值去100vh/vw;</li>
+<li>pt是绝对长度单位，没有用过，不赘述。</li>
+</ul>
+<h2 id="display：none-和-visibility：hidden的区别？"><a href="#display：none-和-visibility：hidden的区别？" class="headerlink" title="display：none 和 visibility：hidden的区别？"></a>display：none 和 visibility：hidden的区别？</h2><table>
+<thead>
+<tr>
+<th>display：none</th>
+<th>visibility：hidden</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>渲染时，元素从DOM中消失，不占空间</td>
+<td>没有消失，占空间，出现空白块。</td>
+</tr>
+<tr>
+<td>非继承性，子元素一同从DOM中消失，将子元素设置为block,仍然不可见</td>
+<td>继承，子元素不可见时因为继承了父元素的样式，子元素设置为visible，仍然可见</td>
+</tr>
+<tr>
+<td>修改该值，页面会重新渲染</td>
+<td>不重新渲染</td>
+</tr>
+</tbody></table>
+<h2 id="css选择器有哪些？"><a href="#css选择器有哪些？" class="headerlink" title="css选择器有哪些？"></a>css选择器有哪些？</h2><ul>
+<li>标签<br>p{</li>
+</ul>
+<p> }</p>
+<ul>
+<li>class<br>.red {</li>
+</ul>
+<p> }</p>
+<ul>
+<li>ID<br>#blue {</li>
+</ul>
+<p> }</p>
+<ul>
+<li>伪类<br>a:hover{}</li>
+<li>关系<br>li + li {}</li>
+</ul>
+<p> </p>
+<h2 id="使用css实现一个三角形。"><a href="#使用css实现一个三角形。" class="headerlink" title="使用css实现一个三角形。"></a>使用css实现一个三角形。</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 使用边框 */</span></span><br><span class="line"><span class="selector-class">.triangle</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">5px</span> solid transparent;</span><br><span class="line">  <span class="attribute">border-left-color</span>: red </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<h2 id="描述一下cookies，sessionStorage，localStorage的区别及用法？"><a href="#描述一下cookies，sessionStorage，localStorage的区别及用法？" class="headerlink" title="描述一下cookies，sessionStorage，localStorage的区别及用法？"></a>描述一下cookies，sessionStorage，localStorage的区别及用法？</h2><ul>
+<li>HTTP Cookie（也叫Web Cookie或浏览器Cookie）是服务器发送到用户浏览器并保存在本地的一小块数据，它会在浏览器下次向同一服务器再发起请求时被携带并发送到服务器上。</li>
+<li>sessionStorage 为每一个给定的源（given origin）维持一个独立的存储区域，该存储区域在页面会话期间可用（即只要浏览器处于打开状态，包括页面重新加载和恢复）。</li>
+<li>localStorage 同样的功能，但是在浏览器关闭，然后重新打开后数据仍然存在。<br>(以上来自MDN)</li>
+</ul>
+<p>Cookies一般用于登录功能，用于保存登录后产生的tooken信息，让服务端知道该用户已经登录了。<br>localStorage可用于保存用户自定义主题之类的数据。sessionStorage、localStorage和域名是相关的，所有保存或删除都是在域名对应下进行的。（个人用的比较多的就是localStorage和vuex的配合使用，用于解决vuex页面刷新后数据不见的状态。）</p>
+<h2 id="分别列出JS中数组、字符串操作函数？"><a href="#分别列出JS中数组、字符串操作函数？" class="headerlink" title="分别列出JS中数组、字符串操作函数？"></a>分别列出JS中数组、字符串操作函数？</h2><table>
+<thead>
+<tr>
+<th>数组函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>push</td>
+<td>添加元素到数组的末尾</td>
+</tr>
+<tr>
+<td>pop</td>
+<td>删除数组末尾的元素</td>
+</tr>
+<tr>
+<td>shift</td>
+<td>删除数组最前面（头部）的元素</td>
+</tr>
+<tr>
+<td>unshift</td>
+<td>添加元素到数组的头部</td>
+</tr>
+<tr>
+<td>indexOf</td>
+<td>找出某个元素在数组中的索引</td>
+</tr>
+<tr>
+<td>splice</td>
+<td>通过索引删除某个元素</td>
+</tr>
+<tr>
+<td>slice</td>
+<td>复制一个数组</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>字符串函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>concat</td>
+<td>连接两个字符串文本，并返回一个新的字符串。</td>
+</tr>
+<tr>
+<td>includes</td>
+<td>判断一个字符串里是否包含其他字符串</td>
+</tr>
+<tr>
+<td>indexOf</td>
+<td>从字符串对象中返回首个被发现的给定值的索引值，如果没有找到则返回-1。</td>
+</tr>
+<tr>
+<td>match</td>
+<td>使用正则表达式与字符串相比较。</td>
+</tr>
+<tr>
+<td>replace</td>
+<td>被用来在正则表达式和字符串直接比较，然后用新的子串来替换被匹配的子串</td>
+</tr>
+<tr>
+<td>slice</td>
+<td>摘取一个字符串区域，返回一个新的字符串</td>
+</tr>
+<tr>
+<td>split</td>
+<td>通过分离字符串成字串，将字符串对象分割成字符串数组。</td>
+</tr>
+<tr>
+<td>substr</td>
+<td>通过指定字符数返回在指定位置开始的字符串中的字符。</td>
+</tr>
+<tr>
+<td>substring</td>
+<td>返回在字符串中指定两个下标之间的字符</td>
+</tr>
+<tr>
+<td>toLocaleLowerCase</td>
+<td>根据当前区域设置，将符串中的字符转换成小写。对于大多数语言来说，toLowerCase的返回值是一致的。</td>
+</tr>
+<tr>
+<td>toLocaleUpperCase</td>
+<td>根据当前区域设置，将字符串中的字符转换成大写，对于大多数语言来说，toUpperCase的返回值是一致的</td>
+</tr>
+<tr>
+<td>toString</td>
+<td>返回用字符串表示的特定对象</td>
+</tr>
+<tr>
+<td>trim</td>
+<td>从字符串的开始和结尾去除空格</td>
+</tr>
+</tbody></table>
+<p>这些操作函数还有很多，没有全部列出，具体可参考MDN,以上是个人比较常用的。</p>
+<h2 id="完成一个Promise链式写法的例子。"><a href="#完成一个Promise链式写法的例子。" class="headerlink" title="完成一个Promise链式写法的例子。"></a>完成一个Promise链式写法的例子。</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="title function_">all</span>(promise).<span class="title function_">then</span>(<span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;).<span class="title function_">catch</span>(<span class="function">(<span class="params">error</span>)=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<p>链式就是一个对象的方法返回的仍是一个拥有特定方法的对象，直到调用完成，才返回void</p>
+<p><em>（什么乱七八糟的）</em></p>
+<h2 id="JS中箭头函数-gt-与普通函数function-的区别？"><a href="#JS中箭头函数-gt-与普通函数function-的区别？" class="headerlink" title="JS中箭头函数 ()=&gt; 与普通函数function(){} 的区别？"></a>JS中箭头函数 ()=&gt; 与普通函数function(){} 的区别？</h2><ul>
+<li>不绑定this<br>在箭头函数出现之前，每个新定义的函数都有它自己的 this值。</li>
+<li>通过 call 或 apply 调用<br>由于 箭头函数没有自己的this指针，通过 call() 或 apply() 方法调用一个函数时，只能传递参数，他们的第一个参数会被忽略。 </li>
+<li>不绑定arguments<br>箭头函数不绑定Arguments 对象，在大多数情况下，使用剩余参数是相较使用arguments对象的更好选择。剩余参数语法允许我们将一个不定数量的参数表示为一个数组。</li>
+<li>使用 new 操作符<br>箭头函数不能用作构造器，和 new一起用会抛出错误。</li>
+<li>使用prototype属性<br>箭头函数没有prototype属性。会返回undefined。</li>
+<li>使用 yield 关键字<br>yield 关键字通常不能在箭头函数中使用（除非是嵌套在允许使用的函数内）。因此，箭头函数不能用作生成器。 </li>
+<li>返回对象字面量<br>用params =&gt; {object:literal}这种简单的语法返回对象字面量是行不通的。这是因为花括号（{} ）里面的代码被解析为一系列语句（即 foo 被认为是一个标签，而非对象字面量的组成部分）。所以，记得用圆括号把对象字面量包起来</li>
+<li>换行<br>箭头函数在参数和箭头之间不能换行。<br><em>（以上内容来自MDN的重新排列组合）</em></li>
+</ul>
+<h2 id="如何屏蔽浏览器右键菜单？"><a href="#如何屏蔽浏览器右键菜单？" class="headerlink" title="如何屏蔽浏览器右键菜单？"></a>如何屏蔽浏览器右键菜单？</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">  document.oncontextmenu = () =&gt; false</span><br><span class="line">```  </span><br><span class="line">## React 组件中 class components 和functional components 有什么区别，分别适合什么场景使用？</span><br><span class="line"></span><br><span class="line">## React生命周期的方法有哪些？</span><br><span class="line"></span><br><span class="line">## 分别写出匹配Emali、URL的正则表达式？</span><br><span class="line">邮箱：  /^[\w.+-]+@[\w-]+(\.[\w-]+)+$/</span><br><span class="line">URL:   /^((ht|f)tps?):\/\/[\w\-]+(\.[\w\-]+)+([\w\-.,@?^=%&amp;:\/~+#]*[\w\-@?^=%&amp;\/~+#])?$/</span><br><span class="line">(https?|ftp|file)://[-A-Za-z0-9+&amp;@#/%?=~_|!:,.;]+[-A-Za-z0-9+&amp;@#/%=~_|]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## NodeJS中如何读写文件？</span><br><span class="line">```js</span><br><span class="line">var fs = require(&quot;fs&quot;);</span><br><span class="line"></span><br><span class="line">// 异步读取</span><br><span class="line">fs.readFile(&#x27;file.txt&#x27;, function (err, data) &#123;</span><br><span class="line">   if (err) &#123;</span><br><span class="line">       return console.error(err);</span><br><span class="line">   &#125;</span><br><span class="line">   console.log(data.toString());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+<h2 id="http请求状态码有哪些？代表什么含义？"><a href="#http请求状态码有哪些？代表什么含义？" class="headerlink" title="http请求状态码有哪些？代表什么含义？"></a>http请求状态码有哪些？代表什么含义？</h2><table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>200</td>
+<td>请求成功</td>
+</tr>
+<tr>
+<td>304</td>
+<td>发送get请求时，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个状态码。</td>
+</tr>
+<tr>
+<td>400</td>
+<td>语义有误、参数有误</td>
+</tr>
+<tr>
+<td>401</td>
+<td>无权限，常见于登录。该响应必须包含一个适用于被请求资源的 WWW-Authenticate 信息头用以询问用户信息。</td>
+</tr>
+<tr>
+<td>403</td>
+<td>禁止访问，服务器已经理解请求，但是拒绝执行它。常见于跨域。</td>
+</tr>
+<tr>
+<td>404</td>
+<td>请求失败，请求所希望得到的资源未被在服务器上发现。比如输入错误的URL。</td>
+</tr>
+<tr>
+<td>500</td>
+<td>服务器遇到了不知道如何处理的情况。</td>
+</tr>
+<tr>
+<td>504</td>
+<td>当服务器作为网关，不能及时得到响应时返回此错误代码。</td>
+</tr>
+<tr>
+<td><em>（太多了，只列出个人常用的）</em></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="Linus中常用的命令？"><a href="#Linus中常用的命令？" class="headerlink" title="Linus中常用的命令？"></a>Linus中常用的命令？</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cd</td>
+<td>切换目录</td>
+</tr>
+<tr>
+<td>ls</td>
+<td>列出当前目录下所有的目录和文件</td>
+</tr>
+<tr>
+<td>cp</td>
+<td>复制文件</td>
+</tr>
+<tr>
+<td>mv</td>
+<td>移动文件、目录</td>
+</tr>
+<tr>
+<td>rm</td>
+<td>删除</td>
+</tr>
+</tbody></table>
+<p>除了cd ls其他的基本上用的很少，现在的用户图像界面也是很不错的。</p>
+<h2 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传统的方法</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">unique</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> res = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.<span class="property">length</span>; i &lt; len; i++) &#123;</span><br><span class="line">      <span class="keyword">var</span> current = arr[i];</span><br><span class="line">      <span class="keyword">if</span> (res.<span class="title function_">indexOf</span>(current) === -<span class="number">1</span>) &#123;</span><br><span class="line">          res.<span class="title function_">push</span>(current)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">8</span>, <span class="number">12</span>]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">unique</span>(arr1))</span><br><span class="line"><span class="comment">// 输出[ 2, 4, 8, 12 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用es6</span></span><br><span class="line"><span class="keyword">var</span> <span class="title function_">uniqueArr</span> = (<span class="params">arr = arr1</span>) =&gt; [...<span class="keyword">new</span> <span class="title class_">Set</span>(arr)]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(uniqueArr)</span><br><span class="line"><span class="comment">// 输出[ 2, 4, 8, 12 ]</span></span><br><span class="line"></span><br><span class="line">但是，一般实际的应用场景当中，是不会出现如此简单的数据结构的。所以这种去重方式只适用于面试。</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<h2 id="获取数组最大值"><a href="#获取数组最大值" class="headerlink" title="获取数组最大值"></a>获取数组最大值</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">MaxFun</span> (arr) &#123;</span><br><span class="line">  <span class="keyword">var</span> max = <span class="number">0</span></span><br><span class="line">  arr.<span class="title function_">map</span>(<span class="function"><span class="params">i</span> =&gt;</span> &#123;</span><br><span class="line">    i &gt; max &amp;&amp; (max = i)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> max</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">2</span>, <span class="number">6</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">13</span>]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">MaxFun</span>(arr1))</span><br><span class="line"><span class="comment">// 输出14</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用Math.max</span></span><br><span class="line"><span class="keyword">var</span> max = <span class="title class_">Math</span>.<span class="title function_">max</span>(...arr);</span><br><span class="line"><span class="comment">// ...扩展云算法可以将数组转换成字符序列（参数序列）</span></span><br></pre></td></tr></table></figure></div>
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/5b83c362.html" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            关于vue的面试题
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/55c8e4e2.html" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">使用Heroku，解决gitment登录失败，报[object ProgressEvent]的错</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: 'yiluyanxia',
+  repo: 'yiluyanxia.github.io',
+  oauth: {
+    client_id: 'b8e8c50258809e47e61a',
+    client_secret: '15a8996b14bedbbb4c2e1a540ac064d629f0c6ee',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        一路烟霞
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，不想局限于前端的攻城狮。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Top-Up/">Top Up</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%A5%E5%9D%91%E6%95%99%E7%A8%8B/">入坑教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%81%E4%BA%BA/">私人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%B3%E5%9D%91%E8%AE%B0%E5%BD%95/">跳坑记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%9B%E6%AD%A5%E7%AC%94%E8%AE%B0/">进步笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%B2%E4%B8%A2%E5%A4%B1/">防丢失</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/" rel="tag">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/" rel="tag">React Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/" rel="tag">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/" rel="tag">mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%83%85%E7%BB%AA/" rel="tag">小情绪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%89%B2%E5%BD%A9/" rel="tag">色彩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/24c57dd0.html">JSON Web Token 简介</a>
+          </li>
+        
+          <li>
+            <a href="/32c28743.html">函数进阶（箭头函数、默认参数）</a>
+          </li>
+        
+          <li>
+            <a href="/a1d95bcb.html">对象与数组的解构、rest 操作符</a>
+          </li>
+        
+          <li>
+            <a href="/e181814a.html">块级作用域、模板字符串</a>
+          </li>
+        
+          <li>
+            <a href="/53634cfe.html">JavaScript vs. ECMAScript</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2023 yiluyanxia &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank">antiquity</a>
+    <br>
+    上帝本不公平，但凡人保持偏执的权利
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之  阁下是第56<span id="busuanzi_value_site_pv"></span>个访客</span>-->
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia" class="mobile-nav-link">姬友</a>
+  
+    <a href="/mood" class="mobile-nav-link">心情</a>
+  
+    <a href="/pda" class="mobile-nav-link">手账</a>
+  
+    <a href="/topup" class="mobile-nav-link">Top Up</a>
+  
+    <a href="/about" class="mobile-nav-link">本王</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

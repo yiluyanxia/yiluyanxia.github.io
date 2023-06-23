@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-134049127-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>SQL常用语句初体验 | Yiluyanxia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="Z2eTUO78NDUbUNrYk5dUHLf6we_TOAle3WKpEFw5Dk4" />
+  <meta name="baidu-site-verification" content="1CQQGgl03Q" />
+  
+  <meta name="keywords" content="前端" />
+  
+  <meta name="description" content="MySQL Workbench官方出品，业界有不同的声音，对于只是简单的使用，完全够了。下载，傻瓜式安装即可。技术发展到这一步，一切从简，我觉得最好不过了。爱因斯坦说，如果想做好一件事，那么就把它简单到不能再简单。 输入 hostname port username password 就可以开启 MySQL 之旅了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL常用语句初体验">
+<meta property="og:url" content="https://yiluyanxia.github.io/7c4d0ca2.html">
+<meta property="og:site_name" content="Yiluyanxia">
+<meta property="og:description" content="MySQL Workbench官方出品，业界有不同的声音，对于只是简单的使用，完全够了。下载，傻瓜式安装即可。技术发展到这一步，一切从简，我觉得最好不过了。爱因斯坦说，如果想做好一件事，那么就把它简单到不能再简单。 输入 hostname port username password 就可以开启 MySQL 之旅了。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-14T14:52:31.000Z">
+<meta property="article:modified_time" content="2022-12-01T10:49:35.093Z">
+<meta property="article:author" content="yiluyanxia">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Yiluyanxia" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+        <a class="nav-item" href="https://github.com/yiluyanxia" title
+        
+          target='_blank'
+        
+        >姬友</a>
+      
+        <a class="nav-item" href="/mood" title
+        
+          target='_blank'
+        
+        >心情</a>
+      
+        <a class="nav-item" href="/pda" title
+        
+          target='_blank'
+        
+        >手账</a>
+      
+        <a class="nav-item" href="/topup" title
+        
+        >Top Up</a>
+      
+        <a class="nav-item" href="/about" title
+        
+        >本王</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-SQL常用语句初体验" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      SQL常用语句初体验
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/7c4d0ca2.html" class="article-date">
+  <time datetime="2020-10-14T14:52:31.000Z" itemprop="datePublished">2020-10-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%98%B2%E4%B8%A2%E5%A4%B1/">防丢失</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
+
+  </div>
+  <!--
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  -->
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="MySQL-Workbench"><a href="#MySQL-Workbench" class="headerlink" title="MySQL Workbench"></a>MySQL Workbench</h2><p>官方出品，业界有不同的声音，对于只是简单的使用，完全够了。<br>下载，傻瓜式安装即可。<br>技术发展到这一步，一切从简，我觉得最好不过了。<br>爱因斯坦说，如果想做好一件事，那么就把它简单到不能再简单。</p>
+<p>输入 hostname port username password 就可以开启 MySQL 之旅了。</p>
+<span id="more"></span>
+<h2 id="SQL语句"><a href="#SQL语句" class="headerlink" title="SQL语句"></a>SQL语句</h2><p>SQL（ Structured Query Language），结构化查询语言。</p>
+<ol>
+<li><p>使用数据库</p>
+ <div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use dataName;</span><br></pre></td></tr></table></figure></div>
+
+<p> 注意：表名最好不要使用符号</p>
+</li>
+</ol>
+<h3 id="假设数据"><a href="#假设数据" class="headerlink" title="假设数据"></a>假设数据</h3><p>假设表名为 repository，字段如下：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>star</th>
+<th>fork</th>
+<th>languages</th>
+<th>uId</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>antiquity</td>
+<td>99</td>
+<td>22</td>
+<td>JavaScript</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>todolist</td>
+<td>16</td>
+<td>12</td>
+<td>Vue</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>假设表名为 user，字段如下：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>userName</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>yiluyanxia</td>
+</tr>
+</tbody></table>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><h4 id="基本查询"><a href="#基本查询" class="headerlink" title="基本查询"></a>基本查询</h4><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 基本查询</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tableName</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 条件查询</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tableName <span class="keyword">WHERE</span> <span class="keyword">condition</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>表名<span class="operator">&gt;</span> <span class="keyword">WHERE</span> <span class="operator">&lt;</span>条件表达式<span class="operator">&gt;</span></span><br><span class="line"><span class="comment">-- 示例</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> repository <span class="keyword">WHERE</span> star <span class="operator">&gt;=</span> <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 多个条件</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tableName <span class="keyword">WHERE</span> condition1 <span class="keyword">AND</span> condition2;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tableName <span class="keyword">WHERE</span> condition1 <span class="keyword">OR</span> condition2;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tableName <span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">condition</span>;</span><br><span class="line"><span class="comment">-- 示例，查询大于等于100个star和大于等于100个人fork</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> repository <span class="keyword">WHERE</span> star <span class="operator">&gt;=</span> <span class="number">100</span> <span class="keyword">AND</span> fork <span class="operator">&gt;=</span> <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 也可以同时多个</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> repository <span class="keyword">WHERE</span> (star <span class="operator">&lt;</span> <span class="number">100</span> <span class="keyword">OR</span> star <span class="operator">&gt;</span> <span class="number">90</span>) <span class="keyword">AND</span> languages <span class="operator">=</span> <span class="string">&#x27;JavaScript&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="投影查询"><a href="#投影查询" class="headerlink" title="投影查询"></a>投影查询</h4><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 投影查询</span></span><br><span class="line"><span class="keyword">SELECT</span> column1, column2, column3 <span class="keyword">FROM</span> tableName</span><br><span class="line"><span class="comment">-- 示例</span></span><br><span class="line"><span class="keyword">SELECT</span> id, star, fork <span class="keyword">FROM</span> repository</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 投影查询，并重命名</span></span><br><span class="line"><span class="keyword">SELECT</span> column1 alias1, column2 alias2, column3 alias3 <span class="keyword">FROM</span> tableName</span><br><span class="line"><span class="comment">-- 示例</span></span><br><span class="line"><span class="keyword">SELECT</span> id, star, fork fans <span class="keyword">FROM</span> repository</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 投影查询，并添加条件</span></span><br><span class="line"><span class="keyword">SELECT</span> column1, column2, column3 <span class="keyword">FROM</span> tableName <span class="keyword">WHERE</span> condition1;</span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 排序，正序，从小到大，ASC 可省</span></span><br><span class="line"><span class="keyword">SELECT</span> column1, column2, column3 <span class="keyword">FROM</span> tableName <span class="keyword">ORDER</span> <span class="keyword">BY</span> column1 <span class="keyword">ASC</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 排序，倒序，从大到小</span></span><br><span class="line"><span class="keyword">SELECT</span> column1, column2, column3 <span class="keyword">FROM</span> tableName <span class="keyword">ORDER</span> <span class="keyword">BY</span> column1 <span class="keyword">DESC</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 按多个选项排序</span></span><br><span class="line"><span class="keyword">SELECT</span> column1, column2, column3 <span class="keyword">FROM</span> tableName <span class="keyword">ORDER</span> <span class="keyword">BY</span> column1 <span class="keyword">DESC</span>, column2;</span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h4><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 分页</span></span><br><span class="line"><span class="keyword">SELECT</span> column1, column2, column3 <span class="keyword">FROM</span> tableName LIMIT m <span class="keyword">OFFSET</span> n;</span><br><span class="line"><span class="comment">-- 示例，第一页</span></span><br><span class="line"><span class="keyword">SELECT</span> id, star, fork <span class="keyword">FROM</span> repository LIMIT <span class="number">10</span> <span class="keyword">OFFSET</span> <span class="number">0</span>;</span><br><span class="line"><span class="comment">-- 示例，第二页</span></span><br><span class="line"><span class="keyword">SELECT</span> id, star, fork <span class="keyword">FROM</span> repository LIMIT <span class="number">10</span> <span class="keyword">OFFSET</span> <span class="number">10</span>;</span><br><span class="line"><span class="comment">-- 示例，第三页</span></span><br><span class="line"><span class="keyword">SELECT</span> id, star, fork <span class="keyword">FROM</span> repository LIMIT <span class="number">10</span> <span class="keyword">OFFSET</span> <span class="number">20</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="聚合查询"><a href="#聚合查询" class="headerlink" title="聚合查询"></a>聚合查询</h4><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 统计总数</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> tableName;</span><br><span class="line"><span class="comment">-- 统计总数，并重命名</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) alias1 <span class="keyword">FROM</span> tableName;</span><br><span class="line"><span class="comment">-- 示例，统计repository表中有多少行</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) num <span class="keyword">FROM</span> repository;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SUM</td>
+<td>计算某一列的合计值，该列必须为数值类型</td>
+</tr>
+<tr>
+<td>AVG</td>
+<td>计算某一列的平均值，该列必须为数值类型</td>
+</tr>
+<tr>
+<td>MAX</td>
+<td>计算某一列的最大值</td>
+</tr>
+<tr>
+<td>MIN</td>
+<td>计算某一列的最小值</td>
+</tr>
+</tbody></table>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 求平均值，该列为数值类型</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">AVG</span>(column1) <span class="keyword">FROM</span> tableName;</span><br><span class="line"><span class="comment">-- 示例，计算平均star数</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">AVG</span>(star) average <span class="keyword">FROM</span> repository;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 求和，该列为数值类型</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(column1) <span class="keyword">FROM</span> tableName;</span><br><span class="line"><span class="comment">-- 示例，计算总的star数量</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(star) summation <span class="keyword">FROM</span> repository;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 计算某一列的最大值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MAX</span>(column1) <span class="keyword">FROM</span> tableName;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 计算某一列的最小值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MIN</span>(column1) <span class="keyword">FROM</span> tableName;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 分组</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> tableName <span class="keyword">GROUP</span> <span class="keyword">BY</span> column1;</span><br><span class="line"><span class="comment">-- 示例，统计每种语言下的数目</span></span><br><span class="line"><span class="keyword">SELECT</span> languages <span class="built_in">COUNT</span>(<span class="operator">*</span>) num <span class="keyword">FROM</span> repository <span class="keyword">GROUP</span> <span class="keyword">BY</span> languages;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="笛卡尔查询（多表查询）"><a href="#笛卡尔查询（多表查询）" class="headerlink" title="笛卡尔查询（多表查询）"></a>笛卡尔查询（多表查询）</h4><p>注意：结果集是目标表的行数乘积，每个表中各有10条记录，那么将返回10*10=100条记录。当添加条件后，结果集数量会减少。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 多表查询</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tableName, tableName1;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 多表查询，并重命名列</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    tableName1.column1 t1column1,</span><br><span class="line">    tableName2.column1 t2column1</span><br><span class="line"><span class="keyword">FROM</span> tableName1, tableName2;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 多表查询，并重命名表名</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    t1.column1 t1column1,</span><br><span class="line">    t2.column1 t2column1</span><br><span class="line"><span class="keyword">FROM</span> tableName1 t1, tableName2 t2;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 多表查询，并添加条件</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    t1.column1 t1column1,</span><br><span class="line">    t2.column1 t2column1</span><br><span class="line"><span class="keyword">FROM</span> tableName1 t1, tableName2 t2</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">condition</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h4><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 连接查询，INNER JOIN，交集</span></span><br><span class="line"><span class="keyword">SELECT</span> t1.column1, t1.column2</span><br><span class="line"><span class="keyword">FROM</span> tableName1 t1</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> tableName2 t2</span><br><span class="line"><span class="keyword">ON</span> t1.column1 <span class="operator">=</span> t2.column2;</span><br><span class="line"><span class="comment">-- 示例,获取仓库中的所有记录，并返回对应的用户名。</span></span><br><span class="line"><span class="keyword">SELECT</span> r.id, r.name, r.star, r.uId, u.userName</span><br><span class="line"><span class="keyword">FROM</span> repository r</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> <span class="keyword">user</span> u</span><br><span class="line"><span class="keyword">ON</span> r.uId <span class="operator">=</span> u.id;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 连接查询，RIGHT OUTER JOIN，右表所有的记录</span></span><br><span class="line"><span class="keyword">SELECT</span> t1.column1, t1.column2</span><br><span class="line"><span class="keyword">FROM</span> tableName1 t1</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> tableName2 t2</span><br><span class="line"><span class="keyword">ON</span> t1.column1 <span class="operator">=</span> t2.column2;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 连接查询，LEFT OUTER JOIN，左表所有的记录</span></span><br><span class="line"><span class="keyword">SELECT</span> t1.column1, t1.column2</span><br><span class="line"><span class="keyword">FROM</span> tableName1 t1</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> tableName2 t2</span><br><span class="line"><span class="keyword">ON</span> t1.column1 <span class="operator">=</span> t2.column2;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 连接查询，FULL OUTER JOIN，两张表的全集</span></span><br><span class="line"><span class="keyword">SELECT</span> t1.column1, t1.column2</span><br><span class="line"><span class="keyword">FROM</span> tableName1 t1</span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> tableName2 t2</span><br><span class="line"><span class="keyword">ON</span> t1.column1 <span class="operator">=</span> t2.column2;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 插入</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> tableName (column1, column2, column3) <span class="keyword">VALUES</span> (value1, value2, value3);</span><br><span class="line"><span class="comment">-- 示例，插入一条</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> repository (name, star, fork, languages) <span class="keyword">VALUES</span> (<span class="string">&#x27;sqlTest&#x27;</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="string">&#x27;SQL&#x27;</span>);</span><br><span class="line"><span class="comment">-- 示例，插入多条</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> repository (name, star, fork, languages) <span class="keyword">VALUES</span></span><br><span class="line">    (<span class="string">&#x27;sqlTest&#x27;</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="string">&#x27;SQL&#x27;</span>),</span><br><span class="line">    (<span class="string">&#x27;cms&#x27;</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="string">&#x27;JavaScript&#x27;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 插入或更新，插入一条新记录（INSERT），但记录已经存在，则更新该记录</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> tableName (column1, column2, column3) <span class="keyword">VALUES</span> (value1, value2, value3) <span class="keyword">ON</span> DUPLICATE KEY <span class="keyword">UPDATE</span> column1<span class="operator">=</span>value1, column2<span class="operator">=</span>value2, column3<span class="operator">=</span>value3;</span><br><span class="line"><span class="comment">-- 示例</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> repository (id, name, star, fork, languages) <span class="keyword">VALUES</span> (<span class="number">3</span>, <span class="string">&#x27;sqlTest&#x27;</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="string">&#x27;SQL&#x27;</span>) <span class="keyword">ON</span> DUPLICATE KEY <span class="keyword">UPDATE</span> name<span class="operator">=</span><span class="string">&#x27;sqlTest&#x27;</span>, star<span class="operator">=</span><span class="number">0</span>, fork<span class="operator">=</span><span class="number">0</span>, languages<span class="operator">=</span><span class="string">&#x27;SQL&#x27;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 插入或忽略，插入一条新记录（INSERT），但记录已经存在，则直接忽略</span></span><br><span class="line"><span class="keyword">INSERT</span> IGNORE <span class="keyword">INTO</span> tableName (column1, column2, column3) <span class="keyword">VALUES</span> (value1, value2, value3);</span><br><span class="line"><span class="comment">-- 示例</span></span><br><span class="line"><span class="keyword">INSERT</span> IGNORE <span class="keyword">INTO</span> repository (id, name, star, fork, languages) <span class="keyword">VALUES</span> (<span class="number">3</span>, <span class="string">&#x27;sqlTest&#x27;</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="string">&#x27;SQL&#x27;</span>);</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>注意：没有条件的时候，整个表都会更新。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 更新</span></span><br><span class="line"><span class="keyword">UPDATE</span> tableName <span class="keyword">SET</span> column1<span class="operator">=</span>value1, column2<span class="operator">=</span>value2 <span class="keyword">WHERE</span> <span class="keyword">condition</span>;</span><br><span class="line"><span class="comment">-- 示例，更新一条</span></span><br><span class="line"><span class="keyword">UPDATE</span> repository <span class="keyword">SET</span> star<span class="operator">=</span><span class="number">2</span>, languages<span class="operator">=</span><span class="string">&#x27;java&#x27;</span> <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">4</span>;</span><br><span class="line"><span class="comment">-- 示例，修改条件更新多条</span></span><br><span class="line"><span class="keyword">UPDATE</span> repository <span class="keyword">SET</span> star<span class="operator">=</span><span class="number">2</span>, languages<span class="operator">=</span><span class="string">&#x27;java&#x27;</span> <span class="keyword">WHERE</span> id<span class="operator">&gt;</span><span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 更新，字段可以使用表达式</span></span><br><span class="line"><span class="keyword">UPDATE</span> tableName <span class="keyword">SET</span> column1<span class="operator">=</span>column1<span class="operator">+</span>value1 <span class="keyword">WHERE</span> <span class="keyword">condition</span>;</span><br><span class="line"><span class="comment">-- 示例</span></span><br><span class="line"><span class="keyword">UPDATE</span> repository <span class="keyword">SET</span> star<span class="operator">=</span>star<span class="operator">+</span><span class="number">1</span> <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">4</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p>注意：没有条件的时候，整个表的记录都会被删除。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 删除</span></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> tableName <span class="keyword">WHERE</span> <span class="keyword">condition</span>;</span><br><span class="line"><span class="comment">-- 示例</span></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> repository <span class="keyword">WHERE</span> id<span class="operator">=</span><span class="number">4</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 替换，若id=id1的记录不存在，REPLACE语句将插入新记录，否则，当前id=id1的记录将被删除，然后再插入新记录。</span></span><br><span class="line">REPLACE <span class="keyword">INTO</span> tableName (id, column1, column2, column3) <span class="keyword">VALUES</span> (id1, value1, value2, value3);</span><br><span class="line"><span class="comment">-- 示例</span></span><br><span class="line">REPLACE <span class="keyword">INTO</span> repository (id, name, star, fork) <span class="keyword">VALUES</span> (<span class="number">3</span>, <span class="string">&#x27;sqlTest&#x27;</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="快照"><a href="#快照" class="headerlink" title="快照"></a>快照</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--快照</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tableName_new <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> tableName <span class="keyword">WHERE</span> <span class="keyword">condition</span>;</span><br><span class="line"><span class="comment">-- 示例</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> repository_of_user1 <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> repository <span class="keyword">WHERE</span> uId<span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><h4 id="显示事务"><a href="#显示事务" class="headerlink" title="显示事务"></a>显示事务</h4><p>几条SQL语句必须全部执行，若其中一条语句失败，就必须全部撤销。<br>这种把多条语句作为一个整体进行操作的功能，被称为数据库事务。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 显示事务</span></span><br><span class="line"><span class="keyword">BEGIN</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> tableName <span class="keyword">SET</span> column1<span class="operator">=</span>value1, column2<span class="operator">=</span>value2 <span class="keyword">WHERE</span> <span class="keyword">condition</span>;</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> tableName (column1, column2, column3) <span class="keyword">VALUES</span> (value1, value2, value3);</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="回滚事务"><a href="#回滚事务" class="headerlink" title="回滚事务"></a>回滚事务</h4><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 回滚事务</span></span><br><span class="line"><span class="keyword">BEGIN</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> tableName <span class="keyword">SET</span> column1<span class="operator">=</span>value1, column2<span class="operator">=</span>value2 <span class="keyword">WHERE</span> <span class="keyword">condition</span>;</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> tableName (column1, column2, column3) <span class="keyword">VALUES</span> (value1, value2, value3);</span><br><span class="line"><span class="keyword">ROLLBACK</span>;</span><br></pre></td></tr></table></figure></div>
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/53634cfe.html" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            JavaScript vs. ECMAScript
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/c03ee65c.html" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">《中国新说唱2020》不完全数据大屏</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: 'yiluyanxia',
+  repo: 'yiluyanxia.github.io',
+  oauth: {
+    client_id: 'b8e8c50258809e47e61a',
+    client_secret: '15a8996b14bedbbb4c2e1a540ac064d629f0c6ee',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        一路烟霞
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，不想局限于前端的攻城狮。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Top-Up/">Top Up</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%A5%E5%9D%91%E6%95%99%E7%A8%8B/">入坑教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%81%E4%BA%BA/">私人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%B3%E5%9D%91%E8%AE%B0%E5%BD%95/">跳坑记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%9B%E6%AD%A5%E7%AC%94%E8%AE%B0/">进步笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%B2%E4%B8%A2%E5%A4%B1/">防丢失</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/" rel="tag">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/" rel="tag">React Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/" rel="tag">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/" rel="tag">mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%83%85%E7%BB%AA/" rel="tag">小情绪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%89%B2%E5%BD%A9/" rel="tag">色彩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/24c57dd0.html">JSON Web Token 简介</a>
+          </li>
+        
+          <li>
+            <a href="/32c28743.html">函数进阶（箭头函数、默认参数）</a>
+          </li>
+        
+          <li>
+            <a href="/a1d95bcb.html">对象与数组的解构、rest 操作符</a>
+          </li>
+        
+          <li>
+            <a href="/e181814a.html">块级作用域、模板字符串</a>
+          </li>
+        
+          <li>
+            <a href="/53634cfe.html">JavaScript vs. ECMAScript</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2023 yiluyanxia &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank">antiquity</a>
+    <br>
+    上帝本不公平，但凡人保持偏执的权利
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之  阁下是第56<span id="busuanzi_value_site_pv"></span>个访客</span>-->
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia" class="mobile-nav-link">姬友</a>
+  
+    <a href="/mood" class="mobile-nav-link">心情</a>
+  
+    <a href="/pda" class="mobile-nav-link">手账</a>
+  
+    <a href="/topup" class="mobile-nav-link">Top Up</a>
+  
+    <a href="/about" class="mobile-nav-link">本王</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

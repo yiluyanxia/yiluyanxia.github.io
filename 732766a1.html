@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-134049127-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>第一次与云服务器的亲密接触 | Yiluyanxia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="Z2eTUO78NDUbUNrYk5dUHLf6we_TOAle3WKpEFw5Dk4" />
+  <meta name="baidu-site-verification" content="1CQQGgl03Q" />
+  
+  <meta name="keywords" content="前端" />
+  
+  <meta name="description" content="第一次与云服务器的亲密接触最近想学一点服务器的内容，看到腾讯云服务器搞活动，二话不说我就买了。在这里记录一下部署一个 node + vue + mongodb 的项目过程。期间参考了很多文章，主要是官方文档。成果在这里 http:&#x2F;&#x2F;www.fishhere.fun ，可以查看一下。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一次与云服务器的亲密接触">
+<meta property="og:url" content="https://yiluyanxia.github.io/732766a1.html">
+<meta property="og:site_name" content="Yiluyanxia">
+<meta property="og:description" content="第一次与云服务器的亲密接触最近想学一点服务器的内容，看到腾讯云服务器搞活动，二话不说我就买了。在这里记录一下部署一个 node + vue + mongodb 的项目过程。期间参考了很多文章，主要是官方文档。成果在这里 http:&#x2F;&#x2F;www.fishhere.fun ，可以查看一下。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yiluyanxia.github.io/732766a1/shell_1.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/732766a1/grep_nginx.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/732766a1/nginx_v.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/732766a1/FileZilla.png">
+<meta property="article:published_time" content="2020-07-31T15:31:27.000Z">
+<meta property="article:modified_time" content="2022-12-01T10:49:35.086Z">
+<meta property="article:author" content="yiluyanxia">
+<meta property="article:tag" content="云服务器">
+<meta property="article:tag" content="node">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="mongodb">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yiluyanxia.github.io/732766a1/shell_1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Yiluyanxia" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+        <a class="nav-item" href="https://github.com/yiluyanxia" title
+        
+          target='_blank'
+        
+        >姬友</a>
+      
+        <a class="nav-item" href="/mood" title
+        
+          target='_blank'
+        
+        >心情</a>
+      
+        <a class="nav-item" href="/pda" title
+        
+          target='_blank'
+        
+        >手账</a>
+      
+        <a class="nav-item" href="/topup" title
+        
+        >Top Up</a>
+      
+        <a class="nav-item" href="/about" title
+        
+        >本王</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-第一次与云服务器的亲密接触" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      第一次与云服务器的亲密接触
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/732766a1.html" class="article-date">
+  <time datetime="2020-07-31T15:31:27.000Z" itemprop="datePublished">2020-07-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%98%B2%E4%B8%A2%E5%A4%B1/">防丢失</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongodb/" rel="tag">mongodb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li></ul>
+
+  </div>
+  <!--
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  -->
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="第一次与云服务器的亲密接触"><a href="#第一次与云服务器的亲密接触" class="headerlink" title="第一次与云服务器的亲密接触"></a>第一次与云服务器的亲密接触</h1><p>最近想学一点服务器的内容，看到腾讯云服务器搞活动，二话不说我就买了。在这里记录一下部署一个 node + vue + mongodb 的项目过程。期间参考了很多文章，主要是官方文档。成果在这里 <a target="_blank" rel="noopener" href="http://www.fishhere.fun/">http://www.fishhere.fun</a> ，可以查看一下。</p>
+<span id="more"></span>
+
+<h2 id="登录-Linux-实例"><a href="#登录-Linux-实例" class="headerlink" title="登录 Linux 实例"></a>登录 Linux 实例</h2><p>我购买的是CentOS 7.5 64位。<br>直接通过官方提供的 webshell 登录，这个 webshell 还是挺方便的可以复制粘贴。<br>需要注意的是，要在安全组中放通22端口，我的默认就是允许访问。<br>期间遇到了一个问题，偶尔登录不上，提示“实例鉴权失败，请确认实例已启用密码鉴权并且账号密码正确”，根据文档进行排查无果，索性提交工单，十分钟后就收到回复，为这速度点个赞，但是回复只是一些让我检查密码是否正确之类的内容。<br>我决定改用另外的方式登录。</p>
+<h3 id="使用-OS-X-的-shell-登录"><a href="#使用-OS-X-的-shell-登录" class="headerlink" title="使用 OS X 的 shell 登录"></a>使用 OS X 的 shell 登录</h3><p>打开终端，选择 shell 中的新建远程连接。依次输入用户名和公网 ip,这时终端会提示输入密码，输入密码即可。</p>
+<img src="/732766a1/shell_1.png" class="" title="使用 OS X 的 shell 登录">
+
+<p>此时是可以正常登录的，我再次尝试使用官方提供的 webshell，发现也可以登录了。</p>
+<h2 id="安装-node-环境"><a href="#安装-node-环境" class="headerlink" title="安装 node 环境"></a>安装 node 环境</h2><ol>
+<li><p>下载安装版，选择自己所需的版本，我这里选择最新的稳定版。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#wget https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz</span></span><br><span class="line"></span><br><span class="line">wget https://nodejs.org/dist/v12.18.1/node-v12.18.1-linux-x64.tar.xz</span><br><span class="line"></span><br></pre></td></tr></table></figure></div></li>
+<li><p>解压安装包</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvf node-v12.18.1-linux-x64.tar.xz</span><br></pre></td></tr></table></figure></div></li>
+<li><p>创建软连接</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /root/node-v12.18.1-linux-x64/bin/node /usr/local/bin/node</span><br></pre></td></tr></table></figure></div></li>
+</ol>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /root/node-v12.18.1-linux-x64/bin/npm /usr/local/bin/npm</span><br></pre></td></tr></table></figure></div>
+<p>成功创建软链接后，即可在云服务器任意目录下使用 node 及 npm 命令</p>
+<ol start="4">
+<li>查看版本<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line"></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure></div>
+如果出现版本信息，说明我们已经安装成功了。</li>
+</ol>
+<h2 id="安装-node-的多个环境"><a href="#安装-node-的多个环境" class="headerlink" title="安装 node 的多个环境"></a>安装 node 的多个环境</h2><ol>
+<li><p>安装git</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y git</span><br></pre></td></tr></table></figure></div></li>
+<li><p>执行以下命令，下载 NVM 源码并检查最新版本</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/cnpm/nvm.git ~/.nvm &amp;&amp; cd ~/.nvm &amp;&amp; git checkout `git describe --abbrev=0 --tags`</span><br></pre></td></tr></table></figure></div></li>
+<li><p>配置 nvm 的环境变量</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;. ~/.nvm/nvm.sh&quot; &gt;&gt; /etc/profile</span><br></pre></td></tr></table></figure></div></li>
+<li><p>读取环境变量</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure></div></li>
+<li><p>查看node所有版本</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm list-remote</span><br></pre></td></tr></table></figure></div></li>
+</ol>
+<p>6.安装多个版本的 Node.js</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm install v10.16.3</span><br><span class="line">nvm install v12.18.1</span><br></pre></td></tr></table></figure></div>
+
+<p>7.查看已经安装的脚本</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm ls</span><br></pre></td></tr></table></figure></div>
+
+<p>8.切换 Node.js 使用版本</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm use v10.16.3</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="安装-mongodb"><a href="#安装-mongodb" class="headerlink" title="安装 mongodb"></a>安装 mongodb</h2><ol>
+<li><p>下载，直接去官网查看下载连接，选择合适的，我的是 linux。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-4.0.4.tgz</span></span><br><span class="line">wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel70-4.2.8.tgz</span><br><span class="line"></span><br></pre></td></tr></table></figure></div></li>
+<li><p>解压</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf mongodb-linux-x86_64-rhel70-4.2.8.tgz  <span class="comment"># 解压</span></span><br><span class="line"><span class="built_in">mv</span> mongodb-linux-x86_64-rhel70-4.2.8 /usr/local/mongodb  <span class="comment">#将解压后的文件移动到指定目录</span></span><br></pre></td></tr></table></figure></div></li>
+<li><p>创建文件夹</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /var/mongodb</span><br><span class="line"><span class="comment"># 用于存放数据</span></span><br><span class="line"><span class="built_in">mkdir</span> /var/mongodb/data</span><br><span class="line"><span class="comment"># 用于存放日志</span></span><br><span class="line"><span class="built_in">mkdir</span> /var/mongodb/logs</span><br></pre></td></tr></table></figure></div></li>
+<li><p>操作 mongodb</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 启动 mongodb</span></span><br><span class="line">/usr/local/mongodb/bin/mongod --dbpath=/var/mongodb/data --logpath /var/mongodb/logs/log.log -fork</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 停止 mongodb</span></span><br><span class="line">/usr/local/mongodb/bin/mongod -shutdown -dbpath=/var/mongodb/data</span><br></pre></td></tr></table></figure></div>
+<p>–dbpath 指定存储数据的文件夹<br>–logpath 指定日志存储文件（将不会输出到控制台）<br>–port 指定端口，如果不写的话，默认是27017<br>–fork 表示后台运行  </p>
+</li>
+</ol>
+<p>4.1 创建 mongodb.conf 文件并配置， bind_ip (值为内网 IP) 支持外网访问<br>这一步骤，如果不需要外网访问数据库，可以不用操作，我只是方便我自己在本地电脑远程操作数据库。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">port = 27017 </span><br><span class="line">dbpath = /var/mongodb/data</span><br><span class="line">logpath = /var/mongodb/logs/log.log</span><br><span class="line">logappend = <span class="literal">true</span></span><br><span class="line">bind_ip = 172.1.2.3</span><br><span class="line">fork = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行这个命令 开启 mongodb 的服务</span></span><br><span class="line"><span class="built_in">cd</span> /usr/local/mongodb/bin/</span><br><span class="line">./mongod -f mongodb.conf</span><br></pre></td></tr></table></figure></div>
+
+<ol start="5">
+<li>创建数据库管理员的账号密码<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 超级管理员</span></span><br><span class="line">db.createUser(&#123; <span class="keyword">user</span>: &quot;root&quot;, pwd:&quot;yourPassword&quot;, roles:[&#123; role: &quot;userAdminAnyDatabase&quot;, db: &quot;admin&quot; &#125;] &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 数据库管理员 readWrite 读写权限</span></span><br><span class="line">db.createUser(&#123; <span class="keyword">user</span>: &quot;yourName&quot;, pwd:&quot;yourPassword&quot;, roles:[ &#123; role: &quot;readWrite&quot;, db: &quot;yourDB&quot; &#125;] &#125;)</span><br></pre></td></tr></table></figure></div></li>
+</ol>
+<h2 id="使用git将代码拉取到服务器"><a href="#使用git将代码拉取到服务器" class="headerlink" title="使用git将代码拉取到服务器"></a>使用git将代码拉取到服务器</h2><ol>
+<li><p>创建文件夹（可选）<br>我喜欢这样的格式。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir yourFolder</span><br><span class="line">cd yourFolder</span><br><span class="line">mkdir yourFolder-node</span><br><span class="line">cd yourFolder-node</span><br></pre></td></tr></table></figure></div></li>
+<li><p>克隆仓库</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://yourWebsite.com/yourProject.git</span><br></pre></td></tr></table></figure></div>
+<p>如果仓库是私人仓库，会提示输入账号和密码。</p>
+</li>
+<li><p>拉取代码</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> yourFolder/yourFolder-node/yourProject/</span><br><span class="line">git pull</span><br><span class="line"></span><br><span class="line"><span class="comment">#输入邮箱和密码</span></span><br></pre></td></tr></table></figure></div></li>
+<li><p>安装依赖和运行代码</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure></div>
+<p>因为我用了 Egg 框架，内置了进程守护，所以无需安装其他进程守护模块。</p>
+</li>
+<li><p>这个时候打开ip+端口号就能访问页面了<br>但是有个端口号，看起来不是很专业，接下来我们使用nginx去掉它。</p>
+</li>
+</ol>
+<h2 id="配置-nginx"><a href="#配置-nginx" class="headerlink" title="配置 nginx"></a>配置 nginx</h2><ol>
+<li>查看 yum 源是否存在<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum list | grep nginx</span><br></pre></td></tr></table></figure></div>
+很多系统内置了 nginx  </li>
+</ol>
+<img src="/732766a1/grep_nginx.png" class="" title="很多系统内置了 nginx">
+
+<ol start="2">
+<li>安装 nginx<br>我打算再次安装，走一下流程。</li>
+</ol>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/yum.repos.d/nginx.repo</span><br></pre></td></tr></table></figure></div>
+
+<p>baseurl=<a target="_blank" rel="noopener" href="http://nginx.org/packages/OS/OSRELEASE/$basearch/">http://nginx.org/packages/OS/OSRELEASE/$basearch/</a><br>改成自己对应的系统<br>输入这段代码</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[nginx]</span><br><span class="line">name=nginx repo</span><br><span class="line">baseurl=http://nginx.org/packages/centos/7/$basearch/</span><br><span class="line">gpgcheck=0</span><br><span class="line">enabled=1</span><br></pre></td></tr></table></figure></div>
+
+<p>然后就可以愉快的安装了</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install nginx</span><br></pre></td></tr></table></figure></div>
+<p>查看版本</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -v</span><br></pre></td></tr></table></figure></div>
+<img src="/732766a1/nginx_v.png" class="" title="查看版本">
+
+<p>从刚刚的 1.16.1 升级到了 1.18.0</p>
+<ol start="3">
+<li>体验 nginx</li>
+</ol>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 nginx 安装到了哪个路径，rpm 是 linux 的包管理工具，-q 代表询问模式，-l 代表返回列表</span></span><br><span class="line">rpm -ql nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入文件夹查看配置文件</span></span><br><span class="line"><span class="built_in">cd</span> /etc/nginx</span><br><span class="line">vim nginx.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接子配置文件</span></span><br><span class="line"><span class="built_in">cd</span> /etc/nginx/conf.d</span><br><span class="line">vim default.conf</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<ol start="4">
+<li>nginx 的常用命令<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动</span></span><br><span class="line">nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用linux的命令启动</span></span><br><span class="line">systemctl start nginx.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务的运行状态</span></span><br><span class="line">ps aux | grep nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 立即停止</span></span><br><span class="line">nginx  -s stop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从容停止，进程完成当前工作后再停止</span></span><br><span class="line">nginx -s quit</span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死进程</span></span><br><span class="line">killall nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用linux的命令停止</span></span><br><span class="line">systemctl stop nginx.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line">systemctl restart nginx.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改配置文件后，需要重新加载</span></span><br><span class="line">nginx -s reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看端口号占用情况</span></span><br><span class="line">netstat -tlnp</span><br></pre></td></tr></table></figure></div></li>
+<li>配置nginx</li>
+</ol>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 执行</span></span><br><span class="line"><span class="built_in">cd</span> /etc/nginx/conf.d</span><br><span class="line">vim default.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加以下内容</span></span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://127.0.0.1:7001;</span><br><span class="line">        proxy_set_header Host      <span class="variable">$host</span>;</span><br><span class="line">        proxy_set_header X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">        proxy_set_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        <span class="comment">#root   /usr/share/nginx/html;</span></span><br><span class="line">        <span class="comment">#index  index.html index.htm;</span></span><br><span class="line">   &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p>记得要执行 nginx -s reload 命令，每次修改 nginx 的配置都要执行此命令。<br>到了这一步，我们的网站就可以不用加端口号访问了。</p>
+<p>下面这一步是开启 gzip, 优化一下我们的网站。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 执行</span></span><br><span class="line"><span class="built_in">cd</span> /etc/nginx</span><br><span class="line">vim nginx.conf</span><br><span class="line"></span><br><span class="line"><span class="comment">#修改部分内容</span></span><br><span class="line">http &#123;</span><br><span class="line">    include       /etc/nginx/mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    log_format  main  <span class="string">&#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span></span><br><span class="line">                      <span class="string">&#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span></span><br><span class="line">                      <span class="string">&#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    access_log  /var/log/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    <span class="comment">#tcp_nopush     on;</span></span><br><span class="line"></span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line">    <span class="comment"># 修改这里，开启 gzip</span></span><br><span class="line">    gzip  on;</span><br><span class="line">    gzip_types text/plain application/javascript text/css application/xml text/javascript application/x-javascript;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="优化-vue-项目"><a href="#优化-vue-项目" class="headerlink" title="优化 vue 项目"></a>优化 vue 项目</h2><p>有一些项目是在服务端打包成 gzip 文件，我使用了 vue，我直接在本地打包。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装插件</span></span><br><span class="line">npm install compression-webpack-plugin -D</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vue.config.js</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">CompressionPlugin</span> = <span class="built_in">require</span>(<span class="string">&#x27;compression-webpack-plugin&#x27;</span>)</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">configureWebpack</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="attr">plugins</span>: [</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">CompressionPlugin</span>(&#123;</span><br><span class="line">                    <span class="attr">algorithm</span>: <span class="string">&#x27;gzip&#x27;</span>,</span><br><span class="line">                    <span class="attr">test</span>: <span class="regexp">/\.(js|css)(\?.*)?$/i</span>, <span class="comment">// 匹配文件名</span></span><br><span class="line">                    <span class="attr">threshold</span>: <span class="number">1024</span>, <span class="comment">// 对超过1k的数据压缩</span></span><br><span class="line">                    <span class="attr">deleteOriginalAssets</span>: <span class="literal">false</span>, <span class="comment">// 不删除源文件</span></span><br><span class="line">                    <span class="comment">// minRatio: 0.8 // 压缩比</span></span><br><span class="line">                &#125;)</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>如果本身就是很小的文件，再压缩成 gzip 反而会变大。所以设置成超过 1k 的数据进行压缩。</p>
+<h2 id="配置-ssl"><a href="#配置-ssl" class="headerlink" title="配置 ssl"></a>配置 ssl</h2><p>腾讯云有免费的证书，可以申请使用一年，之前用过阿里云的域名也有免费的证书。<br>以下用我的 <a target="_blank" rel="noopener" href="http://www.fishhere.fun/">http://www.fishhere.fun</a> 网站举例说明。</p>
+<ol>
+<li><p>在 SSL 证书管理页面中下载并解压 fishhere.fun 证书文件包到本地目录</p>
+</li>
+<li><p>使用 FileZilla 上传文件<br>依次输入主机用户名和密码。  </p>
+</li>
+</ol>
+<img src="/732766a1/FileZilla.png" class="" title="使用 FileZilla 上传文件">
+
+<p>当然也可以使用其他趁手的工具，直接使用命令行也是很酷的。</p>
+<p>然后将文件拖到 /etc/nginx 下，这个路径是我们在上一步骤中通过查询命令拿到的，</p>
+<ol start="3">
+<li>修改配置内容<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入 conf.d 目录</span></span><br><span class="line"><span class="built_in">cd</span> /etc/nginx/conf.d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建文件</span></span><br><span class="line">vim fishhere.conf</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    <span class="comment">#SSL 访问端口号为 443</span></span><br><span class="line">    listen 443 ssl;</span><br><span class="line">    <span class="comment">#填写绑定证书的域名</span></span><br><span class="line">    server_name fishhere.com;</span><br><span class="line">    <span class="comment">#证书文件名称</span></span><br><span class="line">    ssl_certificate 1_fishhere.fun_bundle.crt;</span><br><span class="line">    <span class="comment">#私钥文件名称</span></span><br><span class="line">    ssl_certificate_key 2_fishhere.fun.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">    <span class="comment">#请按照以下协议配置</span></span><br><span class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">    <span class="comment">#请按照以下套件配置，配置加密套件，写法遵循 openssl 标准。</span></span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line">    location / &#123;</span><br><span class="line">        <span class="comment">#网站主页路径。此路径仅供参考，具体请您按照实际目录操作。</span></span><br><span class="line">        proxy_pass http://127.0.0.1:7001;</span><br><span class="line">        proxy_set_header Host      <span class="variable">$host</span>;</span><br><span class="line">        proxy_set_header X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">        proxy_set_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        <span class="comment">#root /var/www/cloud.tencent.com;</span></span><br><span class="line">        <span class="comment">#index  index.html index.htm;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    <span class="comment">#填写绑定证书的域名</span></span><br><span class="line">    server_name www.fishhere.fun;</span><br><span class="line">    <span class="comment">#把http的域名请求转成https</span></span><br><span class="line">    <span class="built_in">return</span> 301 https://$host<span class="variable">$request_uri</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+</ol>
+<h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><p>好了，我们就结束了云服务器的部署工作，很多细节仍然需要提高，比如使用密码就可以直接访问云服务器是不是不太安全？比如 nginx 配置网站主页路径是不是应该直接指向 vue? 这些问题在配置的过程当中也有查阅相关文档，但说法不一，最后决定使用最简单的方式。</p>
+<p>最后感谢你的阅读，如果有好的建议或者意见可以给我回复，谢谢你。</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/c03ee65c.html" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            《中国新说唱2020》不完全数据大屏
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/dc916e3c.html" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">前端可能需要知道的色彩知识</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: 'yiluyanxia',
+  repo: 'yiluyanxia.github.io',
+  oauth: {
+    client_id: 'b8e8c50258809e47e61a',
+    client_secret: '15a8996b14bedbbb4c2e1a540ac064d629f0c6ee',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        一路烟霞
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，不想局限于前端的攻城狮。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Top-Up/">Top Up</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%A5%E5%9D%91%E6%95%99%E7%A8%8B/">入坑教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%81%E4%BA%BA/">私人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%B3%E5%9D%91%E8%AE%B0%E5%BD%95/">跳坑记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%9B%E6%AD%A5%E7%AC%94%E8%AE%B0/">进步笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%B2%E4%B8%A2%E5%A4%B1/">防丢失</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/" rel="tag">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/" rel="tag">React Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/" rel="tag">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/" rel="tag">mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%83%85%E7%BB%AA/" rel="tag">小情绪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%89%B2%E5%BD%A9/" rel="tag">色彩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/24c57dd0.html">JSON Web Token 简介</a>
+          </li>
+        
+          <li>
+            <a href="/32c28743.html">函数进阶（箭头函数、默认参数）</a>
+          </li>
+        
+          <li>
+            <a href="/a1d95bcb.html">对象与数组的解构、rest 操作符</a>
+          </li>
+        
+          <li>
+            <a href="/e181814a.html">块级作用域、模板字符串</a>
+          </li>
+        
+          <li>
+            <a href="/53634cfe.html">JavaScript vs. ECMAScript</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2023 yiluyanxia &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank">antiquity</a>
+    <br>
+    上帝本不公平，但凡人保持偏执的权利
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之  阁下是第56<span id="busuanzi_value_site_pv"></span>个访客</span>-->
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia" class="mobile-nav-link">姬友</a>
+  
+    <a href="/mood" class="mobile-nav-link">心情</a>
+  
+    <a href="/pda" class="mobile-nav-link">手账</a>
+  
+    <a href="/topup" class="mobile-nav-link">Top Up</a>
+  
+    <a href="/about" class="mobile-nav-link">本王</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-134049127-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>和我一起入坑-Angular入门-ToDoList | Yiluyanxia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="Z2eTUO78NDUbUNrYk5dUHLf6we_TOAle3WKpEFw5Dk4" />
+  <meta name="baidu-site-verification" content="1CQQGgl03Q" />
+  
+  <meta name="keywords" content="前端" />
+  
+  <meta name="description" content="和我一起入坑-Angular入门-Angular版的ToDoList本项目是仿照这个做滴  ToDoList 。使用angular实现这个代办事项功能。 （一） 基本功入坑前不得先看看文档嘛，Angular quickstart 。然后开撸~  前置项安装Node ，需要注意版本，node 6.9.x 和 npm 3.x.x。 然后全局安装 Angular CLI 。1npm install -g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="和我一起入坑-Angular入门-ToDoList">
+<meta property="og:url" content="https://yiluyanxia.github.io/42986.html">
+<meta property="og:site_name" content="Yiluyanxia">
+<meta property="og:description" content="和我一起入坑-Angular入门-Angular版的ToDoList本项目是仿照这个做滴  ToDoList 。使用angular实现这个代办事项功能。 （一） 基本功入坑前不得先看看文档嘛，Angular quickstart 。然后开撸~  前置项安装Node ，需要注意版本，node 6.9.x 和 npm 3.x.x。 然后全局安装 Angular CLI 。1npm install -g">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yiluyanxia.github.io/42986/helloworld.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/42986/html%E5%92%8Ccss.png">
+<meta property="og:image" content="https://yiluyanxia.github.io/42986/%E5%BE%AA%E7%8E%AF%E8%BF%9B%E8%A1%8C%E5%88%97%E8%A1%A8.png">
+<meta property="article:published_time" content="2018-03-08T01:07:24.000Z">
+<meta property="article:modified_time" content="2022-12-01T10:49:35.098Z">
+<meta property="article:author" content="yiluyanxia">
+<meta property="article:tag" content="angular">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yiluyanxia.github.io/42986/helloworld.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Yiluyanxia" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+        <a class="nav-item" href="https://github.com/yiluyanxia" title
+        
+          target='_blank'
+        
+        >姬友</a>
+      
+        <a class="nav-item" href="/mood" title
+        
+          target='_blank'
+        
+        >心情</a>
+      
+        <a class="nav-item" href="/pda" title
+        
+          target='_blank'
+        
+        >手账</a>
+      
+        <a class="nav-item" href="/topup" title
+        
+        >Top Up</a>
+      
+        <a class="nav-item" href="/about" title
+        
+        >本王</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-和我一起入坑-Angular入门-ToDoList" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      和我一起入坑-Angular入门-ToDoList
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/42986.html" class="article-date">
+  <time datetime="2018-03-08T01:07:24.000Z" itemprop="datePublished">2018-03-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%85%A5%E5%9D%91%E6%95%99%E7%A8%8B/">入坑教程</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/" rel="tag">angular</a></li></ul>
+
+  </div>
+  <!--
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  -->
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="和我一起入坑-Angular入门-Angular版的ToDoList"><a href="#和我一起入坑-Angular入门-Angular版的ToDoList" class="headerlink" title="和我一起入坑-Angular入门-Angular版的ToDoList"></a>和我一起入坑-Angular入门-Angular版的ToDoList</h1><p>本项目是仿照这个做滴  <a target="_blank" rel="noopener" href="http://www.todolist.cn/">ToDoList</a> 。使用angular实现这个代办事项功能。</p>
+<h2 id="（一）-基本功"><a href="#（一）-基本功" class="headerlink" title="（一） 基本功"></a>（一） 基本功</h2><p>入坑前不得先看看文档嘛，<a target="_blank" rel="noopener" href="https://angular.cn/guide/quickstart">Angular quickstart</a> 。<br>然后开撸~</p>
+<ol>
+<li>前置项<br>安装Node ，需要注意版本，node 6.9.x 和 npm 3.x.x。</li>
+<li>然后全局安装 <a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli">Angular CLI</a> 。<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @angular/cli</span><br></pre></td></tr></table></figure></div></li>
+<li>创建项目<span id="more"></span>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng new ng-first</span><br></pre></td></tr></table></figure></div></li>
+<li>启动开发服务器<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ng-first</span><br><span class="line">ng serve --open</span><br></pre></td></tr></table></figure></div>
+浏览器自动打开 <a target="_blank" rel="noopener" href="http://localhost:4200/">http://localhost:4200/</a> ，看到了ng的标，是不是好激动 <em>（手动滑稽）</em>。</li>
+<li>创建组件<br>这个操作会直接创建文件，并在根组件配置。<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng g component components/todolist</span><br></pre></td></tr></table></figure></div></li>
+<li>创建服务<br>保持队形，再来一个。<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng g service services/storage</span><br></pre></td></tr></table></figure></div></li>
+<li>小试牛刀， 打个招呼<br>按照国际惯例，先来问个好！<br>在app.component中插入自定义组件app-todolist，这个名字取决于 todolist.component.ts中selector: ‘app-todolist’。<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--app.component.html--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">app-todolist</span>&gt;</span><span class="tag">&lt;/<span class="name">app-todolist</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+继续，在todolist.component.ts中定义一个变量msg,这种语法是ts的默认套路。 <em>（手动捂脸，其实我也不太会ts啦）</em><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//todolist.component.ts</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">TodolistComponent</span> implements <span class="title class_">OnInit</span> &#123;</span><br><span class="line">  public <span class="attr">msg</span>: any = <span class="string">&#x27;Hello World !&#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">ngOnInit</span>(<span class="params"></span>) &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+在todolist.component.html中绑定数据<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//todolist.component.html</span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span> &#123;&#123;msg&#125;&#125; <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*todolist.component.css*/</span></span><br><span class="line"><span class="selector-tag">h3</span>&#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">color</span>:  <span class="number">#369</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+切到浏览器，噔噔噔噔！<img src="/42986/helloworld.png" class="" title="Helloworld">
+哇咔咔，下面开始进入正题。</li>
+</ol>
+<h2 id="（二）html和css部分"><a href="#（二）html和css部分" class="headerlink" title="（二）html和css部分"></a>（二）html和css部分</h2><p>这个不重要，不是本文重点，打开控制台抄一抄就好了（<em>好不要脸呀</em>）。</p>
+<p>这是html,直接复制到todolist.component.html，去掉一些用不到得代码。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--todolist.component.html--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;title&quot;</span>&gt;</span>ToDoList<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;添加ToDo&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>正在进行</span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ol</span> <span class="attr">class</span>=<span class="string">&quot;demo-box&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>记得吃药<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span>&gt;</span>-<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>已经完成</span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">draggable</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span><span class="attr">checked</span>=<span class="string">&quot;checked&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>记得吃饭<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span>&gt;</span>-<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><br><span class="line">  Copyright <span class="symbol">&amp;copy;</span> 2014 todolist.cn</span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span>&gt;</span>clear<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>这是css样式,直接复制到todolist.component.css，把body的样式复制到src目录下的styles.css。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*todolist.component.css*/</span></span><br><span class="line"><span class="selector-tag">header</span> &#123;<span class="attribute">height</span>:<span class="number">50px</span>;<span class="attribute">background</span>:<span class="number">#333</span>;<span class="attribute">background</span>:<span class="built_in">rgba</span>(<span class="number">47</span>,<span class="number">47</span>,<span class="number">47</span>,<span class="number">0.98</span>);&#125;  </span><br><span class="line"><span class="selector-tag">section</span>&#123;<span class="attribute">margin</span>:<span class="number">0</span> auto;&#125;  </span><br><span class="line"><span class="selector-tag">label</span>&#123;<span class="attribute">float</span><span class="selector-pseudo">:left</span>;<span class="attribute">width</span>:<span class="number">100px</span>;<span class="attribute">line-height</span>:<span class="number">50px</span>;<span class="attribute">color</span>:<span class="number">#DDD</span>;<span class="attribute">font-size</span>:<span class="number">24px</span>;<span class="attribute">cursor</span>:pointer;<span class="attribute">font-family</span>: <span class="string">&quot;Helvetica Neue&quot;</span>,Helvetica,Arial,sans-serif;&#125;  </span><br><span class="line"><span class="selector-tag">header</span> <span class="selector-tag">input</span>&#123;<span class="attribute">float</span><span class="selector-pseudo">:right</span>;<span class="attribute">width</span>:<span class="number">60%</span>;<span class="attribute">height</span>:<span class="number">24px</span>;<span class="attribute">margin-top</span>:<span class="number">12px</span>;<span class="attribute">text-indent</span>:<span class="number">10px</span>;<span class="attribute">border-radius</span>:<span class="number">5px</span>;<span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">0</span> <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.24</span>), <span class="number">0</span> <span class="number">1px</span> <span class="number">6px</span> <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.45</span>) inset;<span class="attribute">border</span>:none&#125;  </span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:focus</span>&#123;<span class="attribute">outline-width</span>:<span class="number">0</span>&#125;  </span><br><span class="line"><span class="selector-tag">h2</span>&#123;<span class="attribute">position</span>:relative;&#125;  </span><br><span class="line"><span class="selector-tag">span</span>&#123;<span class="attribute">position</span>:absolute;<span class="attribute">top</span>:<span class="number">2px</span>;<span class="attribute">right</span>:<span class="number">5px</span>;<span class="attribute">display</span>:inline-block;<span class="attribute">padding</span>:<span class="number">0</span> <span class="number">5px</span>;<span class="attribute">height</span>:<span class="number">20px</span>;<span class="attribute">border-radius</span>:<span class="number">20px</span>;<span class="attribute">background</span>:<span class="number">#E6E6FA</span>;<span class="attribute">line-height</span>:<span class="number">22px</span>;<span class="attribute">text-align</span>:center;<span class="attribute">color</span>:<span class="number">#666</span>;<span class="attribute">font-size</span>:<span class="number">14px</span>;&#125;  </span><br><span class="line"><span class="selector-tag">ol</span>,<span class="selector-tag">ul</span>&#123;<span class="attribute">padding</span>:<span class="number">0</span>;<span class="attribute">list-style</span>:none;&#125;  </span><br><span class="line"><span class="selector-tag">li</span> <span class="selector-tag">input</span>&#123;<span class="attribute">position</span>:absolute;<span class="attribute">top</span>:<span class="number">2px</span>;<span class="attribute">left</span>:<span class="number">10px</span>;<span class="attribute">width</span>:<span class="number">22px</span>;<span class="attribute">height</span>:<span class="number">22px</span>;<span class="attribute">cursor</span>:pointer;&#125;  </span><br><span class="line"><span class="selector-tag">p</span>&#123;<span class="attribute">margin</span>: <span class="number">0</span>;&#125;  </span><br><span class="line"><span class="selector-tag">li</span> <span class="selector-tag">p</span> <span class="selector-tag">input</span>&#123;<span class="attribute">top</span>:<span class="number">3px</span>;<span class="attribute">left</span>:<span class="number">40px</span>;<span class="attribute">width</span>:<span class="number">70%</span>;<span class="attribute">height</span>:<span class="number">20px</span>;<span class="attribute">line-height</span>:<span class="number">14px</span>;<span class="attribute">text-indent</span>:<span class="number">5px</span>;<span class="attribute">font-size</span>:<span class="number">14px</span>;&#125;  </span><br><span class="line"><span class="selector-tag">li</span>&#123;<span class="attribute">height</span>:<span class="number">32px</span>;<span class="attribute">line-height</span>:<span class="number">32px</span>;<span class="attribute">background</span>: <span class="number">#fff</span>;<span class="attribute">position</span>:relative;<span class="attribute">margin-bottom</span>: <span class="number">10px</span>;</span><br><span class="line">	<span class="attribute">padding</span>:<span class="number">0</span> <span class="number">45px</span>;<span class="attribute">border-radius</span>:<span class="number">3px</span>;<span class="attribute">border-left</span>: <span class="number">5px</span> solid <span class="number">#629A9C</span>;<span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">2px</span> <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.07</span>);&#125;  </span><br><span class="line"><span class="selector-tag">ol</span> <span class="selector-tag">li</span>&#123;<span class="attribute">cursor</span>:move;&#125;  </span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;<span class="attribute">border-left</span>: <span class="number">5px</span> solid <span class="number">#999</span>;<span class="attribute">opacity</span>: <span class="number">0.5</span>;&#125;  </span><br><span class="line"><span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;<span class="attribute">position</span>:absolute;<span class="attribute">top</span>:<span class="number">2px</span>;<span class="attribute">right</span>:<span class="number">5px</span>;<span class="attribute">display</span>:inline-block;<span class="attribute">width</span>:<span class="number">14px</span>;<span class="attribute">height</span>:<span class="number">12px</span>;<span class="attribute">border-radius</span>:<span class="number">14px</span>;<span class="attribute">border</span>:<span class="number">6px</span> double <span class="number">#FFF</span>;<span class="attribute">background</span>:<span class="number">#CCC</span>;<span class="attribute">line-height</span>:<span class="number">14px</span>;<span class="attribute">text-align</span>:center;<span class="attribute">color</span>:<span class="number">#FFF</span>;<span class="attribute">font-weight</span>:bold;<span class="attribute">font-size</span>:<span class="number">14px</span>;<span class="attribute">cursor</span>:pointer;&#125;  </span><br><span class="line"><span class="selector-tag">footer</span>&#123;<span class="attribute">color</span>:<span class="number">#666</span>;<span class="attribute">font-size</span>:<span class="number">14px</span>;<span class="attribute">text-align</span>:center;&#125;  </span><br><span class="line"><span class="selector-tag">footer</span> <span class="selector-tag">a</span>&#123;<span class="attribute">color</span>:<span class="number">#666</span>;<span class="attribute">text-decoration</span>:none;<span class="attribute">color</span>:<span class="number">#999</span>;&#125;  </span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-device-width</span>: <span class="number">620px</span>) &#123;<span class="selector-tag">section</span>&#123;<span class="attribute">width</span>:<span class="number">96%</span>;<span class="attribute">padding</span>:<span class="number">0</span> <span class="number">2%</span>;&#125;&#125;  </span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width</span>: <span class="number">620px</span>) &#123;<span class="selector-tag">section</span>&#123;<span class="attribute">width</span>:<span class="number">600px</span>;<span class="attribute">padding</span>:<span class="number">0</span> <span class="number">10px</span>;&#125;&#125;  </span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="CSS"><figure class="iseeu highlight /css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*src/styles.css*/</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">margin</span>:<span class="number">0</span>;<span class="attribute">padding</span>:<span class="number">0</span>;<span class="attribute">font-size</span>:<span class="number">16px</span>;<span class="attribute">background</span>: <span class="number">#CDCDCD</span>;&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>复制完之后，页面应该长这样。</p>
+<img src="/42986/html%E5%92%8Ccss.png" class="" title="html和css">
+
+<p>好了，以上是不必要的前戏 <em>（手动滑稽）</em>。</p>
+<h2 id="（三）实现ToDoList的功能"><a href="#（三）实现ToDoList的功能" class="headerlink" title="（三）实现ToDoList的功能"></a>（三）实现ToDoList的功能</h2><p>研究 <a target="_blank" rel="noopener" href="http://www.todolist.cn/">ToDoList</a> 上的js源码，大概的逻辑就是用户输入待办事项后，添加一个done属性，默认值为false,表示正在进行；点击完成按钮，done属性变为true,表示已经完。且可以删除。浏览器刷新后，数据仍然存在，因为使用了HTML5的localStorage。</p>
+<h3 id="添加代办事项的功能"><a href="#添加代办事项的功能" class="headerlink" title="添加代办事项的功能"></a>添加代办事项的功能</h3><p>声明todo变量</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//todolist.component.ts</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">TodolistComponent</span> implements <span class="title class_">OnInit</span> &#123;</span><br><span class="line">  public <span class="attr">todo</span>: any = <span class="string">&#x27;&#x27;</span>; </span><br><span class="line">  public todoList = [];</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">ngOnInit</span>(<span class="params"></span>) &#123;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">addTodo</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> todoObj = &#123;</span><br><span class="line">      <span class="attr">todo</span>: <span class="variable language_">this</span>.<span class="property">todo</span>,</span><br><span class="line">      <span class="attr">done</span>: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (e.<span class="property">keyCode</span> == <span class="number">13</span>) &#123;  <span class="comment">//表示回车按钮</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">todoList</span>.<span class="title function_">push</span>(todoObj);</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">todo</span> = <span class="string">&#x27;&#x27;</span>;       <span class="comment">//清空输入框</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--todolist.component.html--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;title&quot;</span>&gt;</span>ToDoList<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> [(<span class="attr">ngModel</span>)]=<span class="string">&#x27;todo&#x27;</span> (<span class="attr">keydown</span>)=<span class="string">&#x27;addTodo($event)&#x27;</span> <span class="attr">placeholder</span>=<span class="string">&quot;添加ToDo&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p>[(ngModel)]是一个Angular语法，用于把todo绑定到输入框中。 它的数据流是双向的：从属性到输入框，并且从输入框回到属性。</p>
+<p>到这一步的时候，控制台报错。<br>解救的办法就是我们必须选择使用FormsModule模块。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">BrowserModule</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/platform-browser&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">NgModule</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/core&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">FormsModule</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/forms&#x27;</span>;  <span class="comment">//NgModel lives here</span></span><br><span class="line"></span><br><span class="line">@<span class="title class_">NgModule</span>(&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="attr">imports</span>: [</span><br><span class="line">    <span class="title class_">BrowserModule</span>, </span><br><span class="line">    <span class="title class_">FormsModule</span>  <span class="comment">//import the FormsModule before binding with [(ngModel)]</span></span><br><span class="line">  ],</span><br><span class="line">  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<h3 id="循环添加的事项"><a href="#循环添加的事项" class="headerlink" title="循环添加的事项"></a>循环添加的事项</h3><p>添加内置指令*ngFor,循环列表。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>正在进行</span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;todoList.length&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ol</span> <span class="attr">class</span>=<span class="string">&quot;demo-box&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> *<span class="attr">ngFor</span>=<span class="string">&quot;let item of todoList&quot;</span> &gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;item.todo&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span>&gt;</span>-<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p>能看到添加的事项咯。</p>
+<img src="/42986/%E5%BE%AA%E7%8E%AF%E8%BF%9B%E8%A1%8C%E5%88%97%E8%A1%A8.png" class="" title="ngFor循环列表">
+
+
+<h3 id="切换事项完成与否以及删除该事项"><a href="#切换事项完成与否以及删除该事项" class="headerlink" title="切换事项完成与否以及删除该事项"></a>切换事项完成与否以及删除该事项</h3><p>绑定changeTodo、deleteTodo事件</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>正在进行</span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;todoList.length&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">class</span>=<span class="string">&quot;demo-box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> *<span class="attr">ngFor</span>=<span class="string">&quot;let item of todoList;let key = index&quot;</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> (<span class="attr">click</span>)=<span class="string">&quot;changeTodo(key,true)&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;item.todo&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> (<span class="attr">click</span>)=<span class="string">&quot;deleteTodo(key,true)&quot;</span>&gt;</span>-<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>已经完成</span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;doneList.length&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> *<span class="attr">ngFor</span>=<span class="string">&quot;let item of doneList;let key = index&quot;</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> (<span class="attr">click</span>)=<span class="string">&quot;changeTodo(key,false)&quot;</span> <span class="attr">checked</span>=<span class="string">&#x27;checked&#x27;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;item.todo&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> (<span class="attr">click</span>)=<span class="string">&quot;deleteTodo(key,false)&quot;</span>&gt;</span>-<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p>将添加的事项和已完成的事项分为两个数组，（或者放在一个数组里，然后根据done的值来控制是否显示），但是我觉得分两个比较容易操作。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public doneList = [];  <span class="comment">//再声明一个已完成的数组</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">deleteTodo</span>(<span class="params">index, done</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (done) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">todoList</span>.<span class="title function_">splice</span>(index, <span class="number">1</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">doneList</span>.<span class="title function_">splice</span>(index, <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">changeTodo</span>(<span class="params">index, done</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (done) &#123;</span><br><span class="line">    <span class="keyword">var</span> tempTodo = <span class="variable language_">this</span>.<span class="property">todoList</span>[index]</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">doneList</span>.<span class="title function_">push</span>(tempTodo);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">todoList</span>.<span class="title function_">splice</span>(index, <span class="number">1</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> tempDone = <span class="variable language_">this</span>.<span class="property">doneList</span>[index]</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">todoList</span>.<span class="title function_">push</span>(tempDone);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">doneList</span>.<span class="title function_">splice</span>(index, <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p>到此，这个功能就算完成啦~<br>等等，刷新页面，欧漏，刚刚输入的事项不见了。<br>这个时候，localStorage闪亮登场！！</p>
+<h3 id="创建StorageService服务"><a href="#创建StorageService服务" class="headerlink" title="创建StorageService服务"></a>创建StorageService服务</h3><blockquote>
+<p>为了不再把相同的代码复制一遍又一遍，我们要创建一个单一的可复用的数据服务，并且把它注入到需要它的那些组件中。</p>
+</blockquote>
+<p>在（一） 基本功中第6步，创建服务时，angular-cli已经帮我们生成了一个服务的基本结构。<br>创建服务，方便在任何地方使用。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//storage.service.ts</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">StorageService</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">setItem</span>(<span class="params">key, value</span>) &#123;</span><br><span class="line">    <span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(key, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(value))</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">getItem</span>(<span class="params">key</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(key))</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p>使用该服务，只需要注入它。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//todolist.component.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">StorageService</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;../../services/storage.service&#x27;</span>  <span class="comment">//导入服务</span></span><br><span class="line">...</span><br><span class="line"><span class="title function_">constructor</span>(<span class="params">private storage: StorageService</span>) &#123; &#125; <span class="comment">//注入服务</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p>好了，我们就可以轻松愉快的使用它了。</p>
+<h3 id="将数据存到localStorage"><a href="#将数据存到localStorage" class="headerlink" title="将数据存到localStorage"></a>将数据存到localStorage</h3><p>使用this.storage就可以使用封装好的服务。<br>每次操作数据后都要存一遍。是不是有点鸡肋~</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="title function_">addTodo</span>(<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> todoObj = &#123;</span><br><span class="line">    <span class="attr">todo</span>: <span class="variable language_">this</span>.<span class="property">todo</span>,</span><br><span class="line">    <span class="attr">done</span>: <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (e.<span class="property">keyCode</span> == <span class="number">13</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> tempList = <span class="variable language_">this</span>.<span class="property">storage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;todoList&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span> (tempList) &#123;</span><br><span class="line">      tempList.<span class="title function_">push</span>(todoObj)</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">storage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;todoList&#x27;</span>, tempList);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">var</span> tempData = []</span><br><span class="line">      tempData.<span class="title function_">push</span>(todoObj)</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">storage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;todoList&#x27;</span>, tempData);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">todoList</span>.<span class="title function_">push</span>(todoObj);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">todo</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">deleteTodo</span>(<span class="params">index, done</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (done) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">todoList</span>.<span class="title function_">splice</span>(index, <span class="number">1</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">storage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;todoList&#x27;</span>, <span class="variable language_">this</span>.<span class="property">todoList</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">doneList</span>.<span class="title function_">splice</span>(index, <span class="number">1</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">storage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;doneList&#x27;</span>, <span class="variable language_">this</span>.<span class="property">doneList</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">changeTodo</span>(<span class="params">index, done</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (done) &#123;</span><br><span class="line">    <span class="keyword">var</span> tempTodo = <span class="variable language_">this</span>.<span class="property">todoList</span>[index]</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(tempTodo)</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">doneList</span>.<span class="title function_">push</span>(tempTodo);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">doneList</span>)</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">todoList</span>.<span class="title function_">splice</span>(index, <span class="number">1</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">storage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;todoList&#x27;</span>, <span class="variable language_">this</span>.<span class="property">todoList</span>)</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">storage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;doneList&#x27;</span>, <span class="variable language_">this</span>.<span class="property">doneList</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> tempDone = <span class="variable language_">this</span>.<span class="property">doneList</span>[index]</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">todoList</span>.<span class="title function_">push</span>(tempDone);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">doneList</span>.<span class="title function_">splice</span>(index, <span class="number">1</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">storage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;todoList&#x27;</span>, <span class="variable language_">this</span>.<span class="property">todoList</span>)</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">storage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;doneList&#x27;</span>, <span class="variable language_">this</span>.<span class="property">doneList</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<h3 id="初始事件"><a href="#初始事件" class="headerlink" title="初始事件"></a>初始事件</h3><blockquote>
+<p>OnInit接口的钩子方法叫做ngOnInit， Angular在创建组件后立刻调用它。 </p>
+</blockquote>
+<p>我的理解就是，类似于vue中的mounted？</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">ngOnInit</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="title function_">initTodo</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">initTodo</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> todoArr = <span class="variable language_">this</span>.<span class="property">storage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;todoList&#x27;</span>);</span><br><span class="line">  <span class="keyword">if</span> (todoArr) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">todoList</span> = todoArr</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> doneArr = <span class="variable language_">this</span>.<span class="property">storage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;doneList&#x27;</span>);</span><br><span class="line">  <span class="keyword">if</span> (doneArr) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">doneList</span> = doneArr</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p>然后，大功告成！</p>
+<h3 id="还有页脚的clear按钮"><a href="#还有页脚的clear按钮" class="headerlink" title="还有页脚的clear按钮"></a>还有页脚的clear按钮</h3><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--todolist.component.html--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><br><span class="line">  Copyright <span class="symbol">&amp;copy;</span> 2014 todolist.cn</span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> (<span class="attr">click</span>)=<span class="string">&quot;clearData()&quot;</span>&gt;</span>clear<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">clearData</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">localStorage</span>.<span class="title function_">clear</span>();</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">todoList</span> = [];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">doneList</span> = [];</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="说在后面的话"><a href="#说在后面的话" class="headerlink" title="说在后面的话"></a>说在后面的话</h3><p>还有拖拽排序的的功能，不写了。</p>
+<p>完整的项目在这里<a target="_blank" rel="noopener" href="https://github.com/yiluyanxia/ng-first">GitHub</a>。</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/59519.html" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            一些面试题
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/48873.html" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">angular实操</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: 'yiluyanxia',
+  repo: 'yiluyanxia.github.io',
+  oauth: {
+    client_id: 'b8e8c50258809e47e61a',
+    client_secret: '15a8996b14bedbbb4c2e1a540ac064d629f0c6ee',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        一路烟霞
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，不想局限于前端的攻城狮。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Top-Up/">Top Up</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%A5%E5%9D%91%E6%95%99%E7%A8%8B/">入坑教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%81%E4%BA%BA/">私人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B7%B3%E5%9D%91%E8%AE%B0%E5%BD%95/">跳坑记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%9B%E6%AD%A5%E7%AC%94%E8%AE%B0/">进步笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%B2%E4%B8%A2%E5%A4%B1/">防丢失</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/" rel="tag">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/" rel="tag">React Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/" rel="tag">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongodb/" rel="tag">mongodb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/" rel="tag">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E6%83%85%E7%BB%AA/" rel="tag">小情绪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%89%B2%E5%BD%A9/" rel="tag">色彩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/24c57dd0.html">JSON Web Token 简介</a>
+          </li>
+        
+          <li>
+            <a href="/32c28743.html">函数进阶（箭头函数、默认参数）</a>
+          </li>
+        
+          <li>
+            <a href="/a1d95bcb.html">对象与数组的解构、rest 操作符</a>
+          </li>
+        
+          <li>
+            <a href="/e181814a.html">块级作用域、模板字符串</a>
+          </li>
+        
+          <li>
+            <a href="/53634cfe.html">JavaScript vs. ECMAScript</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2023 yiluyanxia &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank">antiquity</a>
+    <br>
+    上帝本不公平，但凡人保持偏执的权利
+    <!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之  阁下是第56<span id="busuanzi_value_site_pv"></span>个访客</span>-->
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia" class="mobile-nav-link">姬友</a>
+  
+    <a href="/mood" class="mobile-nav-link">心情</a>
+  
+    <a href="/pda" class="mobile-nav-link">手账</a>
+  
+    <a href="/topup" class="mobile-nav-link">Top Up</a>
+  
+    <a href="/about" class="mobile-nav-link">本王</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
