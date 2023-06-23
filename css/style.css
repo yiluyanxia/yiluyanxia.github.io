@@ -660,6 +660,8 @@ body,
 
 .article-content iframe {
   border: none;
+  width: 100%;
+  height: 474px;
 }
 
 .article-content table {
